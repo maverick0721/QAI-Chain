@@ -1,5 +1,5 @@
 import requests
-from core.logger import get_logger
+from core.utils.logger import get_logger
 
 logger = get_logger("p2p")
 
@@ -31,3 +31,25 @@ class P2PNode:
                 })
             except Exception as e:
                 logger.warning(f"Failed to send block to {peer}: {e}")
+
+
+    def connect_to_network(self, bootstrap_node):
+        try:
+            response = requests.post(
+                f"{bootstrap_node}/register_peer",
+                json={"address": self.address}
+            )
+
+            data = response.json()
+
+            for peer in data["peers"]:
+                if peer != self.address:
+                    self.peer_manager.add_peer(peer)
+
+            # also add bootstrap itself
+            self.peer_manager.add_peer(bootstrap_node)
+
+            logger.info(f"Connected to network via {bootstrap_node}")
+
+        except Exception as e:
+            logger.error(f"Connection failed: {e}")

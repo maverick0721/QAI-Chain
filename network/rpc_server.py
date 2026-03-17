@@ -92,3 +92,24 @@ def mine():
     node["p2p"].broadcast_block(mined_block)
 
     return {"status": "block mined", "hash": mined_block.hash}
+
+
+@app.post("/register_peer")
+def register_peer(data: dict):
+
+    new_peer = data["address"]
+
+    node["p2p"].peer_manager.add_peer(new_peer)
+
+    # return current peers list
+    return {
+        "peers": node["p2p"].peer_manager.get_peers()
+    }
+
+
+@app.get("/peers")
+def get_peers():
+
+    return {
+        "peers": node["p2p"].peer_manager.get_peers()
+    }
