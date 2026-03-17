@@ -26,3 +26,16 @@ class Blockchain:
     def add_block(self, block):
 
         self.chain.append(block)
+
+    def is_valid_block(self, block, previous_block):
+
+    if previous_block.hash != block.previous_hash:
+        return False
+
+    if not block.hash.startswith("0" * self.difficulty):
+        return False
+
+    if block.compute_hash() != block.hash:
+        return False
+
+    return True
