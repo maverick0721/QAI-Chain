@@ -1,0 +1,13 @@
+torch
+transformers
+pennylane
+qiskit
+ray
+web3
+cryptography
+fastapi
+uvicorn
+numpy
+pandas
+networkx
+tqdm
