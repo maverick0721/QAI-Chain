@@ -1,0 +1,18 @@
+network:
+  port: 9000
+  max_peers: 50
+
+blockchain:
+  difficulty: 3
+  block_reward: 10
+
+ai:
+  model_dim: 256
+  hidden_dim: 512
+
+quantum:
+  qubits: 4
+  layers: 2
+
+zk:
+  proof_system: groth16
