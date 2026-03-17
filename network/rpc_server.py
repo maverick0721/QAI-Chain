@@ -16,6 +16,12 @@ def init_node(blockchain, mempool, p2p):
         "p2p": p2p
     }
 
+@app.get("/")
+def root():
+    return {
+        "message": "🚀 QAI-Chain Node",
+    }
+
 @app.post("/transaction")
 def add_transaction(tx_data: dict):
 
