@@ -19,32 +19,28 @@ def train(blockchain, episodes=50):
 
     for ep in range(episodes):
 
-        state = env.reset()
-
-        rewards = []
+        states = []
+        actions = []
         log_probs = []
+        rewards = []
 
-        for step in range(20):
+        for step in range(30):
 
             encoded = encoder(torch.tensor(state).float().unsqueeze(0))
 
             action, log_prob = agent.select_action(encoded.detach().numpy()[0])
 
-            next_state, reward, done = env.step([action])
+            next_state, reward, done = env.step(action)
 
-            rewards.append(reward)
+            states.append(encoded.detach().numpy()[0])
+            actions.append(action)
             log_probs.append(log_prob)
+            rewards.append(reward)
 
             state = next_state
 
         returns = agent.compute_returns(rewards)
-        returns = (returns - returns.mean()) / (returns.std() + 1e-8)
-        log_probs = torch.stack(log_probs).squeeze(-1)
 
-        loss = -(log_probs * returns).mean()
-
-        agent.optimizer.zero_grad()
-        loss.backward()
-        agent.optimizer.step()
+        agent.ppo_update(states, actions, log_probs, returns)
 
         print(f"Episode {ep} | Reward: {sum(rewards):.2f}")
