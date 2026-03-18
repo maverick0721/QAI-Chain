@@ -43,17 +43,16 @@ class BlockchainEnv:
 
     def step(self, action):
 
-        # -----------------------------
+       
         # Apply action
-        # -----------------------------
         # action[0] → difficulty adjustment
         delta = action[0]
 
         self.blockchain.difficulty = max(1, int(self.blockchain.difficulty + delta))
 
-        # -----------------------------
+       
         # Simulate reward
-        # -----------------------------
+       
         reward = self.compute_reward()
 
         next_state = self.get_state()
