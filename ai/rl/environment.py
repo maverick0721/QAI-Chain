@@ -45,20 +45,15 @@ class BlockchainEnv:
         ], dtype=np.float32)
 
     def step(self, action):
-        # Convert discrete action index to symmetric difficulty change.
-        action_idx = int(action[0])
-        action_map = {0: -1, 1: 0, 2: 1}
-        delta = action_map.get(action_idx, 0)
 
-        prev_difficulty = int(self.blockchain.difficulty)
-        next_difficulty = int(np.clip(
-            prev_difficulty + delta,
-            self.min_difficulty,
-            self.max_difficulty,
-        ))
-        self.blockchain.difficulty = next_difficulty
+        delta = float(action)
 
-        reward = self.compute_reward(delta)
+        self.blockchain.difficulty = max(
+            1,
+            self.blockchain.difficulty + delta
+        )
+
+        reward = self.compute_reward()
 
         next_state = self.get_state()
 
@@ -66,23 +61,36 @@ class BlockchainEnv:
 
         return next_state, reward, done
 
-    def compute_reward(self, delta):
+    def compute_reward(self):
 
         chain = self.blockchain.chain
 
         num_blocks = len(chain)
 
+        if num_blocks == 0:
+            return 0
+
         block_sizes = [len(b.transactions) for b in chain]
 
-        throughput = sum(block_sizes) / max(1, num_blocks)
+        throughput = sum(block_sizes) / num_blocks
 
-        stability = 1.0  # placeholder
+        # simulate latency (inverse of difficulty)
+        latency = 1.0 / max(1, self.blockchain.difficulty)
 
-        # Keep reward scale smooth and make a clear optimum around target difficulty.
-        throughput_bonus = 0.1 * min(throughput, 10.0)
-        difficulty_penalty = 0.2 * abs(self.blockchain.difficulty - self.target_difficulty)
-        action_penalty = 0.05 * abs(delta)
+        # stability penalty (fake for now, extend later)
+        stability_penalty = 0.1 * self.blockchain.difficulty
 
-        reward = stability + throughput_bonus - difficulty_penalty - action_penalty
+        # decentralization proxy (future: node count)
+        decentralization = 1.0
+
+        # -----------------------------
+        # Multi-objective reward
+        # -----------------------------
+        reward = (
+            1.5 * throughput
+            + 1.0 * latency
+            + 0.5 * decentralization
+            - stability_penalty
+        )
 
         return reward
