@@ -27,7 +27,8 @@ class P2PNode:
                     "transactions": [t.to_dict() for t in block.transactions],
                     "previous_hash": block.previous_hash,
                     "nonce": block.nonce,
-                    "hash": block.hash
+                    "hash": block.hash,
+                    "zk_proof": block.zk_proof
                 })
             except Exception as e:
                 logger.warning(f"Failed to send block to {peer}: {e}")
