@@ -112,7 +112,9 @@ def receive_block(block_data: dict):
         transactions=[
             Transaction(**t) for t in block_data["transactions"]
         ],
-        previous_hash=block_data["previous_hash"]
+        previous_hash=block_data["previous_hash"],
+        zk_proof=block_data.get("zk_proof")
+
     )
 
     block.nonce = block_data["nonce"]
@@ -140,7 +142,7 @@ def get_chain():
     ]
 
 
-# Mine Block (AI + PQC SYSTEM)
+# Mine Block (AI + ZK + PQC SYSTEM)
 
 @app.post("/mine")
 def mine():
@@ -157,16 +159,21 @@ def mine():
     # AI decision
     
     decision = node["ai"].decide()
-
-    print("🧠 AI Decision:", decision)
+    print("AI Decision:", decision)
 
     
-    # Create block
+    # ZK Proof (SIMULATED FOR NOW)
+    
+    zk_proof = "zk_proof_placeholder"
+
+    
+    # Create block (WITH ZK PROOF)
     
     new_block = Block(
         index=len(blockchain.chain),
         transactions=transactions,
-        previous_hash=blockchain.last_block().hash
+        previous_hash=blockchain.last_block().hash,
+        zk_proof=zk_proof   # NEW
     )
 
     mined_block = proof_of_work(new_block, blockchain.difficulty)
@@ -178,5 +185,6 @@ def mine():
 
     return {
         "status": "block mined",
-        "hash": mined_block.hash
+        "hash": mined_block.hash,
+        "zk_proof": zk_proof
     }
