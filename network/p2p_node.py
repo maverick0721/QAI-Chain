@@ -14,7 +14,7 @@ class P2PNode:
 
         for peer in self.peer_manager.get_peers():
             try:
-                requests.post(f"{peer}/transaction", json=tx.to_dict())
+                requests.post(f"{peer}/receive_transaction", json=tx.to_dict())
             except Exception as e:
                 logger.warning(f"Failed to send tx to {peer}: {e}")
 
@@ -22,7 +22,7 @@ class P2PNode:
 
         for peer in self.peer_manager.get_peers():
             try:
-                requests.post(f"{peer}/block", json={
+                requests.post(f"{peer}/receive_block", json={
                     "index": block.index,
                     "transactions": [t.to_dict() for t in block.transactions],
                     "previous_hash": block.previous_hash,
