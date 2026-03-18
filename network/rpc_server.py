@@ -1,12 +1,17 @@
 from fastapi import FastAPI
+
 from core.blockchain.transaction import Transaction
 from core.blockchain.block import Block
 from core.blockchain.miner import proof_of_work
+
+from crypto.pqc.keypair import PQCKeypair
+from crypto.pqc.transaction_signer import sign_transaction
+
 from ai.integration.blockchain_ai_bridge import AIBridge
 
 app = FastAPI()
 
-node = None  # global node container
+node = None
 
 
 
@@ -26,7 +31,7 @@ def init_node(blockchain, mempool, p2p):
 
 
 
-# Peer Management (AUTO DISCOVERY)
+# Peer Discovery
 
 @app.post("/register_peer")
 def register_peer(data: dict):
@@ -49,10 +54,39 @@ def get_peers():
 
 
 
-# Transaction Endpoint
+# Transaction Endpoint (PQC SIGNED)
 
 @app.post("/transaction")
 def add_transaction(tx_data: dict):
+
+    # Create wallet for this node
+    wallet = PQCKeypair()
+
+    tx = Transaction(
+        sender=wallet.get_public_key(),
+        receiver=tx_data["receiver"],
+        amount=tx_data["amount"]
+    )
+
+    # Sign transaction
+    tx = sign_transaction(tx, wallet.private_key)
+
+    node["mempool"].add_transaction(tx)
+
+    # Broadcast
+    node["p2p"].broadcast_transaction(tx)
+
+    return {
+        "status": "transaction created & broadcasted",
+        "sender": tx.sender
+    }
+
+
+
+# Receive Transaction (from peers)
+
+@app.post("/receive_transaction")
+def receive_transaction(tx_data: dict):
 
     tx = Transaction(
         tx_data["sender"],
@@ -63,14 +97,10 @@ def add_transaction(tx_data: dict):
 
     node["mempool"].add_transaction(tx)
 
-    # broadcast to peers
-    node["p2p"].broadcast_transaction(tx)
-
     return {"status": "transaction received"}
 
 
-
-# Block Endpoint
+# Receive Block
 
 @app.post("/block")
 def receive_block(block_data: dict):
@@ -95,26 +125,22 @@ def receive_block(block_data: dict):
     return {"status": "invalid block"}
 
 
-
 # Get Chain
 
 @app.get("/chain")
 def get_chain():
 
-    chain_data = []
-
-    for block in node["blockchain"].chain:
-        chain_data.append({
-            "index": block.index,
-            "hash": block.hash,
-            "num_tx": len(block.transactions)
-        })
-
-    return chain_data
+    return [
+        {
+            "index": b.index,
+            "hash": b.hash,
+            "tx": len(b.transactions)
+        }
+        for b in node["blockchain"].chain
+    ]
 
 
-
-# Mining Endpoint (AI-ENHANCED)
+# Mine Block (AI + PQC SYSTEM)
 
 @app.post("/mine")
 def mine():
@@ -128,13 +154,11 @@ def mine():
         return {"status": "no transactions"}
 
     
-    # AI Decision (NEW)
+    # AI decision
     
     decision = node["ai"].decide()
 
-    print("AI Decision:", decision)
-
-    # (future use: adjust difficulty, rewards, etc.)
+    print("🧠 AI Decision:", decision)
 
     
     # Create block
@@ -149,7 +173,7 @@ def mine():
 
     blockchain.add_block(mined_block)
 
-    # broadcast block
+    # Broadcast block
     node["p2p"].broadcast_block(mined_block)
 
     return {

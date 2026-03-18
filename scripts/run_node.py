@@ -17,9 +17,9 @@ from network.rpc_server import app, init_node
 
 def main():
 
-  
-    # Parse arguments
-  
+   
+    # Arguments
+   
     bootstrap = None
     port = 8000
 
@@ -31,27 +31,27 @@ def main():
 
     node_address = f"http://127.0.0.1:{port}"
 
-  
-    # Initialize components
-  
+   
+    # Core components
+   
     blockchain = Blockchain()
     mempool = Mempool()
     peers = PeerManager()
 
     p2p = P2PNode(node_address, peers)
 
-    # Inject into FastAPI server
+    # Inject into API server
     init_node(blockchain, mempool, p2p)
 
-  
+   
     # Auto-connect to network
-  
+   
     if bootstrap:
         p2p.connect_to_network(bootstrap)
 
-  
+   
     # Start server
-  
+   
     print(f"🚀 Node running at {node_address}")
 
     if bootstrap:
