@@ -8,7 +8,10 @@ class BlockchainEnv:
         self.blockchain = blockchain
 
         self.state_dim = 5
-        self.action_dim = 3  # e.g., adjust difficulty
+        self.action_dim = 3  # actions map to {-1, 0, +1} difficulty delta
+        self.min_difficulty = 1
+        self.max_difficulty = 8
+        self.target_difficulty = 3
 
     def reset(self):
 
@@ -42,18 +45,20 @@ class BlockchainEnv:
         ], dtype=np.float32)
 
     def step(self, action):
+        # Convert discrete action index to symmetric difficulty change.
+        action_idx = int(action[0])
+        action_map = {0: -1, 1: 0, 2: 1}
+        delta = action_map.get(action_idx, 0)
 
-       
-        # Apply action
-        # action[0] → difficulty adjustment
-        delta = action[0]
+        prev_difficulty = int(self.blockchain.difficulty)
+        next_difficulty = int(np.clip(
+            prev_difficulty + delta,
+            self.min_difficulty,
+            self.max_difficulty,
+        ))
+        self.blockchain.difficulty = next_difficulty
 
-        self.blockchain.difficulty = max(1, int(self.blockchain.difficulty + delta))
-
-       
-        # Simulate reward
-       
-        reward = self.compute_reward()
+        reward = self.compute_reward(delta)
 
         next_state = self.get_state()
 
@@ -61,7 +66,7 @@ class BlockchainEnv:
 
         return next_state, reward, done
 
-    def compute_reward(self):
+    def compute_reward(self, delta):
 
         chain = self.blockchain.chain
 
@@ -73,7 +78,11 @@ class BlockchainEnv:
 
         stability = 1.0  # placeholder
 
-        # RESEARCH IDEA: multi-objective reward
-        reward = throughput - 0.1 * self.blockchain.difficulty + stability
+        # Keep reward scale smooth and make a clear optimum around target difficulty.
+        throughput_bonus = 0.1 * min(throughput, 10.0)
+        difficulty_penalty = 0.2 * abs(self.blockchain.difficulty - self.target_difficulty)
+        action_penalty = 0.05 * abs(delta)
+
+        reward = stability + throughput_bonus - difficulty_penalty - action_penalty
 
         return reward
