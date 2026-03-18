@@ -38,8 +38,10 @@ def train(blockchain, episodes=50):
             state = next_state
 
         returns = agent.compute_returns(rewards)
+        returns = (returns - returns.mean()) / (returns.std() + 1e-8)
+        log_probs = torch.stack(log_probs).squeeze(-1)
 
-        loss = -returns.mean()
+        loss = -(log_probs * returns).mean()
 
         agent.optimizer.zero_grad()
         loss.backward()
