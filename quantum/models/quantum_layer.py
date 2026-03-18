@@ -1,5 +1,8 @@
 import torch
 import torch.nn as nn
+import warnings
+
+warnings.filterwarnings("ignore", message="Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.*")
 
 from quantum.models.qnode import QuantumCircuit
 
@@ -24,6 +27,12 @@ class QuantumLayer(nn.Module):
 
             out = self.qc.forward(x[i], self.weights)
 
-            outputs.append(torch.tensor(out))
+            # Robustly convert QNode output to float or numpy before as_tensor
+            import numpy as np
+            if isinstance(out, torch.Tensor):
+                out = out.detach().cpu().numpy()
+            if isinstance(out, (np.generic, np.ndarray)) and out.shape == ():
+                out = out.item()
+            outputs.append(torch.as_tensor(out, dtype=x.dtype))
 
         return torch.stack(outputs)
