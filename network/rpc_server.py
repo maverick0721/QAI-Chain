@@ -2,25 +2,54 @@ from fastapi import FastAPI
 from core.blockchain.transaction import Transaction
 from core.blockchain.block import Block
 from core.blockchain.miner import proof_of_work
+from ai.integration.blockchain_ai_bridge import AIBridge
 
 app = FastAPI()
 
-node = None  # will be injected later
+node = None  # global node container
 
+
+
+# Initialize node
 
 def init_node(blockchain, mempool, p2p):
     global node
+
+    ai_bridge = AIBridge(blockchain)
+
     node = {
         "blockchain": blockchain,
         "mempool": mempool,
-        "p2p": p2p
+        "p2p": p2p,
+        "ai": ai_bridge
     }
 
-@app.get("/")
-def root():
+
+
+# Peer Management (AUTO DISCOVERY)
+
+@app.post("/register_peer")
+def register_peer(data: dict):
+
+    new_peer = data["address"]
+
+    node["p2p"].peer_manager.add_peer(new_peer)
+
     return {
-        "message": "🚀 QAI-Chain Node",
+        "peers": node["p2p"].peer_manager.get_peers()
     }
+
+
+@app.get("/peers")
+def get_peers():
+
+    return {
+        "peers": node["p2p"].peer_manager.get_peers()
+    }
+
+
+
+# Transaction Endpoint
 
 @app.post("/transaction")
 def add_transaction(tx_data: dict):
@@ -34,9 +63,14 @@ def add_transaction(tx_data: dict):
 
     node["mempool"].add_transaction(tx)
 
+    # broadcast to peers
     node["p2p"].broadcast_transaction(tx)
 
     return {"status": "transaction received"}
+
+
+
+# Block Endpoint
 
 @app.post("/block")
 def receive_block(block_data: dict):
@@ -60,6 +94,10 @@ def receive_block(block_data: dict):
 
     return {"status": "invalid block"}
 
+
+
+# Get Chain
+
 @app.get("/chain")
 def get_chain():
 
@@ -68,11 +106,15 @@ def get_chain():
     for block in node["blockchain"].chain:
         chain_data.append({
             "index": block.index,
-            "hash": block.hash
+            "hash": block.hash,
+            "num_tx": len(block.transactions)
         })
 
     return chain_data
 
+
+
+# Mining Endpoint (AI-ENHANCED)
 
 @app.post("/mine")
 def mine():
@@ -85,6 +127,18 @@ def mine():
     if not transactions:
         return {"status": "no transactions"}
 
+    
+    # AI Decision (NEW)
+    
+    decision = node["ai"].decide()
+
+    print("AI Decision:", decision)
+
+    # (future use: adjust difficulty, rewards, etc.)
+
+    
+    # Create block
+    
     new_block = Block(
         index=len(blockchain.chain),
         transactions=transactions,
@@ -95,27 +149,10 @@ def mine():
 
     blockchain.add_block(mined_block)
 
+    # broadcast block
     node["p2p"].broadcast_block(mined_block)
 
-    return {"status": "block mined", "hash": mined_block.hash}
-
-
-@app.post("/register_peer")
-def register_peer(data: dict):
-
-    new_peer = data["address"]
-
-    node["p2p"].peer_manager.add_peer(new_peer)
-
-    # return current peers list
     return {
-        "peers": node["p2p"].peer_manager.get_peers()
-    }
-
-
-@app.get("/peers")
-def get_peers():
-
-    return {
-        "peers": node["p2p"].peer_manager.get_peers()
+        "status": "block mined",
+        "hash": mined_block.hash
     }
