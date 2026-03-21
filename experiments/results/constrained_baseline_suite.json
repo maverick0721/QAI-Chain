@@ -1,0 +1,839 @@
+{
+  "generated_at_utc": "2026-03-21T12:57:09.249639+00:00",
+  "config": {
+    "seeds": [
+      3,
+      7,
+      11,
+      17
+    ],
+    "episodes": 8,
+    "steps": 80,
+    "intensity": 0.7,
+    "uncertainty_k": 2,
+    "uncertainty_every": 8,
+    "trace_csv_path": null
+  },
+  "results": {
+    "scaled": {
+      "random": {
+        "per_seed": [
+          {
+            "reward_mean": -1826.9629216562078,
+            "reward_std": 188.16199865353136,
+            "violations_mean": 76.0,
+            "violations_std": 0.7071067811865476,
+            "target_error_mean": 5.571576980873942,
+            "target_error_std": 2.5971016067796255,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1876143010146916
+          },
+          {
+            "reward_mean": -1780.4418541426958,
+            "reward_std": 132.4726906575836,
+            "violations_mean": 75.625,
+            "violations_std": 0.6959705453537527,
+            "target_error_mean": 4.912974683567882,
+            "target_error_std": 1.7344470967472403,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1923920294130221
+          },
+          {
+            "reward_mean": -1642.6636417761094,
+            "reward_std": 165.62482741349535,
+            "violations_mean": 75.375,
+            "violations_std": 0.4841229182759271,
+            "target_error_mean": 2.505355856567621,
+            "target_error_std": 1.4682837265230002,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.187285234106239
+          },
+          {
+            "reward_mean": -1682.9084965801212,
+            "reward_std": 164.9415016975272,
+            "violations_mean": 75.125,
+            "violations_std": 0.5994789404140899,
+            "target_error_mean": 3.4189450435340403,
+            "target_error_std": 1.8344582543684946,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.193224156658398
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -1733.2442285387835,
+          "reward_mean_std": 73.73828366657587,
+          "reward_std_mean": 162.80025460553438,
+          "reward_std_std": 19.84655100281655,
+          "violations_mean_mean": 75.53125,
+          "violations_mean_std": 0.3232525135246438,
+          "violations_std_mean": 0.6216697963075793,
+          "violations_std_std": 0.08976588638727312,
+          "target_error_mean_mean": 4.102213141135872,
+          "target_error_mean_std": 1.207598117410719,
+          "target_error_std_mean": 1.90857267110459,
+          "target_error_std_std": 0.4194457987618829,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.1901289302980878,
+          "latency_mean_std": 0.0026977774319810748
+        }
+      },
+      "heuristic": {
+        "per_seed": [
+          {
+            "reward_mean": -1689.3638476988915,
+            "reward_std": 75.23592890052403,
+            "violations_mean": 74.125,
+            "violations_std": 0.9270248108869579,
+            "target_error_mean": 2.8697092194110154,
+            "target_error_std": 0.011228694969987841,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2321517298184335
+          },
+          {
+            "reward_mean": -1656.412846517151,
+            "reward_std": 131.67595891057778,
+            "violations_mean": 74.125,
+            "violations_std": 1.0532687216470449,
+            "target_error_mean": 2.8710788384079935,
+            "target_error_std": 0.010475985368043344,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.230195986465551
+          },
+          {
+            "reward_mean": -1633.4878229752992,
+            "reward_std": 71.06364819482158,
+            "violations_mean": 74.375,
+            "violations_std": 1.3169567191065923,
+            "target_error_mean": 2.869537742435932,
+            "target_error_std": 0.010190063430240003,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2283377798227593
+          },
+          {
+            "reward_mean": -1712.58241939369,
+            "reward_std": 85.16140591771511,
+            "violations_mean": 74.875,
+            "violations_std": 1.2686114456365274,
+            "target_error_mean": 2.874266177788377,
+            "target_error_std": 0.011825494228043286,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2336978196678683
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -1672.9617341462579,
+          "reward_mean_std": 30.293907693474964,
+          "reward_std_mean": 90.78423548090963,
+          "reward_std_std": 24.15781787419491,
+          "violations_mean_mean": 74.375,
+          "violations_mean_std": 0.30618621784789724,
+          "violations_std_mean": 1.1414654243192806,
+          "violations_std_std": 0.1586873816143068,
+          "target_error_mean_mean": 2.8711479945108294,
+          "target_error_mean_std": 0.0018967627060001587,
+          "target_error_std_mean": 0.010930059499078618,
+          "target_error_std_std": 0.0006412417634350647,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.231095828943653,
+          "latency_mean_std": 0.0020187764750538924
+        }
+      },
+      "cpo": {
+        "per_seed": [
+          {
+            "reward_mean": -1784.1379465213302,
+            "reward_std": 67.91003231851487,
+            "violations_mean": 75.375,
+            "violations_std": 0.6959705453537527,
+            "target_error_mean": 2.8078125,
+            "target_error_std": 0.1562421873046777,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.246130538014695
+          },
+          {
+            "reward_mean": -1779.9620123803945,
+            "reward_std": 87.70974688391519,
+            "violations_mean": 75.375,
+            "violations_std": 0.6959705453537527,
+            "target_error_mean": 2.8078125,
+            "target_error_std": 0.1562421873046777,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2436247247859138
+          },
+          {
+            "reward_mean": -1755.1549253808978,
+            "reward_std": 61.77524249295503,
+            "violations_mean": 75.375,
+            "violations_std": 0.8569568250501305,
+            "target_error_mean": 2.805443388596177,
+            "target_error_std": 0.15855419552125413,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2418163212176296
+          },
+          {
+            "reward_mean": -1804.4312869702194,
+            "reward_std": 78.21606673405556,
+            "violations_mean": 75.75,
+            "violations_std": 0.9682458365518543,
+            "target_error_mean": 2.8078125,
+            "target_error_std": 0.1562421873046777,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2477440798064345
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -1780.9215428132104,
+          "reward_mean_std": 17.520649215256554,
+          "reward_std_mean": 73.90277210736016,
+          "reward_std_std": 9.902360422421882,
+          "violations_mean_mean": 75.46875,
+          "violations_mean_std": 0.16237976320958225,
+          "violations_std_mean": 0.8042859380773726,
+          "violations_std_std": 0.11524053024435825,
+          "target_error_mean_mean": 2.807220222149044,
+          "target_error_mean_std": 0.0010258553300530222,
+          "target_error_std_mean": 0.1568201893588218,
+          "target_error_std_std": 0.0010011289246567704,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.2448289159561683,
+          "latency_mean_std": 0.0022758626765653086
+        }
+      },
+      "p3o": {
+        "per_seed": [
+          {
+            "reward_mean": -1815.9960903297308,
+            "reward_std": 64.19343211506212,
+            "violations_mean": 75.625,
+            "violations_std": 0.4841229182759271,
+            "target_error_mean": 2.7870253540575503,
+            "target_error_std": 0.3656207999357247,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.191320279436186
+          },
+          {
+            "reward_mean": -1832.4008702282615,
+            "reward_std": 73.59071131521189,
+            "violations_mean": 75.75,
+            "violations_std": 0.4330127018922193,
+            "target_error_mean": 2.781470281071961,
+            "target_error_std": 0.34152879476619014,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1899958602222613
+          },
+          {
+            "reward_mean": -1809.993677085635,
+            "reward_std": 50.9296837612489,
+            "violations_mean": 75.75,
+            "violations_std": 0.6614378277661477,
+            "target_error_mean": 2.7964748963713646,
+            "target_error_std": 0.3352040731145255,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1892759002395905
+          },
+          {
+            "reward_mean": -1834.5542209086343,
+            "reward_std": 75.36955314691407,
+            "violations_mean": 75.875,
+            "violations_std": 0.9270248108869579,
+            "target_error_mean": 2.78747647870332,
+            "target_error_std": 0.3604452623076065,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.191780803797301
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -1823.2362146380653,
+          "reward_mean_std": 10.4865673465536,
+          "reward_std_mean": 66.02084508460925,
+          "reward_std_std": 9.692571968166883,
+          "violations_mean_mean": 75.75,
+          "violations_mean_std": 0.08838834764831845,
+          "violations_std_mean": 0.626399564705313,
+          "violations_std_std": 0.19316077587593816,
+          "target_error_mean_mean": 2.788111752551049,
+          "target_error_mean_std": 0.005376689327902163,
+          "target_error_std_mean": 0.3506997325310117,
+          "target_error_std_std": 0.012667232959100152,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.1905932109238346,
+          "latency_mean_std": 0.0010038850474848482
+        }
+      },
+      "ppo_lagrangian": {
+        "per_seed": [
+          {
+            "reward_mean": -1795.1007968197832,
+            "reward_std": 67.34732210303517,
+            "violations_mean": 75.5,
+            "violations_std": 0.7071067811865476,
+            "target_error_mean": 2.8078125,
+            "target_error_std": 0.1562421873046777,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2271052596718073
+          },
+          {
+            "reward_mean": -1806.677595441494,
+            "reward_std": 82.81921038045628,
+            "violations_mean": 75.375,
+            "violations_std": 0.6959705453537527,
+            "target_error_mean": 2.8078125,
+            "target_error_std": 0.1562421873046777,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.225581672131084
+          },
+          {
+            "reward_mean": -1783.5828060531283,
+            "reward_std": 45.40627352827465,
+            "violations_mean": 75.5,
+            "violations_std": 0.7071067811865476,
+            "target_error_mean": 2.806196843460202,
+            "target_error_std": 0.15779557566044383,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.223860045900801
+          },
+          {
+            "reward_mean": -1814.9121448978372,
+            "reward_std": 75.43384255200223,
+            "violations_mean": 75.875,
+            "violations_std": 0.9270248108869579,
+            "target_error_mean": 2.8078125,
+            "target_error_std": 0.1562421873046777,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.2286153578665107
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -1800.0683358030606,
+          "reward_mean_std": 11.83712503204095,
+          "reward_std_mean": 67.75166214094209,
+          "reward_std_std": 14.013625413642481,
+          "violations_mean_mean": 75.5625,
+          "violations_mean_std": 0.1875,
+          "violations_std_mean": 0.7593022296534514,
+          "violations_std_std": 0.096941343312837,
+          "target_error_mean_mean": 2.8074085858650504,
+          "target_error_mean_std": 0.000699599803627672,
+          "target_error_std_mean": 0.15663053439361924,
+          "target_error_std_std": 0.000672636889018203,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.2262905838925509,
+          "latency_mean_std": 0.0017662347996651633
+        }
+      },
+      "robust_qgate_shield": {
+        "per_seed": [
+          {
+            "reward_mean": -1708.8601881736815,
+            "reward_std": 53.96213922775756,
+            "violations_mean": 75.5,
+            "violations_std": 0.7071067811865476,
+            "target_error_mean": 2.8146319873631,
+            "target_error_std": 0.4904376624635156,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1074454674137724
+          },
+          {
+            "reward_mean": -1762.824372171624,
+            "reward_std": 95.1072932557798,
+            "violations_mean": 75.625,
+            "violations_std": 0.4841229182759271,
+            "target_error_mean": 3.3740620419383047,
+            "target_error_std": 0.9896751378777682,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1097916128288436
+          },
+          {
+            "reward_mean": -1701.438978339184,
+            "reward_std": 37.88674826689157,
+            "violations_mean": 75.625,
+            "violations_std": 0.6959705453537527,
+            "target_error_mean": 2.9346712827682495,
+            "target_error_std": 0.17284353926607177,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1098003525488565
+          },
+          {
+            "reward_mean": -1739.2785028707387,
+            "reward_std": 63.153302874114935,
+            "violations_mean": 75.75,
+            "violations_std": 0.9682458365518543,
+            "target_error_mean": 2.9287246391177177,
+            "target_error_std": 0.18857687950090013,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1048142955321831
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -1728.100510388807,
+          "reward_mean_std": 24.554640005573432,
+          "reward_std_mean": 62.527370906135964,
+          "reward_std_std": 20.870832571385957,
+          "violations_mean_mean": 75.625,
+          "violations_mean_std": 0.08838834764831845,
+          "violations_std_mean": 0.7138615203420204,
+          "violations_std_std": 0.17165147763703986,
+          "target_error_mean_mean": 3.0130224877968432,
+          "target_error_mean_std": 0.213865254855936,
+          "target_error_std_mean": 0.4603833047770639,
+          "target_error_std_std": 0.33076084962347496,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.107962932080914,
+          "latency_mean_std": 0.0020555941386619955
+        }
+      }
+    },
+    "defi": {
+      "random": {
+        "per_seed": [
+          {
+            "reward_mean": -120.96827837559525,
+            "reward_std": 37.729276421772155,
+            "violations_mean": 60.375,
+            "violations_std": 5.146297212559725,
+            "target_error_mean": 3.075488455758286,
+            "target_error_std": 0.8024588233358426,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1527466993266717
+          },
+          {
+            "reward_mean": -136.30173770831138,
+            "reward_std": 35.67225430225668,
+            "violations_mean": 60.25,
+            "violations_std": 3.8649062084350767,
+            "target_error_mean": 2.846207200729936,
+            "target_error_std": 1.0347010984342497,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1549963611899876
+          },
+          {
+            "reward_mean": -118.87285687003472,
+            "reward_std": 47.74763207999646,
+            "violations_mean": 60.5,
+            "violations_std": 3.3166247903554,
+            "target_error_mean": 3.2896530868402447,
+            "target_error_std": 1.350589645133907,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1530345653794938
+          },
+          {
+            "reward_mean": -130.00369598029414,
+            "reward_std": 27.789352599242466,
+            "violations_mean": 59.75,
+            "violations_std": 4.968651728587948,
+            "target_error_mean": 2.945581771237781,
+            "target_error_std": 0.7737454117294639,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1510778374335495
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -126.53664223355887,
+          "reward_mean_std": 7.01993293177765,
+          "reward_std_mean": 37.23462885081694,
+          "reward_std_std": 7.11375728456377,
+          "violations_mean_mean": 60.21875,
+          "violations_mean_std": 0.28470104934825935,
+          "violations_std_mean": 4.324119984984537,
+          "violations_std_std": 0.7611373762057175,
+          "target_error_mean_mean": 3.039232628641562,
+          "target_error_mean_std": 0.1658720815849413,
+          "target_error_std_mean": 0.9903737446583658,
+          "target_error_std_std": 0.23127919357963367,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.1529638658324257,
+          "latency_mean_std": 0.0013910697517607777
+        }
+      },
+      "heuristic": {
+        "per_seed": [
+          {
+            "reward_mean": -119.64628849714403,
+            "reward_std": 10.65500702492179,
+            "violations_mean": 60.875,
+            "violations_std": 4.2260353760942415,
+            "target_error_mean": 3.3978796860220055,
+            "target_error_std": 0.040901743327971286,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.0030050653964282
+          },
+          {
+            "reward_mean": -116.48729941309293,
+            "reward_std": 8.716157416185402,
+            "violations_mean": 59.875,
+            "violations_std": 4.013648589500581,
+            "target_error_mean": 3.4086622616842166,
+            "target_error_std": 0.0384328341035086,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.0030050653964282
+          },
+          {
+            "reward_mean": -115.47275156830285,
+            "reward_std": 8.42908225785532,
+            "violations_mean": 59.25,
+            "violations_std": 3.031088913245535,
+            "target_error_mean": 3.408436461075547,
+            "target_error_std": 0.024617514125298355,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.0030050653964282
+          },
+          {
+            "reward_mean": -109.7578287484175,
+            "reward_std": 9.61243533429468,
+            "violations_mean": 56.875,
+            "violations_std": 4.3714271125114275,
+            "target_error_mean": 3.4232209357040144,
+            "target_error_std": 0.019874001052110082,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.0030050653964282
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -115.34104205673933,
+          "reward_mean_std": 3.5720677163678745,
+          "reward_std_mean": 9.353170508314298,
+          "reward_std_std": 0.8691549545597895,
+          "violations_mean_mean": 59.21875,
+          "violations_mean_std": 1.4720707141642346,
+          "violations_std_mean": 3.910549997837946,
+          "violations_std_std": 0.5234548351191699,
+          "target_error_mean_mean": 3.409549836121446,
+          "target_error_mean_std": 0.009015524936386491,
+          "target_error_std_mean": 0.030956523152222082,
+          "target_error_std_std": 0.00891358459497843,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.0030050653964282,
+          "latency_mean_std": 0.0
+        }
+      },
+      "cpo": {
+        "per_seed": [
+          {
+            "reward_mean": -118.17778590618869,
+            "reward_std": 10.67919432968172,
+            "violations_mean": 60.875,
+            "violations_std": 4.2260353760942415,
+            "target_error_mean": 3.4361272555791103,
+            "target_error_std": 0.041946102557394706,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.114664629415347
+          },
+          {
+            "reward_mean": -115.00308649694395,
+            "reward_std": 8.705310003833413,
+            "violations_mean": 59.875,
+            "violations_std": 4.013648589500581,
+            "target_error_mean": 3.4473780919864936,
+            "target_error_std": 0.03777237314867525,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1140184742430574
+          },
+          {
+            "reward_mean": -114.07414461778978,
+            "reward_std": 8.433646900366659,
+            "violations_mean": 59.25,
+            "violations_std": 3.031088913245535,
+            "target_error_mean": 3.4443941796603035,
+            "target_error_std": 0.02414376589374929,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1139701191821951
+          },
+          {
+            "reward_mean": -108.34837984591411,
+            "reward_std": 9.635846649524764,
+            "violations_mean": 56.875,
+            "violations_std": 4.3714271125114275,
+            "target_error_mean": 3.4596222167099064,
+            "target_error_std": 0.019767632107592362,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1131405066543083
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -113.90084921670913,
+          "reward_mean_std": 3.5484877721857933,
+          "reward_std_mean": 9.36349947085164,
+          "reward_std_std": 0.8807759540051008,
+          "violations_mean_mean": 59.21875,
+          "violations_mean_std": 1.4720707141642346,
+          "violations_std_mean": 3.910549997837946,
+          "violations_std_std": 0.5234548351191699,
+          "target_error_mean_mean": 3.4468804359839536,
+          "target_error_mean_std": 0.0084322742615964,
+          "target_error_std_mean": 0.0309074684268529,
+          "target_error_std_std": 0.009203558897023064,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.113948432373727,
+          "latency_mean_std": 0.0005410772476376107
+        }
+      },
+      "p3o": {
+        "per_seed": [
+          {
+            "reward_mean": -105.90198388059308,
+            "reward_std": 10.8123555925673,
+            "violations_mean": 60.875,
+            "violations_std": 4.2260353760942415,
+            "target_error_mean": 3.7164752347117265,
+            "target_error_std": 0.04128725855359685,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1185690646688453
+          },
+          {
+            "reward_mean": -102.67220635058642,
+            "reward_std": 8.458554430881515,
+            "violations_mean": 59.875,
+            "violations_std": 4.013648589500581,
+            "target_error_mean": 3.729070590641458,
+            "target_error_std": 0.03153953444759176,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1179293501010397
+          },
+          {
+            "reward_mean": -102.00498878813161,
+            "reward_std": 8.369042320346267,
+            "violations_mean": 59.25,
+            "violations_std": 3.031088913245535,
+            "target_error_mean": 3.7187959813287272,
+            "target_error_std": 0.021144618086287075,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1178464680397884
+          },
+          {
+            "reward_mean": -96.29589039045399,
+            "reward_std": 9.624408413116859,
+            "violations_mean": 56.875,
+            "violations_std": 4.3714271125114275,
+            "target_error_mean": 3.734470925995503,
+            "target_error_std": 0.016145278061997257,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1169715646730038
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -101.71876735244128,
+          "reward_mean_std": 3.460414126216959,
+          "reward_std_mean": 9.316090189227985,
+          "reward_std_std": 0.9957581944438636,
+          "violations_mean_mean": 59.21875,
+          "violations_mean_std": 1.4720707141642346,
+          "violations_std_mean": 3.910549997837946,
+          "violations_std_std": 0.5234548351191699,
+          "target_error_mean_mean": 3.724703183169354,
+          "target_error_mean_std": 0.007366770278630473,
+          "target_error_std_mean": 0.027529172287368238,
+          "target_error_std_std": 0.00969179449903524,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.1178291118706694,
+          "latency_mean_std": 0.0005686093296778239
+        }
+      },
+      "ppo_lagrangian": {
+        "per_seed": [
+          {
+            "reward_mean": -114.67228742224947,
+            "reward_std": 11.368735147393462,
+            "violations_mean": 60.875,
+            "violations_std": 4.2260353760942415,
+            "target_error_mean": 3.5172993459937403,
+            "target_error_std": 0.06622297137716744,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1157721782199224
+          },
+          {
+            "reward_mean": -111.51838697723487,
+            "reward_std": 8.509372285616317,
+            "violations_mean": 59.875,
+            "violations_std": 4.013648589500581,
+            "target_error_mean": 3.528085131259462,
+            "target_error_std": 0.054888466909668504,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1151177397798164
+          },
+          {
+            "reward_mean": -110.58922041330057,
+            "reward_std": 8.738011447808592,
+            "violations_mean": 59.25,
+            "violations_std": 3.031088913245535,
+            "target_error_mean": 3.5249036257073745,
+            "target_error_std": 0.045266560916540195,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1150770928428393
+          },
+          {
+            "reward_mean": -104.78084704022167,
+            "reward_std": 9.964495187949629,
+            "violations_mean": 56.875,
+            "violations_std": 4.3714271125114275,
+            "target_error_mean": 3.5424257161484087,
+            "target_error_std": 0.0479883096165012,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1142510135934571
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -110.39018546325164,
+          "reward_mean_std": 3.574686290390682,
+          "reward_std_mean": 9.645153517192,
+          "reward_std_std": 1.1385976548692462,
+          "violations_mean_mean": 59.21875,
+          "violations_mean_std": 1.4720707141642346,
+          "violations_std_mean": 3.910549997837946,
+          "violations_std_std": 0.5234548351191699,
+          "target_error_mean_mean": 3.5281784547772466,
+          "target_error_mean_std": 0.00911143072213997,
+          "target_error_std_mean": 0.053591577204969335,
+          "target_error_std_std": 0.008092226910903189,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.1150545061090087,
+          "latency_mean_std": 0.0005397133820370809
+        }
+      },
+      "robust_qgate_shield": {
+        "per_seed": [
+          {
+            "reward_mean": -150.9678019528852,
+            "reward_std": 21.391591713182404,
+            "violations_mean": 60.875,
+            "violations_std": 4.2260353760942415,
+            "target_error_mean": 2.3897080888419984,
+            "target_error_std": 0.5535483824621443,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1182206079102732
+          },
+          {
+            "reward_mean": -140.37783370484567,
+            "reward_std": 18.366920257300016,
+            "violations_mean": 59.875,
+            "violations_std": 4.013648589500581,
+            "target_error_mean": 2.592615288692696,
+            "target_error_std": 0.45085821573215795,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.118875723836347
+          },
+          {
+            "reward_mean": -145.4881265000411,
+            "reward_std": 13.191547303989678,
+            "violations_mean": 59.25,
+            "violations_std": 3.031088913245535,
+            "target_error_mean": 2.393985572978525,
+            "target_error_std": 0.27271844637982373,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1209962162294205
+          },
+          {
+            "reward_mean": -128.3238009096613,
+            "reward_std": 17.128630516879635,
+            "violations_mean": 56.875,
+            "violations_std": 4.3714271125114275,
+            "target_error_mean": 2.730278285148795,
+            "target_error_std": 0.2813955948803928,
+            "fallback_rate_mean": 0.0,
+            "fallback_rate_std": 0.0,
+            "latency_mean": 1.1172136623201978
+          }
+        ],
+        "aggregate": {
+          "reward_mean_mean": -141.2893907668583,
+          "reward_mean_std": 8.370162505370963,
+          "reward_std_mean": 17.519672447837934,
+          "reward_std_std": 2.940882890415863,
+          "violations_mean_mean": 59.21875,
+          "violations_mean_std": 1.4720707141642346,
+          "violations_std_mean": 3.910549997837946,
+          "violations_std_std": 0.5234548351191699,
+          "target_error_mean_mean": 2.5266468089155034,
+          "target_error_mean_std": 0.14332553419816713,
+          "target_error_std_mean": 0.3896301598636297,
+          "target_error_std_std": 0.11832278767435912,
+          "fallback_rate_mean_mean": 0.0,
+          "fallback_rate_mean_std": 0.0,
+          "fallback_rate_std_mean": 0.0,
+          "fallback_rate_std_std": 0.0,
+          "latency_mean_mean": 1.1188265525740597,
+          "latency_mean_std": 0.0013855000989717006
+        }
+      }
+    }
+  }
+}

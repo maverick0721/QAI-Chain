@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use QAI-Chain in your research, please cite this software."
+title: "QAI-Chain"
+version: "1.0.0"
+date-released: 2026-03-21
+authors:
+  - family-names: "Gupta"
+    given-names: "Shivang"
+  - name: "QAI-Chain Contributors"
+license: "MIT"
+repository-code: "https://github.com/maverick0721/QAI-Chain.git"
+abstract: >-
+  QAI-Chain is a research-grade prototype that combines safe reinforcement
+  learning governance, quantum-inspired parameter-efficient modeling,
+  blockchain-native auditable execution, post-quantum cryptography,
+  and reproducibility-focused publication tooling.
+keywords:
+  - safe reinforcement learning
+  - blockchain governance
+  - quantum-inspired models
+  - post-quantum cryptography
+  - reproducibility

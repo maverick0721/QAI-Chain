@@ -1,4 +1,4 @@
-from ai.test_ai_pipeline import run_ai
+from ai.pipeline import run_ai
 
 
 class AIBridge:
@@ -9,5 +9,9 @@ class AIBridge:
     def decide(self):
 
         output = run_ai(self.blockchain)
+
+        if isinstance(output, tuple):
+            # Policy network returns (mean, std); use mean as action signal.
+            output = output[0]
 
         return output.detach().numpy()

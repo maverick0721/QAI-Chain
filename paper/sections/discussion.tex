@@ -1,0 +1,36 @@
+\section{Discussion}
+
+The results are easiest to read as a trade-off story rather than a single winning score.
+
+The first point is external validity: the primary standard-benchmark runs (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1) show stable constrained-learning behavior under a fixed 30-seed protocol. These tasks are where we should judge portability. The governance environments then serve as stress tests that expose mechanism behavior under harder, less stationary shifts.
+
+The second point is the negative result. In the main ablation table, random reward is less negative than full-system reward in one workload. We do not hide or smooth that result. It indicates reward misspecification pressure: a random controller can occasionally score better on a stylized reward while ignoring control intent. The gated controller often chooses conservative actions that protect tracking and constraints at the expense of raw return. This is a limitation of the reward design and a reminder that reward alone is an unsafe deployment metric.
+
+The third point is where the method helps in practice. As switching complexity increases, uncertainty-gated routing reduces brittle policy behavior and improves failure-targeting precision without increasing model size. The efficiency claim is therefore practical, not cosmetic: a compact uncertainty head can preserve safety-oriented behavior while keeping deployment budgets realistic.
+
+Official OmniSafe constrained baselines reinforce this interpretation. Return rankings move across methods and budgets, while cost differences can remain relatively tight. That pattern is exactly what we expect in constrained RL: safety and reward should be interpreted as a frontier, not a leaderboard.
+
+\subsection{Failure Cases}
+
+The controller still fails under two regimes. First, when uncertainty calibration drifts faster than the gate update rate, fallback can trigger too late and transiently increase violations before stabilizing. Second, when disturbance magnitude exceeds the shield's modeled envelope, the policy-fallback pair can oscillate between conservative and aggressive actions, degrading target tracking.
+
+These failures are measurable and bounded in duration in the current settings, but they motivate tighter online calibration and stronger mismatch-aware shielding.
+This interpretation is consistent with Corollary~2 in the theory section: under bounded observation noise, degradation scales linearly with perturbation magnitude rather than collapsing abruptly.
+
+Limitations remain clear. Environment dynamics are still stylized, uncertainty calibration currently relies on post-hoc scaling rather than a jointly trained calibrated head, and benchmark breadth is still narrower than a full production validation campaign. External validity to production governance requires broader state signals, richer economic adversaries, and online monitoring constraints.
+
+Near-term follow-up should focus on three directions:
+\begin{itemize}
+	\item calibrated uncertainty estimators (for example, ensemble or Bayesian approximations) instead of raw action-variance proxies,
+	\item explicit safety constraints in addition to fallback routing,
+	\item and transfer tests where policies trained in one disturbance profile are evaluated in another without retuning.
+\end{itemize}
+
+For deployment-minded readers, the practical message is straightforward: keep a deterministic fallback in the control loop, gate learned actions by uncertainty, and report safety-oriented metrics next to reward \citep{pineau2021improving,dror2018hitchhikers}.
+
+\begin{table}[htbp]
+\centering
+\input{tables/when_to_use}
+\caption{When to use this method in practice.}
+\label{tab:when-to-use}
+\end{table}

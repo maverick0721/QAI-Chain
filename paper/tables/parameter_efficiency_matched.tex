@@ -1,0 +1,13 @@
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lccccc}
+\toprule
+Policy & Parameters & Mean Reward & Safety Violations & Inference (ms) & FLOPs est. \\
+\midrule
+MLP (28 params) & 28 & -1800.08 $\pm$ 81.53 & 75.46 $\pm$ 0.30 & 0.0837 & 56 \\
+VQC (6q, 4l) & 28 & -1729.94 $\pm$ 25.69 & 75.43 $\pm$ 0.33 & 9.3438 & 56 \\
+LoRA-MLP (trainable) & 396 & -1785.27 $\pm$ 102.43 & 75.47 $\pm$ 0.29 & 0.1464 & 10138 \\
+Distilled Student & 97 & -1778.46 $\pm$ 74.12 & 75.44 $\pm$ 0.30 & 0.0799 & 194 \\
+MLP (4673 params) & 4673 & -1770.52 $\pm$ 92.57 & 75.47 $\pm$ 0.29 & 0.0953 & 9346 \\
+\bottomrule
+\end{tabular}

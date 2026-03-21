@@ -1,0 +1,76 @@
+\section{Appendix: Extended Methods and Artifacts}
+
+\subsection{Detailed Training Protocol}
+
+For each seed, training proceeds over fixed-length episodes with per-step action selection and trajectory collection. PPO updates are performed after each episode using stored states, actions, rewards, and log-probabilities. Entropy coefficient is annealed linearly to balance early exploration and late-stage exploitation. Gradient clipping is used to limit instability from occasional high-variance trajectories.
+
+\subsection{Pseudo-Code for Governance Update Loop}
+
+\begin{verbatim}
+for episode in range(E):
+    state = env.reset()
+    rollout = []
+    for t in range(T):
+        action, logp = policy.sample(state)
+        next_state, reward = env.step(action)
+        rollout.append((state, action, logp, reward))
+        state = next_state
+
+    returns = discounted_returns(rollout.rewards)
+    advantages = returns - value(rollout.states)
+    if normalize_adv:
+        advantages = (advantages - mean) / (std + 1e-8)
+
+    update_policy_and_value_with_clipped_objective()
+\end{verbatim}
+
+\subsection{Extended Interpretation Notes}
+
+\paragraph{Why heuristics win here.}
+The environment exposes target error in a nearly direct control channel. When task geometry aligns with low-complexity proportional control, RL optimization overhead may not produce gains at this horizon.
+
+\paragraph{What would favor learned policies.}
+Learned controllers are expected to improve relative standing when state-action dependencies become nonlinear and partially observed, for example under dynamic peer churn, stochastic transaction bursts, adversarial behavior, or delayed feedback loops in block propagation.
+
+\subsection{Reproducibility Command Set}
+
+\begin{verbatim}
+PYTHONPATH=. python experiments/run_publication_suite.py
+PYTHONPATH=. python experiments/run_detailed_suite.py
+PYTHONPATH=. python experiments/run_adversarial_suite.py
+PYTHONPATH=. python experiments/run_complexity_regime_suite.py
+PYTHONPATH=. python scripts/analyze_research_results.py
+PYTHONPATH=. python scripts/generate_paper_tables.py
+PYTHONPATH=. python scripts/generate_appendix_tables.py
+PYTHONPATH=. python scripts/generate_paper_figures.py
+PYTHONPATH=. python scripts/generate_adversarial_artifacts.py
+PYTHONPATH=. python scripts/generate_adversarial_stress_sweep.py
+PYTHONPATH=. python scripts/generate_complexity_artifacts.py
+cd paper
+pdflatex -interaction=nonstopmode main.tex
+bibtex main
+pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
+\end{verbatim}
+
+\subsection{Artifact Availability}
+
+All generated artifacts used in the manuscript are available in the repository and can be regenerated from the provided command set.
+
+\subsection{Validity and Reporting Notes}
+
+To keep claims grounded, we use strong heuristic baselines, multi-seed evaluation, significance testing, and explicit ablations of each robustness mechanism. We also report stress-sweep behavior to avoid single-setting conclusions. The code and artifact pipeline is included to enable exact regeneration of tables and figures.
+
+\subsection{Extended Future Work}
+
+\paragraph{Security hardening.}
+Integrate stronger mempool admission control, anti-spam economics, key rotation workflows, and adversarially robust governance testing.
+
+\paragraph{Systems scaling.}
+Run distributed multi-node latency and consistency experiments under controlled network conditions, including packet delay and loss profiles.
+
+\paragraph{Modeling depth.}
+Study uncertainty-aware RL, risk-sensitive objectives, and policy fallback logic tied to runtime confidence estimates.
+
+\paragraph{Quantum pathway evaluation.}
+Add hardware-aware compilation and benchmark queues to assess near-term feasibility beyond simulator-heavy workflows.

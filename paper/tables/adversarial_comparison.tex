@@ -1,0 +1,13 @@
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccc}
+\toprule
+Method & Reward (Last5) & Delay & Fork & Error & Fallback \\
+\midrule
+Random & -505.614 $\pm$ 19.589 & 16.615 & 0.566 & 4.035 & 0.000 \\
+Heuristic Target & -366.166 $\pm$ 9.496 & 14.426 & 0.490 & 0.200 & 0.000 \\
+Heuristic Resilience & -220.235 $\pm$ 10.216 & 10.552 & 0.355 & 1.897 & 0.000 \\
+PPO & -472.896 $\pm$ 126.416 & 15.484 & 0.527 & 5.257 & 0.000 \\
+R-PPO (Safe) & -220.225 $\pm$ 10.211 & 10.552 & 0.355 & 1.897 & 0.062 \\
+\bottomrule
+\end{tabular}

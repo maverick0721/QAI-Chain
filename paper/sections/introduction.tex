@@ -1,0 +1,43 @@
+\section{Introduction}
+
+A compact 6-qubit variational controller with uncertainty-gated routing improves hard-regime fallback precision (0.964 vs 0.743 for MC-dropout at matched trigger rates) while preserving safety behavior in non-stationary governance dynamics, with parameter efficiency as the headline outcome.
+
+In decentralized governance, the painful failures are rarely about average reward. They show up when load shifts quickly, latency spikes, and attack pressure distorts telemetry. The practical question is whether a controller stays predictable when estimates are noisy and the regime changes mid-episode.
+
+QAI-Chain was built to study that exact failure mode. The empirical focus is narrow and operational: once vanilla PPO is placed in adversarial, regime-switching dynamics, can uncertainty-gated safe control recover stability without sacrificing hard constraints?
+
+For safety-critical RL practice, a practical pattern is uncertainty-gated fallback with deterministic post-checks. This pattern is not blockchain-specific and can transfer to other control domains where policy collapse is unacceptable.
+
+The updated protocol gives three practical lessons. First, baseline reward alone is an incomplete indicator of safe behavior under shift. Second, deterministic heuristics remain strong in easier regimes and are not straw-man baselines. Third, once switching complexity rises, uncertainty-gated control preserves safety behavior with substantially fewer parameters, which is the paper's primary practical value.
+
+Primary external evidence comes from standard constrained benchmarks (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, 30 seeds) and an official OmniSafe constrained-baseline suite with 50 seeds. Across these settings, ranking and significance patterns confirm that reward-safety trade-offs remain compute-budget dependent.
+
+Design-wise, we deliberately changed as little as possible. The controller keeps PPO's policy/value backbone and adds two controls: variance-aware reward shaping during training, and a decision-time routing rule that falls back to a resilience heuristic when uncertainty is high. In the complexity benchmark, only the risk weight $\lambda_{\mathrm{risk}}$ and uncertainty threshold $\tau$ are retuned across levels; model class and environment stay fixed. This keeps the comparison about efficient safety behavior, not architecture churn.
+
+Deployment integrations (for example, on-chain audit commitments) provide optional provenance support in multi-party governance settings but are orthogonal to the core Safe RL mechanism evaluated in this paper.
+
+\paragraph{Contributions.}
+The paper makes the following contributions:
+\begin{itemize}
+    \item a parameter-efficient uncertainty-estimation module (compact architecture) that preserves safety behavior under non-stationary disturbances,
+    \item a safe RL control rule centered on uncertainty-gated fallback and deterministic shielding,
+    \item and a high-rigor evaluation protocol centered on completed 30-seed standard constrained-benchmark runs (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1), with 50-seed constrained OmniSafe baselines and governance stress tests as supporting evidence.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\input{tables/core_contribution_layers}
+\caption{Core contribution layering: what is algorithmically novel versus efficiency support versus deployment engineering.}
+\label{tab:core-contribution-layers}
+\end{table}
+
+\paragraph{Scope.}
+The empirical claim is specific and testable: uncertainty-gated control with compact architecture achieves comparable safety behavior at materially lower parameter budget under non-stationary governance dynamics, and this can be measured with fixed-seed paired comparisons \citep{dror2018hitchhikers,pineau2021improving,wilson2017good}.
+
+\section{Related Perspectives}
+
+Blockchain and ML integration work often focuses on transaction analytics, mechanism optimization, or fraud detection in mostly stationary settings. Governance control with adversarial perturbations has received less systematic, reproducible treatment. Classical consensus foundations remain essential \citep{nakamoto2008bitcoin}, and PPO remains a practical baseline for continuous-control policy learning \citep{schulman2017ppo}, but both need stress-tested evaluation when used in operational control loops.
+
+Safe RL literature offers several tools with different assumptions: CVaR objectives \citep{chow2015cvar}, robust MDP formulations \citep{iyengar2005robust}, and constrained policy optimization \citep{achiam2017cpo}. The approach here keeps PPO as the optimizer and adds uncertainty-aware routing at action time with risk shaping during updates. We evaluate this controller pattern against strong heuristic and constrained baselines under the same disturbance model.
+
+Reproducibility details are provided in dedicated checklist material, while the main text focuses on algorithmic behavior and safety-relevant outcomes.

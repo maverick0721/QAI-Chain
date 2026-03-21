@@ -38,7 +38,7 @@ class PPOAgent:
 
     def compute_returns(self, rewards):
 
-        returns = []
+        returns: list[float] = []
 
         G = 0
 

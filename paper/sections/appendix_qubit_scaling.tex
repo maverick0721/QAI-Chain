@@ -1,0 +1,17 @@
+\section{Appendix: Qubit Scaling Trend}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/qubit_scaling_trend.pdf}
+\caption{Simulator forward-pass latency versus qubit count (fixed layer depth).}
+\label{fig:qubit-scaling-trend}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\input{tables/qubit_scaling_trend}
+\caption{Qubit-scaling simulation summary with state-space growth and measured latency.}
+\label{tab:qubit-scaling-trend}
+\end{table}
+
+The trend illustrates the expected growth in simulator cost as qubit count rises. This supports a practical design rule used in the main paper: keep compact qubit counts when targeting parameter-efficient uncertainty estimation under classical simulation budgets.

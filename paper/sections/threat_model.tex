@@ -1,0 +1,26 @@
+\section{Threat Model and Security Considerations}
+
+QAI-Chain currently targets a research prototype setting and does not claim hardened production security. We make the following threat assumptions explicit:
+
+\begin{itemize}
+    \item \textbf{Network adversary:} adversaries may submit malformed payloads and attempt protocol abuse at RPC boundaries.
+    \item \textbf{Consensus adversary:} adversaries may attempt invalid block injection or transaction forgery.
+    \item \textbf{Model-level adversary:} adversaries may seek to perturb governance signals via manipulated state trajectories.
+\end{itemize}
+
+Current mitigations include strict API schema validation, block linkage and proof-of-work checks, and signature verification pathways through PQC interfaces. However, this version does not yet implement Byzantine fault tolerant consensus, robust anti-spam protections, formal key lifecycle management, or comprehensive adversarial robustness tests for governance policies.
+
+\paragraph{Adversary Capability Stratification.}
+We distinguish three adversary levels:
+\begin{itemize}
+    \item \textbf{Opportunistic:} malformed requests and replay attempts.
+    \item \textbf{Strategic:} coordinated transaction flooding or chain-state perturbation to influence governance telemetry.
+    \item \textbf{Advanced:} long-horizon manipulation that exploits policy adaptation dynamics.
+\end{itemize}
+
+Current controls primarily address opportunistic threats at interface and validation layers. Strategic and advanced threats remain future-work territory and require stronger simulation realism, red-team testing, and protocol-level economic defenses.
+
+\paragraph{Cryptographic Horizon Considerations.}
+Post-quantum pathways are included to support migration readiness under long-term cryptographic uncertainty \citep{shor1999polynomial,nistpqc2024}. In this release, PQC integration is interface-level preparedness, not full operational hardening.
+
+We therefore frame current security results as engineering readiness signals rather than deployment guarantees.

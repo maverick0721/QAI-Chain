@@ -1,0 +1,60 @@
+\section{Reproducibility Checklist}
+
+\begin{itemize}
+    \item \textbf{Code availability:} all experiment and table-generation scripts are included in the repository.
+    \item \textbf{Determinism controls:} fixed seed sets are used for publication-scale runs.
+    \item \textbf{Artifact generation:} JSON and markdown artifacts are generated directly from executable scripts.
+    \item \textbf{Table provenance:} LaTeX tables are generated from artifact files via a dedicated script.
+    \item \textbf{Validation gates:} linting, type checks, tests, and runtime health checks are automated.
+\end{itemize}
+
+The end-to-end workflow is:
+\begingroup
+\scriptsize
+\begin{verbatim}
+python experiments/run_publication_suite.py
+python experiments/run_detailed_suite.py
+python experiments/run_adversarial_suite.py
+python experiments/run_complexity_\
+regime_suite.py
+python scripts/analyze_research_results.py
+python scripts/generate_benchmark_report.py
+python scripts/generate_paper_tables.py
+python scripts/generate_appendix_tables.py
+python scripts/generate_paper_figures.py
+python scripts/generate_adversarial_\
+artifacts.py
+python scripts/generate_adversarial_\
+stress_sweep.py
+python scripts/generate_complexity_\
+artifacts.py
+\end{verbatim}
+\endgroup
+
+\paragraph{Provenance policy.}
+All quantitative manuscript assets are generated from stored artifacts; manual number entry is minimized. This improves traceability and supports exact regeneration when code or protocol settings change.
+
+\paragraph{One-command replication.}
+For this repository, a single command is provided:
+\begingroup
+\scriptsize
+\begin{verbatim}
+make reproduce
+\end{verbatim}
+\endgroup
+This target runs the artifact-generation scripts used by the main manuscript tables and figures (including constrained transfer, uncertainty, efficiency, adversarial perturbation, and qubit-scaling artifacts).
+
+\paragraph{Checklist links.}
+The reproducibility checklist used for this paper is versioned in the repository's docs directory as the reproducibility harness file.
+Venue-specific submission checklists are tracked at:
+\begin{itemize}
+    \item \texttt{docs/NEURIPS\_SUBMISSION\_CHECKLIST.md}
+    \item \texttt{docs/ICLR\_SUBMISSION\_CHECKLIST.md}
+    \item \texttt{docs/IEEE\_SUBMISSION\_CHECKLIST.md}
+\end{itemize}
+Code and artifacts: \url{https://github.com/maverick0721/QAI-Chain.git}.
+
+\paragraph{Environment notes.}
+The reference environment uses Python with fixed seed sets and deterministic script ordering. Although strict bitwise reproducibility across all hardware is not guaranteed, protocol-level reproducibility is enforced through documented commands, structured outputs, and validation checks.
+
+This reproducibility framing aligns with current deployment governance guidance and standards updates through 2024--2025 \citep{nistairmf2023,nistcsf2024}.

@@ -1,0 +1,83 @@
+\documentclass{article}
+
+% Official ICLR template uses iclr<year>_conference.sty.
+% This file prefers official styles when available and falls back locally.
+\newif\ificlrofficial
+\iclrofficialfalse
+\IfFileExists{iclr2026_conference.sty}{
+  \usepackage[final]{iclr2026_conference}
+  \iclrofficialtrue
+}{
+  \IfFileExists{iclr2025_conference.sty}{
+    \usepackage[final]{iclr2025_conference}
+    \iclrofficialtrue
+  }{
+    \IfFileExists{iclr2024_conference.sty}{
+      \usepackage[final]{iclr2024_conference}
+      \iclrofficialtrue
+    }{
+      \usepackage[margin=1in]{geometry}
+    }
+  }
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\ificlrofficial\else
+\usepackage{lmodern}
+\fi
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{natbib}
+
+\ificlrofficial\else
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=teal,
+  urlcolor=blue
+}
+\fi
+
+\title{Uncertainty-Gated Safe RL with Quantum-Inspired Parameter-Efficient Estimation for Non-Stationary Control}
+
+\author{Shivang Gupta\\Indian Institute of Technology Roorkee}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/system}
+\input{sections/method}
+\input{sections/experimental_setup}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/threat_model}
+\input{sections/limitations}
+\input{sections/ethics}
+\input{sections/reproducibility}
+\input{sections/conclusion}
+
+\appendix
+\input{sections/appendix_system_details}
+\input{sections/appendix_adversarial_inputs}
+\input{sections/appendix_deployment_costs}
+\input{sections/appendix_qubit_scaling}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

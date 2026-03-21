@@ -1,0 +1,20 @@
+\section{Appendix: Deployment Cost and Gas Accounting}
+
+\subsection{Audit Gas Model}
+
+We model per-action audit commitment cost as:
+\[
+C_{\text{gas}} = g_0 + g_1 b + g_2 h,
+\]
+where $b$ is bytes committed and $h$ is hash/check overhead terms. For an episode with $N$ committed actions and gas price $p_g$:
+\[
+\text{Cost}_{\text{episode}} = N \cdot C_{\text{gas}} \cdot p_g.
+\]
+
+\subsection{Interpretation}
+
+This cost model is included to expose the practical cost-of-safety instrumentation: stronger provenance and finer-grained audit logging increase operational spend. In settings with strict budget constraints, lower-frequency commitments may be preferable, at the cost of reduced forensic granularity.
+
+\subsection{Practical Guidance}
+
+For production deployment, we recommend pre-declaring commitment cadence (per action, per block, or per epoch) and reporting both safety gains and incremental audit costs. This avoids overstating benefits while hiding operational overhead.

@@ -1,0 +1,126 @@
+{
+  "generated_at_utc": "2026-03-21T12:58:38.062610+00:00",
+  "base_config": {
+    "attack_prob": 0.28,
+    "delay_noise": 0.55,
+    "burst_prob": 0.18,
+    "episodes": 34,
+    "steps_per_episode": 24,
+    "seeds": [
+      3,
+      7,
+      11,
+      17
+    ]
+  },
+  "stress_scales": [
+    0.7,
+    1.0,
+    1.3,
+    1.6
+  ],
+  "results": {
+    "heuristic_resilience": [
+      {
+        "stress_scale": 0.7,
+        "attack_prob": 0.196,
+        "delay_noise": 0.6022500000000001,
+        "burst_prob": 0.126,
+        "mean_reward_last5": -125.86959927367455,
+        "std_reward_last5": 5.845002954719893
+      },
+      {
+        "stress_scale": 1.0,
+        "attack_prob": 0.28,
+        "delay_noise": 0.66,
+        "burst_prob": 0.18,
+        "mean_reward_last5": -141.80900859316114,
+        "std_reward_last5": 7.389169076973194
+      },
+      {
+        "stress_scale": 1.3,
+        "attack_prob": 0.36400000000000005,
+        "delay_noise": 0.71775,
+        "burst_prob": 0.23399999999999999,
+        "mean_reward_last5": -159.58825591393543,
+        "std_reward_last5": 6.695974188287259
+      },
+      {
+        "stress_scale": 1.6,
+        "attack_prob": 0.44800000000000006,
+        "delay_noise": 0.7755,
+        "burst_prob": 0.288,
+        "mean_reward_last5": -173.76247503029919,
+        "std_reward_last5": 8.064636684809045
+      }
+    ],
+    "ppo_full": [
+      {
+        "stress_scale": 0.7,
+        "attack_prob": 0.196,
+        "delay_noise": 0.6022500000000001,
+        "burst_prob": 0.126,
+        "mean_reward_last5": -286.00712896801593,
+        "std_reward_last5": 63.64557898143259
+      },
+      {
+        "stress_scale": 1.0,
+        "attack_prob": 0.28,
+        "delay_noise": 0.66,
+        "burst_prob": 0.18,
+        "mean_reward_last5": -299.1674446448236,
+        "std_reward_last5": 59.84177014468738
+      },
+      {
+        "stress_scale": 1.3,
+        "attack_prob": 0.36400000000000005,
+        "delay_noise": 0.71775,
+        "burst_prob": 0.23399999999999999,
+        "mean_reward_last5": -310.00575976272324,
+        "std_reward_last5": 56.68390454025715
+      },
+      {
+        "stress_scale": 1.6,
+        "attack_prob": 0.44800000000000006,
+        "delay_noise": 0.7755,
+        "burst_prob": 0.288,
+        "mean_reward_last5": -321.76046385617957,
+        "std_reward_last5": 56.52215320801415
+      }
+    ],
+    "robust_ppo": [
+      {
+        "stress_scale": 0.7,
+        "attack_prob": 0.196,
+        "delay_noise": 0.6022500000000001,
+        "burst_prob": 0.126,
+        "mean_reward_last5": -125.6203005640026,
+        "std_reward_last5": 6.011494676310681
+      },
+      {
+        "stress_scale": 1.0,
+        "attack_prob": 0.28,
+        "delay_noise": 0.66,
+        "burst_prob": 0.18,
+        "mean_reward_last5": -141.63072789668036,
+        "std_reward_last5": 7.4797054616791705
+      },
+      {
+        "stress_scale": 1.3,
+        "attack_prob": 0.36400000000000005,
+        "delay_noise": 0.71775,
+        "burst_prob": 0.23399999999999999,
+        "mean_reward_last5": -159.5533540065551,
+        "std_reward_last5": 6.696598273319398
+      },
+      {
+        "stress_scale": 1.6,
+        "attack_prob": 0.44800000000000006,
+        "delay_noise": 0.7755,
+        "burst_prob": 0.288,
+        "mean_reward_last5": -173.74019269707927,
+        "std_reward_last5": 8.079471670133806
+      }
+    ]
+  }
+}

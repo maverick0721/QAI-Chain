@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 
 from quantum.attention.quantum_attention import QuantumAttention

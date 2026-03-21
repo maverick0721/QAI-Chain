@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=teal,
+  urlcolor=blue
+}
+
+\title{Uncertainty-Gated Safe RL with Quantum-Inspired Parameter-Efficient Estimation for Non-Stationary Control}
+
+\author{
+SHIVANG GUPTA\\
+Indian Institute of Technology Roorkee
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/system}
+\input{sections/method}
+\input{sections/theory}
+\input{sections/experimental_setup}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/limitations}
+\input{sections/ethics}
+\input{sections/reproducibility}
+\input{sections/conclusion}
+
+\appendix
+\input{sections/appendix_system_details}
+\input{sections/appendix_adversarial_inputs}
+\input{sections/appendix_deployment_costs}
+\input{sections/appendix_qubit_scaling}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

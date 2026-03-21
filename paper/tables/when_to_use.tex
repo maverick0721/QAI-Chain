@@ -1,0 +1,12 @@
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.34\linewidth}p{0.27\linewidth}p{0.31\linewidth}}
+\toprule
+\textbf{Condition} & \textbf{Recommendation} & \textbf{Rationale} \\
+\midrule
+Frequent regime shifts and high policy uncertainty & Use uncertainty-gated safe RL + deterministic shield & Gating reduces unsafe actions when uncertainty spikes. \\
+Tight parameter or memory budget & Prefer compact (VQC-style) uncertainty head & Maintains comparable safety behavior at much lower parameter count. \\
+Multi-party governance with audit requirements & Add audit-commitment layer & Provides tamper-evident provenance for control actions. \\
+Stable stationary regime with strong heuristic baseline & Keep heuristic as primary, use learned policy as secondary & Deterministic control can be sufficient and lower-risk in easy regimes. \\
+\bottomrule
+\end{tabular}

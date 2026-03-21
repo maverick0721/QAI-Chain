@@ -1,0 +1,1203 @@
+{
+  "generated_at_utc": "2026-03-21T09:30:29.704140+00:00",
+  "status": "ok",
+  "config": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "total_steps": 3000,
+    "steps_per_epoch": 1000,
+    "envs": [
+      "SafetyPointGoal1-v0",
+      "SafetyHalfCheetahVelocity-v1"
+    ],
+    "algos": [
+      "CPO",
+      "P3O",
+      "PPOLag"
+    ]
+  },
+  "results": {
+    "SafetyPointGoal1-v0": {
+      "CPO": {
+        "n_seeds": 30,
+        "seed_runs": [
+          {
+            "final_ep_return": 0.56121426820755,
+            "final_ep_cost": 92.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 0
+          },
+          {
+            "final_ep_return": -0.32951265573501587,
+            "final_ep_cost": 27.0,
+            "final_ep_length": 1000.0,
+            "seed": 1
+          },
+          {
+            "final_ep_return": -0.446643203496933,
+            "final_ep_cost": 152.0,
+            "final_ep_length": 1000.0,
+            "seed": 2
+          },
+          {
+            "final_ep_return": 0.602867841720581,
+            "final_ep_cost": 37.66666793823242,
+            "final_ep_length": 1000.0,
+            "seed": 3
+          },
+          {
+            "final_ep_return": -2.7036197185516357,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 4
+          },
+          {
+            "final_ep_return": -0.4016178846359253,
+            "final_ep_cost": 157.0,
+            "final_ep_length": 1000.0,
+            "seed": 5
+          },
+          {
+            "final_ep_return": -0.08497154712677002,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 6
+          },
+          {
+            "final_ep_return": 0.19780443608760834,
+            "final_ep_cost": 92.33333587646484,
+            "final_ep_length": 1000.0,
+            "seed": 7
+          },
+          {
+            "final_ep_return": -1.2875369787216187,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 8
+          },
+          {
+            "final_ep_return": -0.1907908171415329,
+            "final_ep_cost": 80.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 9
+          },
+          {
+            "final_ep_return": -1.0842421054840088,
+            "final_ep_cost": 98.33333587646484,
+            "final_ep_length": 1000.0,
+            "seed": 10
+          },
+          {
+            "final_ep_return": 0.18707899749279022,
+            "final_ep_cost": 34.66666793823242,
+            "final_ep_length": 1000.0,
+            "seed": 11
+          },
+          {
+            "final_ep_return": -0.11195313185453415,
+            "final_ep_cost": 136.3333282470703,
+            "final_ep_length": 1000.0,
+            "seed": 12
+          },
+          {
+            "final_ep_return": -0.4940241277217865,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 13
+          },
+          {
+            "final_ep_return": -2.5696730613708496,
+            "final_ep_cost": 34.0,
+            "final_ep_length": 1000.0,
+            "seed": 14
+          },
+          {
+            "final_ep_return": -1.1567009687423706,
+            "final_ep_cost": 192.0,
+            "final_ep_length": 1000.0,
+            "seed": 15
+          },
+          {
+            "final_ep_return": 0.007313847541809082,
+            "final_ep_cost": 178.6666717529297,
+            "final_ep_length": 1000.0,
+            "seed": 16
+          },
+          {
+            "final_ep_return": -0.4798182547092438,
+            "final_ep_cost": 65.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 17
+          },
+          {
+            "final_ep_return": -0.14664752781391144,
+            "final_ep_cost": 87.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 18
+          },
+          {
+            "final_ep_return": -0.3796279728412628,
+            "final_ep_cost": 287.6666564941406,
+            "final_ep_length": 1000.0,
+            "seed": 19
+          },
+          {
+            "final_ep_return": -0.8515510559082031,
+            "final_ep_cost": 11.0,
+            "final_ep_length": 1000.0,
+            "seed": 20
+          },
+          {
+            "final_ep_return": -0.09792677313089371,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 21
+          },
+          {
+            "final_ep_return": -0.4045768678188324,
+            "final_ep_cost": 37.0,
+            "final_ep_length": 1000.0,
+            "seed": 22
+          },
+          {
+            "final_ep_return": 1.4172438383102417,
+            "final_ep_cost": 76.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 23
+          },
+          {
+            "final_ep_return": -0.7817966938018799,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 24
+          },
+          {
+            "final_ep_return": -0.7915961146354675,
+            "final_ep_cost": 21.33333396911621,
+            "final_ep_length": 1000.0,
+            "seed": 25
+          },
+          {
+            "final_ep_return": -0.36258435249328613,
+            "final_ep_cost": 52.66666793823242,
+            "final_ep_length": 1000.0,
+            "seed": 26
+          },
+          {
+            "final_ep_return": -0.5020818114280701,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 27
+          },
+          {
+            "final_ep_return": -1.4109840393066406,
+            "final_ep_cost": 20.0,
+            "final_ep_length": 1000.0,
+            "seed": 28
+          },
+          {
+            "final_ep_return": 1.512391448020935,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 29
+          }
+        ],
+        "final_ep_return_mean": -0.4194854329029719,
+        "final_ep_return_std": 0.885618911447486,
+        "final_ep_cost_mean": 65.76666622161865,
+        "final_ep_cost_std": 70.4530382169014,
+        "final_ep_length_mean": 1000.0,
+        "final_ep_length_std": 0.0
+      },
+      "P3O": {
+        "n_seeds": 30,
+        "seed_runs": [
+          {
+            "final_ep_return": 0.014408712275326252,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 0
+          },
+          {
+            "final_ep_return": 0.13566601276397705,
+            "final_ep_cost": 27.0,
+            "final_ep_length": 1000.0,
+            "seed": 1
+          },
+          {
+            "final_ep_return": -0.1960826963186264,
+            "final_ep_cost": 20.33333396911621,
+            "final_ep_length": 1000.0,
+            "seed": 2
+          },
+          {
+            "final_ep_return": 0.4248945713043213,
+            "final_ep_cost": 84.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 3
+          },
+          {
+            "final_ep_return": -2.152503728866577,
+            "final_ep_cost": 16.33333396911621,
+            "final_ep_length": 1000.0,
+            "seed": 4
+          },
+          {
+            "final_ep_return": -0.0593750886619091,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 5
+          },
+          {
+            "final_ep_return": 0.1866244524717331,
+            "final_ep_cost": 112.0,
+            "final_ep_length": 1000.0,
+            "seed": 6
+          },
+          {
+            "final_ep_return": 0.4844585359096527,
+            "final_ep_cost": 173.3333282470703,
+            "final_ep_length": 1000.0,
+            "seed": 7
+          },
+          {
+            "final_ep_return": -0.7517077922821045,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 8
+          },
+          {
+            "final_ep_return": 0.7172848582267761,
+            "final_ep_cost": 27.66666603088379,
+            "final_ep_length": 1000.0,
+            "seed": 9
+          },
+          {
+            "final_ep_return": -0.40631362795829773,
+            "final_ep_cost": 181.3333282470703,
+            "final_ep_length": 1000.0,
+            "seed": 10
+          },
+          {
+            "final_ep_return": -0.1150064542889595,
+            "final_ep_cost": 12.333333015441895,
+            "final_ep_length": 1000.0,
+            "seed": 11
+          },
+          {
+            "final_ep_return": -0.13703066110610962,
+            "final_ep_cost": 197.6666717529297,
+            "final_ep_length": 1000.0,
+            "seed": 12
+          },
+          {
+            "final_ep_return": -0.7595543265342712,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 13
+          },
+          {
+            "final_ep_return": -2.070136785507202,
+            "final_ep_cost": 61.0,
+            "final_ep_length": 1000.0,
+            "seed": 14
+          },
+          {
+            "final_ep_return": -1.5287699699401855,
+            "final_ep_cost": 238.6666717529297,
+            "final_ep_length": 1000.0,
+            "seed": 15
+          },
+          {
+            "final_ep_return": 0.3974933624267578,
+            "final_ep_cost": 97.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 16
+          },
+          {
+            "final_ep_return": -0.3490428030490875,
+            "final_ep_cost": 16.0,
+            "final_ep_length": 1000.0,
+            "seed": 17
+          },
+          {
+            "final_ep_return": -0.8148754239082336,
+            "final_ep_cost": 53.66666793823242,
+            "final_ep_length": 1000.0,
+            "seed": 18
+          },
+          {
+            "final_ep_return": 1.309248924255371,
+            "final_ep_cost": 126.0,
+            "final_ep_length": 1000.0,
+            "seed": 19
+          },
+          {
+            "final_ep_return": -0.5899567604064941,
+            "final_ep_cost": 92.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 20
+          },
+          {
+            "final_ep_return": 0.07206371426582336,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 21
+          },
+          {
+            "final_ep_return": -0.2816636264324188,
+            "final_ep_cost": 40.33333206176758,
+            "final_ep_length": 1000.0,
+            "seed": 22
+          },
+          {
+            "final_ep_return": 3.478060483932495,
+            "final_ep_cost": 99.0,
+            "final_ep_length": 1000.0,
+            "seed": 23
+          },
+          {
+            "final_ep_return": -0.41369661688804626,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 24
+          },
+          {
+            "final_ep_return": -0.35052990913391113,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 25
+          },
+          {
+            "final_ep_return": -0.42791685461997986,
+            "final_ep_cost": 33.0,
+            "final_ep_length": 1000.0,
+            "seed": 26
+          },
+          {
+            "final_ep_return": 0.5293631553649902,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 27
+          },
+          {
+            "final_ep_return": -1.1359971761703491,
+            "final_ep_cost": 78.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 28
+          },
+          {
+            "final_ep_return": 0.47981560230255127,
+            "final_ep_cost": 181.3333282470703,
+            "final_ep_length": 1000.0,
+            "seed": 29
+          }
+        ],
+        "final_ep_return_mean": -0.1436925972190996,
+        "final_ep_return_std": 1.0077402864255935,
+        "final_ep_cost_mean": 65.68888839085896,
+        "final_ep_cost_std": 69.28069207153834,
+        "final_ep_length_mean": 1000.0,
+        "final_ep_length_std": 0.0
+      },
+      "PPOLag": {
+        "n_seeds": 30,
+        "seed_runs": [
+          {
+            "final_ep_return": 0.21764762699604034,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 0
+          },
+          {
+            "final_ep_return": 0.2306186556816101,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 1
+          },
+          {
+            "final_ep_return": -0.5854677557945251,
+            "final_ep_cost": 68.0,
+            "final_ep_length": 1000.0,
+            "seed": 2
+          },
+          {
+            "final_ep_return": 0.10809826850891113,
+            "final_ep_cost": 24.33333396911621,
+            "final_ep_length": 1000.0,
+            "seed": 3
+          },
+          {
+            "final_ep_return": -4.06226921081543,
+            "final_ep_cost": 16.0,
+            "final_ep_length": 1000.0,
+            "seed": 4
+          },
+          {
+            "final_ep_return": -1.2171789407730103,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 5
+          },
+          {
+            "final_ep_return": 0.43789175152778625,
+            "final_ep_cost": 43.66666793823242,
+            "final_ep_length": 1000.0,
+            "seed": 6
+          },
+          {
+            "final_ep_return": -0.031239530071616173,
+            "final_ep_cost": 116.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 7
+          },
+          {
+            "final_ep_return": -0.8875986933708191,
+            "final_ep_cost": 8.333333015441895,
+            "final_ep_length": 1000.0,
+            "seed": 8
+          },
+          {
+            "final_ep_return": -0.23246103525161743,
+            "final_ep_cost": 27.66666603088379,
+            "final_ep_length": 1000.0,
+            "seed": 9
+          },
+          {
+            "final_ep_return": -1.3491315841674805,
+            "final_ep_cost": 98.33333587646484,
+            "final_ep_length": 1000.0,
+            "seed": 10
+          },
+          {
+            "final_ep_return": 0.3599493205547333,
+            "final_ep_cost": 80.0,
+            "final_ep_length": 1000.0,
+            "seed": 11
+          },
+          {
+            "final_ep_return": -0.07774034887552261,
+            "final_ep_cost": 158.6666717529297,
+            "final_ep_length": 1000.0,
+            "seed": 12
+          },
+          {
+            "final_ep_return": -0.7652265429496765,
+            "final_ep_cost": 29.66666603088379,
+            "final_ep_length": 1000.0,
+            "seed": 13
+          },
+          {
+            "final_ep_return": -1.4633668661117554,
+            "final_ep_cost": 27.66666603088379,
+            "final_ep_length": 1000.0,
+            "seed": 14
+          },
+          {
+            "final_ep_return": -0.976875364780426,
+            "final_ep_cost": 50.33333206176758,
+            "final_ep_length": 1000.0,
+            "seed": 15
+          },
+          {
+            "final_ep_return": 0.08078077435493469,
+            "final_ep_cost": 103.0,
+            "final_ep_length": 1000.0,
+            "seed": 16
+          },
+          {
+            "final_ep_return": -0.3188087046146393,
+            "final_ep_cost": 15.666666984558105,
+            "final_ep_length": 1000.0,
+            "seed": 17
+          },
+          {
+            "final_ep_return": 0.4768085777759552,
+            "final_ep_cost": 44.0,
+            "final_ep_length": 1000.0,
+            "seed": 18
+          },
+          {
+            "final_ep_return": 0.9486005902290344,
+            "final_ep_cost": 54.33333206176758,
+            "final_ep_length": 1000.0,
+            "seed": 19
+          },
+          {
+            "final_ep_return": 0.06343215703964233,
+            "final_ep_cost": 86.66666412353516,
+            "final_ep_length": 1000.0,
+            "seed": 20
+          },
+          {
+            "final_ep_return": 0.7163811326026917,
+            "final_ep_cost": 8.333333015441895,
+            "final_ep_length": 1000.0,
+            "seed": 21
+          },
+          {
+            "final_ep_return": -0.32628223299980164,
+            "final_ep_cost": 282.3333435058594,
+            "final_ep_length": 1000.0,
+            "seed": 22
+          },
+          {
+            "final_ep_return": 1.7776893377304077,
+            "final_ep_cost": 83.0,
+            "final_ep_length": 1000.0,
+            "seed": 23
+          },
+          {
+            "final_ep_return": -0.5513872504234314,
+            "final_ep_cost": 15.333333015441895,
+            "final_ep_length": 1000.0,
+            "seed": 24
+          },
+          {
+            "final_ep_return": -0.17941917479038239,
+            "final_ep_cost": 152.6666717529297,
+            "final_ep_length": 1000.0,
+            "seed": 25
+          },
+          {
+            "final_ep_return": -0.6913909912109375,
+            "final_ep_cost": 9.0,
+            "final_ep_length": 1000.0,
+            "seed": 26
+          },
+          {
+            "final_ep_return": 0.39094722270965576,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 27
+          },
+          {
+            "final_ep_return": -0.02991088293492794,
+            "final_ep_cost": 66.33333587646484,
+            "final_ep_length": 1000.0,
+            "seed": 28
+          },
+          {
+            "final_ep_return": 3.0137319564819336,
+            "final_ep_cost": 72.33333587646484,
+            "final_ep_length": 1000.0,
+            "seed": 29
+          }
+        ],
+        "final_ep_return_mean": -0.1641059245914221,
+        "final_ep_return_std": 1.1456014165616812,
+        "final_ep_cost_mean": 58.07777843475342,
+        "final_ep_cost_std": 60.342707240487435,
+        "final_ep_length_mean": 1000.0,
+        "final_ep_length_std": 0.0
+      }
+    },
+    "SafetyHalfCheetahVelocity-v1": {
+      "CPO": {
+        "n_seeds": 30,
+        "seed_runs": [
+          {
+            "final_ep_return": -666.0833740234375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 0
+          },
+          {
+            "final_ep_return": -628.1006469726562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 1
+          },
+          {
+            "final_ep_return": -581.6138305664062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 2
+          },
+          {
+            "final_ep_return": -587.136962890625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 3
+          },
+          {
+            "final_ep_return": -645.3953857421875,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 4
+          },
+          {
+            "final_ep_return": -622.1419067382812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 5
+          },
+          {
+            "final_ep_return": -595.9318237304688,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 6
+          },
+          {
+            "final_ep_return": -641.0025634765625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 7
+          },
+          {
+            "final_ep_return": -656.7971801757812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 8
+          },
+          {
+            "final_ep_return": -680.245849609375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 9
+          },
+          {
+            "final_ep_return": -605.054931640625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 10
+          },
+          {
+            "final_ep_return": -562.0934448242188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 11
+          },
+          {
+            "final_ep_return": -761.2301635742188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 12
+          },
+          {
+            "final_ep_return": -631.2454223632812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 13
+          },
+          {
+            "final_ep_return": -597.0707397460938,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 14
+          },
+          {
+            "final_ep_return": -508.6552429199219,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 15
+          },
+          {
+            "final_ep_return": -553.8018188476562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 16
+          },
+          {
+            "final_ep_return": -638.8158569335938,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 17
+          },
+          {
+            "final_ep_return": -618.2815551757812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 18
+          },
+          {
+            "final_ep_return": -581.2835693359375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 19
+          },
+          {
+            "final_ep_return": -635.9271240234375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 20
+          },
+          {
+            "final_ep_return": -618.7888793945312,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 21
+          },
+          {
+            "final_ep_return": -607.1673583984375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 22
+          },
+          {
+            "final_ep_return": -662.0249633789062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 23
+          },
+          {
+            "final_ep_return": -581.3828125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 24
+          },
+          {
+            "final_ep_return": -585.9996337890625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 25
+          },
+          {
+            "final_ep_return": -620.1680297851562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 26
+          },
+          {
+            "final_ep_return": -725.94775390625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 27
+          },
+          {
+            "final_ep_return": -706.15185546875,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 28
+          },
+          {
+            "final_ep_return": -562.7450561523438,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 29
+          }
+        ],
+        "final_ep_return_mean": -622.2761912027995,
+        "final_ep_return_std": 51.90047788137712,
+        "final_ep_cost_mean": 0.0,
+        "final_ep_cost_std": 0.0,
+        "final_ep_length_mean": 1000.0,
+        "final_ep_length_std": 0.0
+      },
+      "P3O": {
+        "n_seeds": 30,
+        "seed_runs": [
+          {
+            "final_ep_return": -698.49609375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 0
+          },
+          {
+            "final_ep_return": -668.7294311523438,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 1
+          },
+          {
+            "final_ep_return": -531.834228515625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 2
+          },
+          {
+            "final_ep_return": -668.2144165039062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 3
+          },
+          {
+            "final_ep_return": -687.6626586914062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 4
+          },
+          {
+            "final_ep_return": -719.425537109375,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 5
+          },
+          {
+            "final_ep_return": -622.9274291992188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 6
+          },
+          {
+            "final_ep_return": -734.114013671875,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 7
+          },
+          {
+            "final_ep_return": -640.0078735351562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 8
+          },
+          {
+            "final_ep_return": -720.3410034179688,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 9
+          },
+          {
+            "final_ep_return": -633.5147705078125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 10
+          },
+          {
+            "final_ep_return": -627.9853515625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 11
+          },
+          {
+            "final_ep_return": -760.9258422851562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 12
+          },
+          {
+            "final_ep_return": -641.0114135742188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 13
+          },
+          {
+            "final_ep_return": -588.2359008789062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 14
+          },
+          {
+            "final_ep_return": -643.8692016601562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 15
+          },
+          {
+            "final_ep_return": -613.6567993164062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 16
+          },
+          {
+            "final_ep_return": -680.9867553710938,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 17
+          },
+          {
+            "final_ep_return": -633.6782836914062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 18
+          },
+          {
+            "final_ep_return": -600.86572265625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 19
+          },
+          {
+            "final_ep_return": -742.1608276367188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 20
+          },
+          {
+            "final_ep_return": -630.5059204101562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 21
+          },
+          {
+            "final_ep_return": -647.1734619140625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 22
+          },
+          {
+            "final_ep_return": -698.5051879882812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 23
+          },
+          {
+            "final_ep_return": -613.91455078125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 24
+          },
+          {
+            "final_ep_return": -596.4732055664062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 25
+          },
+          {
+            "final_ep_return": -709.4863891601562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 26
+          },
+          {
+            "final_ep_return": -736.5728149414062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 27
+          },
+          {
+            "final_ep_return": -702.5844116210938,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 28
+          },
+          {
+            "final_ep_return": -594.2169189453125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 29
+          }
+        ],
+        "final_ep_return_mean": -659.6025472005208,
+        "final_ep_return_std": 54.03493078593722,
+        "final_ep_cost_mean": 0.0,
+        "final_ep_cost_std": 0.0,
+        "final_ep_length_mean": 1000.0,
+        "final_ep_length_std": 0.0
+      },
+      "PPOLag": {
+        "n_seeds": 30,
+        "seed_runs": [
+          {
+            "final_ep_return": -678.3159790039062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 0
+          },
+          {
+            "final_ep_return": -611.3146362304688,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 1
+          },
+          {
+            "final_ep_return": -587.974853515625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 2
+          },
+          {
+            "final_ep_return": -689.729736328125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 3
+          },
+          {
+            "final_ep_return": -652.3225708007812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 4
+          },
+          {
+            "final_ep_return": -634.0370483398438,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 5
+          },
+          {
+            "final_ep_return": -581.6954345703125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 6
+          },
+          {
+            "final_ep_return": -694.8494262695312,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 7
+          },
+          {
+            "final_ep_return": -645.671142578125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 8
+          },
+          {
+            "final_ep_return": -725.2667846679688,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 9
+          },
+          {
+            "final_ep_return": -619.0872192382812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 10
+          },
+          {
+            "final_ep_return": -570.017822265625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 11
+          },
+          {
+            "final_ep_return": -716.707275390625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 12
+          },
+          {
+            "final_ep_return": -682.377685546875,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 13
+          },
+          {
+            "final_ep_return": -672.4180908203125,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 14
+          },
+          {
+            "final_ep_return": -603.5436401367188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 15
+          },
+          {
+            "final_ep_return": -565.1038208007812,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 16
+          },
+          {
+            "final_ep_return": -685.5708618164062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 17
+          },
+          {
+            "final_ep_return": -592.8580932617188,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 18
+          },
+          {
+            "final_ep_return": -633.1603393554688,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 19
+          },
+          {
+            "final_ep_return": -700.6170043945312,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 20
+          },
+          {
+            "final_ep_return": -690.8826293945312,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 21
+          },
+          {
+            "final_ep_return": -605.2197875976562,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 22
+          },
+          {
+            "final_ep_return": -684.1066284179688,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 23
+          },
+          {
+            "final_ep_return": -610.8114624023438,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 24
+          },
+          {
+            "final_ep_return": -619.5624389648438,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 25
+          },
+          {
+            "final_ep_return": -665.2125244140625,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 26
+          },
+          {
+            "final_ep_return": -661.4408569335938,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 27
+          },
+          {
+            "final_ep_return": -746.1118774414062,
+            "final_ep_cost": 0.0,
+            "final_ep_length": 1000.0,
+            "seed": 28
+          },
+          {
+            "final_ep_return": -600.5691528320312,
+            "final_ep_cost": 0.3333333432674408,
+            "final_ep_length": 1000.0,
+            "seed": 29
+          }
+        ],
+        "final_ep_return_mean": -647.5518941243489,
+        "final_ep_return_std": 48.16833621611236,
+        "final_ep_cost_mean": 0.011111111442248026,
+        "final_ep_cost_std": 0.05983516630694358,
+        "final_ep_length_mean": 1000.0,
+        "final_ep_length_std": 0.0
+      }
+    }
+  },
+  "errors": {},
+  "notes": {}
+}

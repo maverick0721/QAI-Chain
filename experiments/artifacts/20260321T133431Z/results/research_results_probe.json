@@ -1,0 +1,766 @@
+{
+  "generated_at_utc": "2026-03-19T18:13:26.147855+00:00",
+  "config": {
+    "episodes": 45,
+    "steps_per_episode": 30,
+    "seeds": [
+      3,
+      7,
+      11,
+      17,
+      21,
+      42,
+      84,
+      126,
+      5,
+      9,
+      13,
+      19,
+      23,
+      31,
+      57,
+      99
+    ],
+    "start_difficulty": 7,
+    "target_difficulty": 3,
+    "ppo_entropy_start": 0.01,
+    "ppo_entropy_end": 0.002
+  },
+  "results": [
+    {
+      "method": "random",
+      "per_seed": [
+        {
+          "mean_reward_last5": -0.5857142857142877,
+          "mean_reward_all": 8.390539682539679,
+          "best_reward": 24.533333333333324,
+          "reward_std_last5": 6.110441218282537,
+          "final_difficulty": 6.0,
+          "abs_target_error": 3.0
+        },
+        {
+          "mean_reward_last5": 12.990857142857138,
+          "mean_reward_all": 11.158962962962958,
+          "best_reward": 25.133333333333322,
+          "reward_std_last5": 11.381452526966086,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 7.192571428571425,
+          "mean_reward_all": 4.920253968253966,
+          "best_reward": 23.466666666666658,
+          "reward_std_last5": 10.930245928774522,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 12.091619047619044,
+          "mean_reward_all": 8.564465608465603,
+          "best_reward": 25.866666666666653,
+          "reward_std_last5": 8.554259766053676,
+          "final_difficulty": 6.0,
+          "abs_target_error": 3.0
+        },
+        {
+          "mean_reward_last5": 16.82761904761904,
+          "mean_reward_all": 7.019301587301584,
+          "best_reward": 24.73333333333332,
+          "reward_std_last5": 7.372645549843563,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 11.318476190476186,
+          "mean_reward_all": 9.989100529100526,
+          "best_reward": 25.799999999999986,
+          "reward_std_last5": 12.277304668489027,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": 22.797333333333324,
+          "mean_reward_all": 12.789798941798935,
+          "best_reward": 26.399999999999988,
+          "reward_std_last5": 1.9161331431354711,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 12.170857142857136,
+          "mean_reward_all": 8.910687830687827,
+          "best_reward": 24.99999999999999,
+          "reward_std_last5": 13.577710741156679,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": 0.7723809523809482,
+          "mean_reward_all": 9.557671957671953,
+          "best_reward": 24.066666666666652,
+          "reward_std_last5": 11.231745324683457,
+          "final_difficulty": 8.0,
+          "abs_target_error": 5.0
+        },
+        {
+          "mean_reward_last5": 6.836761904761903,
+          "mean_reward_all": 8.776380952380949,
+          "best_reward": 24.466666666666654,
+          "reward_std_last5": 6.070100653287644,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 15.963428571428565,
+          "mean_reward_all": 14.848634920634915,
+          "best_reward": 25.599999999999987,
+          "reward_std_last5": 6.281562542297026,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 10.315047619047613,
+          "mean_reward_all": 12.784698412698408,
+          "best_reward": 25.26666666666665,
+          "reward_std_last5": 10.675296600785346,
+          "final_difficulty": 8.0,
+          "abs_target_error": 5.0
+        },
+        {
+          "mean_reward_last5": 4.751809523809519,
+          "mean_reward_all": 14.56093121693121,
+          "best_reward": 25.399999999999984,
+          "reward_std_last5": 10.439957595416958,
+          "final_difficulty": 8.0,
+          "abs_target_error": 5.0
+        },
+        {
+          "mean_reward_last5": 13.663428571428565,
+          "mean_reward_all": 9.777079365079361,
+          "best_reward": 25.599999999999987,
+          "reward_std_last5": 9.456235310599723,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 4.210476190476187,
+          "mean_reward_all": 8.309608465608461,
+          "best_reward": 25.19999999999999,
+          "reward_std_last5": 10.02765898259418,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 0.42514285714285516,
+          "mean_reward_all": 3.9353862433862403,
+          "best_reward": 22.733333333333324,
+          "reward_std_last5": 8.883005693438449,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        }
+      ],
+      "aggregate": {
+        "mean_reward_last5_mean": 9.483880952380948,
+        "mean_reward_last5_std": 6.338442290192422,
+        "mean_reward_all_mean": 9.64334391534391,
+        "mean_reward_all_std": 2.969244375732214,
+        "best_reward_mean": 24.954166666666655,
+        "best_reward_std": 0.9103475374212241,
+        "reward_std_last5_mean": 9.074109765362772,
+        "reward_std_last5_std": 2.844908333578678,
+        "final_difficulty_mean": 3.875,
+        "final_difficulty_std": 2.595067436503337,
+        "abs_target_error_mean": 2.25,
+        "abs_target_error_std": 1.5612494995995996
+      }
+    },
+    {
+      "method": "heuristic_target",
+      "per_seed": [
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.999999999999982,
+          "mean_reward_all": 22.9665185185185,
+          "best_reward": 22.999999999999982,
+          "reward_std_last5": 0.0,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        }
+      ],
+      "aggregate": {
+        "mean_reward_last5_mean": 22.999999999999982,
+        "mean_reward_last5_std": 0.0,
+        "mean_reward_all_mean": 22.9665185185185,
+        "mean_reward_all_std": 0.0,
+        "best_reward_mean": 22.999999999999982,
+        "best_reward_std": 0.0,
+        "reward_std_last5_mean": 0.0,
+        "reward_std_last5_std": 0.0,
+        "final_difficulty_mean": 3.0,
+        "final_difficulty_std": 0.0,
+        "abs_target_error_mean": 0.0,
+        "abs_target_error_std": 0.0
+      }
+    },
+    {
+      "method": "ppo_full",
+      "per_seed": [
+        {
+          "mean_reward_last5": 20.208,
+          "mean_reward_all": 16.357439153439152,
+          "best_reward": 25.4,
+          "reward_std_last5": 2.99644352153979,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 23.261333333333333,
+          "mean_reward_all": 15.278476190476189,
+          "best_reward": 26.400000000000002,
+          "reward_std_last5": 2.287738912842403,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 18.566095238095237,
+          "mean_reward_all": 9.562370370370369,
+          "best_reward": 24.733333333333334,
+          "reward_std_last5": 4.6287378218180875,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 12.337142857142856,
+          "mean_reward_all": 7.8077460317460305,
+          "best_reward": 24.066666666666666,
+          "reward_std_last5": 11.248062940315414,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 15.341523809523808,
+          "mean_reward_all": 9.14374603174603,
+          "best_reward": 25.6,
+          "reward_std_last5": 5.592623181467408,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 22.758857142857142,
+          "mean_reward_all": 11.710666666666665,
+          "best_reward": 24.733333333333334,
+          "reward_std_last5": 1.5221722632780343,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 12.325142857142856,
+          "mean_reward_all": 14.722010582010581,
+          "best_reward": 26.0,
+          "reward_std_last5": 7.347519626522376,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 21.08685714285714,
+          "mean_reward_all": 14.382137566137565,
+          "best_reward": 26.400000000000002,
+          "reward_std_last5": 4.308178433510617,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": 9.53447619047619,
+          "mean_reward_all": 8.987576719576719,
+          "best_reward": 25.866666666666667,
+          "reward_std_last5": 4.3254635141502344,
+          "final_difficulty": 4.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": -2.2483809523809533,
+          "mean_reward_all": 6.92874074074074,
+          "best_reward": 24.933333333333334,
+          "reward_std_last5": 6.865035309813684,
+          "final_difficulty": 6.0,
+          "abs_target_error": 3.0
+        },
+        {
+          "mean_reward_last5": 19.823809523809523,
+          "mean_reward_all": 12.104380952380952,
+          "best_reward": 24.866666666666667,
+          "reward_std_last5": 8.502882403102946,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 22.896,
+          "mean_reward_all": 15.89326984126984,
+          "best_reward": 25.46666666666667,
+          "reward_std_last5": 1.1253965227124763,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 17.86857142857143,
+          "mean_reward_all": 10.954074074074073,
+          "best_reward": 25.066666666666666,
+          "reward_std_last5": 2.245466927691434,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.194666666666667,
+          "mean_reward_all": 14.064910052910053,
+          "best_reward": 24.933333333333334,
+          "reward_std_last5": 2.014817995640191,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 15.632190476190475,
+          "mean_reward_all": 12.513714285714284,
+          "best_reward": 25.2,
+          "reward_std_last5": 9.15797718805145,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 7.75695238095238,
+          "mean_reward_all": 14.687851851851851,
+          "best_reward": 26.266666666666666,
+          "reward_std_last5": 9.205070837571895,
+          "final_difficulty": 7.0,
+          "abs_target_error": 4.0
+        }
+      ],
+      "aggregate": {
+        "mean_reward_last5_mean": 16.20895238095238,
+        "mean_reward_last5_std": 6.718280843156852,
+        "mean_reward_all_mean": 12.193694444444443,
+        "mean_reward_all_std": 2.9238815062219117,
+        "best_reward_mean": 25.370833333333334,
+        "best_reward_std": 0.6565772993334451,
+        "reward_std_last5_mean": 5.210849212501778,
+        "reward_std_last5_std": 3.07162022203665,
+        "final_difficulty_mean": 3.0625,
+        "final_difficulty_std": 1.9833289565778038,
+        "abs_target_error_mean": 1.6875,
+        "abs_target_error_std": 1.0439558180306292
+      }
+    },
+    {
+      "method": "ppo_no_entropy_anneal",
+      "per_seed": [
+        {
+          "mean_reward_last5": 20.208,
+          "mean_reward_all": 16.357439153439152,
+          "best_reward": 25.4,
+          "reward_std_last5": 2.99644352153979,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 23.261333333333333,
+          "mean_reward_all": 15.278476190476189,
+          "best_reward": 26.400000000000002,
+          "reward_std_last5": 2.287738912842403,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 18.566095238095237,
+          "mean_reward_all": 9.562370370370369,
+          "best_reward": 24.733333333333334,
+          "reward_std_last5": 4.6287378218180875,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 12.337142857142856,
+          "mean_reward_all": 7.8077460317460305,
+          "best_reward": 24.066666666666666,
+          "reward_std_last5": 11.248062940315414,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 15.341523809523808,
+          "mean_reward_all": 9.14374603174603,
+          "best_reward": 25.6,
+          "reward_std_last5": 5.592623181467408,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 22.758857142857142,
+          "mean_reward_all": 11.710666666666665,
+          "best_reward": 24.733333333333334,
+          "reward_std_last5": 1.5221722632780343,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 12.325142857142856,
+          "mean_reward_all": 14.722010582010581,
+          "best_reward": 26.0,
+          "reward_std_last5": 7.347519626522376,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 21.08685714285714,
+          "mean_reward_all": 14.382137566137565,
+          "best_reward": 26.400000000000002,
+          "reward_std_last5": 4.308178433510617,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": 9.53447619047619,
+          "mean_reward_all": 8.987576719576719,
+          "best_reward": 25.866666666666667,
+          "reward_std_last5": 4.3254635141502344,
+          "final_difficulty": 4.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": -2.2483809523809533,
+          "mean_reward_all": 6.92874074074074,
+          "best_reward": 24.933333333333334,
+          "reward_std_last5": 6.865035309813684,
+          "final_difficulty": 6.0,
+          "abs_target_error": 3.0
+        },
+        {
+          "mean_reward_last5": 19.823809523809523,
+          "mean_reward_all": 12.104380952380952,
+          "best_reward": 24.866666666666667,
+          "reward_std_last5": 8.502882403102946,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 22.896,
+          "mean_reward_all": 15.89326984126984,
+          "best_reward": 25.46666666666667,
+          "reward_std_last5": 1.1253965227124763,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 17.86857142857143,
+          "mean_reward_all": 10.954074074074073,
+          "best_reward": 25.066666666666666,
+          "reward_std_last5": 2.245466927691434,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 22.194666666666667,
+          "mean_reward_all": 14.064910052910053,
+          "best_reward": 24.933333333333334,
+          "reward_std_last5": 2.014817995640191,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 15.632190476190475,
+          "mean_reward_all": 12.513714285714284,
+          "best_reward": 25.2,
+          "reward_std_last5": 9.15797718805145,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 7.75695238095238,
+          "mean_reward_all": 14.687851851851851,
+          "best_reward": 26.266666666666666,
+          "reward_std_last5": 9.205070837571895,
+          "final_difficulty": 7.0,
+          "abs_target_error": 4.0
+        }
+      ],
+      "aggregate": {
+        "mean_reward_last5_mean": 16.20895238095238,
+        "mean_reward_last5_std": 6.718280843156852,
+        "mean_reward_all_mean": 12.193694444444443,
+        "mean_reward_all_std": 2.9238815062219117,
+        "best_reward_mean": 25.370833333333334,
+        "best_reward_std": 0.6565772993334451,
+        "reward_std_last5_mean": 5.210849212501778,
+        "reward_std_last5_std": 3.07162022203665,
+        "final_difficulty_mean": 3.0625,
+        "final_difficulty_std": 1.9833289565778038,
+        "abs_target_error_mean": 1.6875,
+        "abs_target_error_std": 1.0439558180306292
+      }
+    },
+    {
+      "method": "ppo_no_adv_norm",
+      "per_seed": [
+        {
+          "mean_reward_last5": 20.287999999999997,
+          "mean_reward_all": 16.566031746031744,
+          "best_reward": 25.4,
+          "reward_std_last5": 3.048113150422369,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 23.34133333333333,
+          "mean_reward_all": 15.291809523809523,
+          "best_reward": 26.6,
+          "reward_std_last5": 2.3554623042338574,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 23.091047619047618,
+          "mean_reward_all": 10.567470899470898,
+          "best_reward": 25.066666666666666,
+          "reward_std_last5": 2.3012356810774395,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 15.949333333333332,
+          "mean_reward_all": 10.77748148148148,
+          "best_reward": 24.933333333333334,
+          "reward_std_last5": 9.628075243208732,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 17.954666666666665,
+          "mean_reward_all": 10.609566137566137,
+          "best_reward": 26.066666666666666,
+          "reward_std_last5": 4.84408319358726,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 23.038857142857143,
+          "mean_reward_all": 12.958222222222222,
+          "best_reward": 25.533333333333335,
+          "reward_std_last5": 1.8057080972367343,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 17.556190476190476,
+          "mean_reward_all": 16.57542857142857,
+          "best_reward": 26.400000000000002,
+          "reward_std_last5": 4.697369167683722,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 23.032,
+          "mean_reward_all": 15.318984126984127,
+          "best_reward": 26.400000000000002,
+          "reward_std_last5": 2.6532542701788353,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": 16.17028571428571,
+          "mean_reward_all": 11.430518518518518,
+          "best_reward": 26.133333333333333,
+          "reward_std_last5": 5.8245300150047825,
+          "final_difficulty": 3.0,
+          "abs_target_error": 0.0
+        },
+        {
+          "mean_reward_last5": 5.834095238095237,
+          "mean_reward_all": 10.873291005291005,
+          "best_reward": 25.266666666666666,
+          "reward_std_last5": 11.565900625890828,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 20.09047619047619,
+          "mean_reward_all": 12.650455026455026,
+          "best_reward": 26.066666666666666,
+          "reward_std_last5": 8.671900962525742,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 23.096,
+          "mean_reward_all": 17.40374603174603,
+          "best_reward": 25.666666666666668,
+          "reward_std_last5": 1.191985085663594,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 19.276571428571426,
+          "mean_reward_all": 11.488550264550264,
+          "best_reward": 25.066666666666666,
+          "reward_std_last5": 3.4658769168453007,
+          "final_difficulty": 2.0,
+          "abs_target_error": 1.0
+        },
+        {
+          "mean_reward_last5": 22.194666666666667,
+          "mean_reward_all": 14.604317460317459,
+          "best_reward": 24.933333333333334,
+          "reward_std_last5": 2.014817995640191,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 15.632190476190475,
+          "mean_reward_all": 12.790116402116402,
+          "best_reward": 25.2,
+          "reward_std_last5": 9.15797718805145,
+          "final_difficulty": 1.0,
+          "abs_target_error": 2.0
+        },
+        {
+          "mean_reward_last5": 11.983047619047618,
+          "mean_reward_all": 16.666074074074075,
+          "best_reward": 26.46666666666667,
+          "reward_std_last5": 10.201941576803307,
+          "final_difficulty": 5.0,
+          "abs_target_error": 2.0
+        }
+      ],
+      "aggregate": {
+        "mean_reward_last5_mean": 18.65804761904762,
+        "mean_reward_last5_std": 4.6810921984156675,
+        "mean_reward_all_mean": 13.535753968253967,
+        "mean_reward_all_std": 2.410320622814754,
+        "best_reward_mean": 25.7,
+        "best_reward_std": 0.5792715732327596,
+        "reward_std_last5_mean": 5.214264467128384,
+        "reward_std_last5_std": 3.3725589830354687,
+        "final_difficulty_mean": 2.5,
+        "final_difficulty_std": 1.620185174601965,
+        "abs_target_error_mean": 1.5,
+        "abs_target_error_std": 0.7905694150420949
+      }
+    }
+  ]
+}

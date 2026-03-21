@@ -1,0 +1,23 @@
+\section{Appendix: Deployment Architecture Details}
+
+This appendix contains implementation-level deployment details that are intentionally separated from the main safe RL claim.
+
+\subsection{Layered Deployment Stack}
+
+QAI-Chain deployment is organized into six layers:
+\begin{enumerate}
+    \item \textbf{Network/RPC:} peer registration, transaction intake, and block propagation.
+    \item \textbf{Blockchain core:} validation, mempool updates, and PoW checks.
+    \item \textbf{PQC signatures:} post-quantum signing and verification interfaces.
+    \item \textbf{Governance policy:} state encoding and action proposal.
+    \item \textbf{Quantum uncertainty gate:} compact uncertainty estimate for fallback routing.
+    \item \textbf{Shield + audit:} action validation and per-epoch commitment of audit records.
+\end{enumerate}
+
+\subsection{Why On-Chain Audit Commitments}
+
+Governance participants are mutually untrusted. Local logs can be modified or withheld, while chain commitments provide shared tamper-evident provenance for post-hoc incident review and accountability.
+
+\subsection{Boundary to Learning Claims}
+
+Main-text empirical claims are tied to the gated-and-shielded control path. Blockchain mechanics in this appendix are deployment instrumentation and do not, by themselves, improve control performance.

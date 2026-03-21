@@ -1,0 +1,39 @@
+\section{System Design}
+
+The main system claim is a safe RL control loop with compact uncertainty estimation, while blockchain serves as a deployment-time audit substrate. For clarity, the online decision path is:
+\[
+\text{state telemetry} \rightarrow \text{policy proposal} \rightarrow \text{uncertainty gate} \rightarrow \text{shield} \rightarrow \text{executed action}.
+\]
+
+Audit records are committed to chain as a verifiable log after execution. This division keeps the core method in the RL/safety domain while preserving multi-party provenance when control actions are reviewed by mutually untrusted participants.
+
+\subsection{System Diagram}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/architecture_flow.pdf}
+\caption{System flowchart}
+\label{fig:system-mermaid-rendered}
+\end{figure}
+
+\subsection{Data and Control Flow}
+
+Transaction and peer events update chain state through RPC and validation logic. Governance telemetry is encoded into a compact vector, and the controller emits bounded actions for difficulty, block size, and gas limit:
+\begin{equation}
+\begin{aligned}
+\text{State telemetry} &\rightarrow \text{policy proposal} \rightarrow \text{uncertainty gate} \\
+&\rightarrow \text{safety shield} \rightarrow \text{on-chain commit}.
+\end{aligned}
+\end{equation}
+
+The uncertainty gate can route to deterministic fallback before execution; the shield can reject or clamp invalid actions. This paper's performance claims are tied to that gated-and-shielded control path. Extended blockchain architecture detail is provided in the appendix.
+
+\subsection{API Contracts}
+
+RPC endpoints use typed request/response schemas. Invalid payloads are rejected and negative-path contract tests cover malformed or missing fields.
+
+Contract tests are the boundary between protocol logic and adaptive governance logic.
+
+\subsection{Operational Guardrails}
+
+Deployment reliability depends on typed interfaces, contract-tested RPC boundaries, and deterministic control handoff between policy, gate, and shield. These controls reduce interface-level failure modes and keep execution behavior auditable across nodes.

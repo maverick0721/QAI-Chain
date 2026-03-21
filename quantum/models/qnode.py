@@ -1,5 +1,4 @@
 import pennylane as qml
-import torch
 
 from quantum.devices.device import get_device
 from quantum.encodings.angle_encoding import angle_encoding

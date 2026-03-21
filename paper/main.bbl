@@ -1,0 +1,79 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Achiam et~al.(2017)Achiam, Held, Tamar, and Abbeel]{achiam2017cpo}
+Joshua Achiam, David Held, Aviv Tamar, and Pieter Abbeel.
+\newblock Constrained policy optimization.
+\newblock In \emph{International Conference on Machine Learning}, 2017.
+
+\bibitem[Chow et~al.(2015)Chow, Tamar, Mannor, and Pavone]{chow2015cvar}
+Yinlam Chow, Aviv Tamar, Shie Mannor, and Marco Pavone.
+\newblock Risk-sensitive and robust decision-making: a {CVaR} optimization
+  approach.
+\newblock In \emph{Advances in Neural Information Processing Systems}, 2015.
+
+\bibitem[Dror et~al.(2018)Dror, Baumer, Shlomov, and
+  Reichart]{dror2018hitchhikers}
+Rotem Dror, Gili Baumer, Segev Shlomov, and Roi Reichart.
+\newblock The hitchhiker's guide to testing statistical significance in natural
+  language processing.
+\newblock \emph{Proceedings of ACL}, 2018.
+
+\bibitem[Efron and Tibshirani(1994)]{efron1994introduction}
+Bradley Efron and Robert~J Tibshirani.
+\newblock \emph{An Introduction to the Bootstrap}.
+\newblock CRC Press, 1994.
+
+\bibitem[Good(2005)]{good2005permutation}
+Phillip Good.
+\newblock \emph{Permutation, Parametric and Bootstrap Tests of Hypotheses}.
+\newblock Springer, 2005.
+
+\bibitem[Iyengar(2005)]{iyengar2005robust}
+Garud~N. Iyengar.
+\newblock Robust dynamic programming.
+\newblock \emph{Mathematics of Operations Research}, 30\penalty0 (2):\penalty0
+  257--280, 2005.
+
+\bibitem[Nakamoto(2008)]{nakamoto2008bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+\newblock \emph{Cryptography Mailing List}, 2008.
+
+\bibitem[{National Institute of Standards and Technology}(2023)]{nistairmf2023}
+{National Institute of Standards and Technology}.
+\newblock Artificial intelligence risk management framework (ai rmf 1.0).
+\newblock \url{https://www.nist.gov/itl/ai-risk-management-framework}, 2023.
+
+\bibitem[{National Institute of Standards and Technology}(2024)]{nistcsf2024}
+{National Institute of Standards and Technology}.
+\newblock Cybersecurity framework (csf 2.0).
+\newblock \url{https://www.nist.gov/cyberframework}, 2024.
+
+\bibitem[Pineau et~al.(2021)Pineau, Vincent-Lamarre, Sinha, Lariviere,
+  Beygelzimer, d'Alche Buc, Fox, and Larochelle]{pineau2021improving}
+Joelle Pineau, Philippe Vincent-Lamarre, Koustuv Sinha, Vincent Lariviere,
+  Alina Beygelzimer, Florence d'Alche Buc, Emily Fox, and Hugo Larochelle.
+\newblock Improving reproducibility in machine learning research.
+\newblock \emph{Journal of Machine Learning Research}, 22\penalty0
+  (164):\penalty0 1--20, 2021.
+
+\bibitem[Schulman et~al.(2017)Schulman, Wolski, Dhariwal, Radford, and
+  Klimov]{schulman2017ppo}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock \emph{arXiv preprint arXiv:1707.06347}, 2017.
+
+\bibitem[Wilson et~al.(2017)Wilson, Bryan, Cranston, Kitzes, Nederbragt, and
+  Teal]{wilson2017good}
+Greg Wilson, Jennifer Bryan, Karen Cranston, Justin Kitzes, Lex Nederbragt, and
+  Tracy~K Teal.
+\newblock Good enough practices in scientific computing.
+\newblock \emph{PLOS Computational Biology}, 13\penalty0 (6):\penalty0
+  e1005510, 2017.
+
+\end{thebibliography}

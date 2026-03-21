@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  node1:
+    image: python:3.12-slim
+    working_dir: /app
+    volumes:
+      - ..:/app
+    command: bash -lc "pip install -r requirements.txt && python scripts/run_node.py '' 8001"
+    ports:
+      - "8001:8001"
+
+  node2:
+    image: python:3.12-slim
+    working_dir: /app
+    depends_on:
+      - node1
+    volumes:
+      - ..:/app
+    command: bash -lc "pip install -r requirements.txt && python scripts/run_node.py http://node1:8001 8002"
+    ports:
+      - "8002:8002"
+
+  node3:
+    image: python:3.12-slim
+    working_dir: /app
+    depends_on:
+      - node1
+    volumes:
+      - ..:/app
+    command: bash -lc "pip install -r requirements.txt && python scripts/run_node.py http://node1:8001 8003"
+    ports:
+      - "8003:8003"

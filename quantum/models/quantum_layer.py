@@ -2,7 +2,13 @@ import torch
 import torch.nn as nn
 import warnings
 
-warnings.filterwarnings("ignore", message="Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.*")
+warnings.filterwarnings(
+    "ignore",
+    message=(
+        "Converting a tensor with requires_grad=True to a scalar may lead to "
+        "unexpected behavior.*"
+    ),
+)
 
 from quantum.models.qnode import QuantumCircuit
 
@@ -26,14 +32,18 @@ class QuantumLayer(nn.Module):
         for i in range(x.shape[0]):
 
             out = self.qc.forward(x[i], self.weights)
-            import numpy as np
-            # Convert to numpy, then to float32 for PyTorch
+
+            # PennyLane can return a tensor, tuple, or list depending on the qnode output.
             if isinstance(out, torch.Tensor):
-                out = out.detach().cpu().numpy()
-            if isinstance(out, (np.generic, np.ndarray)) and out.shape == ():
-                out = out.item()
-            # Always cast to float32 for PyTorch compatibility
-            out = np.array(out, dtype=np.float32)
-            outputs.append(torch.as_tensor(out, dtype=torch.float32))
+                out_tensor = out
+            elif isinstance(out, (list, tuple)):
+                values = []
+                for value in out:
+                    values.append(value if isinstance(value, torch.Tensor) else torch.tensor(value))
+                out_tensor = torch.stack(values)
+            else:
+                out_tensor = torch.tensor(out)
+
+            outputs.append(out_tensor.to(dtype=torch.float32, device=x.device))
 
         return torch.stack(outputs)

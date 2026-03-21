@@ -13,7 +13,7 @@ class BlockchainDataset:
         num_blocks = len(chain)
 
         if num_blocks < 2:
-            return np.zeros(5)
+            return np.zeros(5, dtype=np.float32)
 
         block_sizes = [len(b.transactions) for b in chain]
         avg_block_size = np.mean(block_sizes)

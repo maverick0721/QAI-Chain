@@ -1,0 +1,51 @@
+{
+  "generated_at_utc": "2026-03-21T03:14:49.550742+00:00",
+  "config": {
+    "qubits": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "layers": 4,
+    "samples": 50
+  },
+  "results": [
+    {
+      "n_qubits": 2,
+      "n_layers": 4,
+      "state_dim": 4,
+      "parameter_count": 8,
+      "forward_latency_ms": 2.8066308377310634
+    },
+    {
+      "n_qubits": 4,
+      "n_layers": 4,
+      "state_dim": 16,
+      "parameter_count": 16,
+      "forward_latency_ms": 5.893145673908293
+    },
+    {
+      "n_qubits": 6,
+      "n_layers": 4,
+      "state_dim": 64,
+      "parameter_count": 24,
+      "forward_latency_ms": 7.983243251219392
+    },
+    {
+      "n_qubits": 8,
+      "n_layers": 4,
+      "state_dim": 256,
+      "parameter_count": 32,
+      "forward_latency_ms": 10.660984185524285
+    },
+    {
+      "n_qubits": 10,
+      "n_layers": 4,
+      "state_dim": 1024,
+      "parameter_count": 40,
+      "forward_latency_ms": 13.190789110958576
+    }
+  ]
+}

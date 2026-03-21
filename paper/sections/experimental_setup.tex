@@ -1,0 +1,60 @@
+\section{Experimental Setup}
+
+\paragraph{Protocol.}
+We evaluate in two tiers:
+\begin{itemize}
+    \item \textbf{Primary constrained benchmarks:} SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 under a fixed 30-seed protocol (CPO, P3O, PPOLag) with shared uncertainty-gating and shielding logic.
+    \item \textbf{Governance stress-test environments:} a scaled governance simulator (12-dimensional state, 3-dimensional action, 200-step horizon, partial observability, adversarial telemetry faults) and a DeFi governance simulator (8-dimensional state, 2-dimensional action, 150-step horizon with MEV pressure and liquidity-risk dynamics).
+\end{itemize}
+For publication-facing comparisons, we use fixed seed sets to preserve paired comparability under stochastic dynamics.
+Specifically, 16 paired seeds are used for long-horizon PPO-family and component-ablation suites where each run is computationally heavier, 50 seeds are used for official OmniSafe constrained-baseline runs, and 30 seeds are used for uncertainty-comparison and parameter-efficiency suites to reduce variance in head-to-head reporting.
+
+\paragraph{Constrained baseline fidelity statement.}
+The constrained baselines reported in the main table are official OmniSafe implementations (CPO, P3O, PPOLag, SACLag, FOCOPS) executed through OmniSafe-compatible adapters for both environments.
+
+\paragraph{Environment realism extension.}
+Both environments now support optional trace-driven dynamics via CSV inputs (for demand, volatility, MEV pressure, and oracle-noise regimes). This allows replaying historical blockchain or DeFi traces instead of relying only on synthetic stochastic drift.
+For the reported real-trace run, we use Ethereum daily gas-price history from Etherscan to construct trace features that drive intensity and disturbance schedules.
+
+\paragraph{Primary Metrics.}
+We report:
+\begin{itemize}
+    \item mean reward and standard deviation across seeds,
+    \item safety violation count,
+    \item target-tracking error (MAE),
+    \item fallback activation rate,
+    \item per-decision latency and forward-FLOPs proxy.
+\end{itemize}
+
+Fallback activation is measured as the fraction of states where uncertainty exceeds threshold and the policy is routed to the deterministic controller before shield validation.
+
+\paragraph{Hypothesis Testing.}
+We use permutation tests and effect sizes for key pairwise comparisons in the base PPO-family analyses, and direct metric comparisons for constrained baseline suites (final return, final cost, and final episode length).
+
+Bootstrap resampling (95\% confidence) is used for interval reporting where applicable.
+
+\paragraph{High-rigor constrained-baseline protocol.}
+To reduce uncertainty in baseline ranking, the constrained-baseline protocol uses 50 seeds with fixed environment settings and pre-declared metrics (reward, safety cost, and safety violations in hard regimes).
+
+\paragraph{Fair-capacity quantum efficiency protocol.}
+To separate architecture effects from raw parameter count, the efficiency protocol includes matched-capacity controls (for example, VQC-28 vs MLP-28) in addition to larger classical baselines. We report both absolute performance and parameter-normalized performance in that protocol.
+
+\paragraph{Primary standard-benchmark protocol.}
+The primary external-validity test uses constrained standard benchmarks (Safety Gym-style and MuJoCo-style tasks) under the same uncertainty-gating and shielding logic.
+On this host, we report completed 30-seed runs on SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 (CPO/P3O/PPOLag, 3k steps per run) under the OmniSafe stack.
+Governance simulations are then used as controlled stress tests to probe mechanism behavior under adversarial regime shifts that are hard to isolate in standard suites.
+
+\paragraph{Robust PPO settings.}
+Robust PPO uses risk-aware shaping, quantum-uncertainty-gated fallback, and a smart-contract-style shield. The uncertainty estimator uses $K=10$ parameter-perturbed forward passes with Gaussian perturbation scale 0.01. The gate threshold $\tau_q$ and risk weight $\lambda_{\mathrm{risk}}$ are tuned for high-switch regimes.
+
+\paragraph{Robust ablation variants.}
+To isolate mechanism contributions, we evaluate seven configurations:
+\begin{itemize}
+    \item Full system (quantum gate + shield + robust policy),
+    \item No quantum gate,
+    \item No shield,
+    \item No fallback,
+    \item Classical PPO,
+    \item Heuristic controller,
+    \item Random controller.
+\end{itemize}

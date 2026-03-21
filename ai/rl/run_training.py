@@ -10,6 +10,10 @@ from core.blockchain.blockchain import Blockchain
 from ai.rl.trainer import train
 
 
-blockchain = Blockchain()
+def main():
+    blockchain = Blockchain()
+    train(blockchain)
 
-train(blockchain)
+
+if __name__ == "__main__":
+    main()

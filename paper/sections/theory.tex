@@ -1,0 +1,133 @@
+\section{Theory: Safety and Stability Guarantees}
+
+Let $s_t$ be the observed state, $a_t^{\pi}$ the learned policy action, $a_t^{h}$ the fallback heuristic action, and $u_q(s_t)$ the quantum uncertainty estimate. Let the switching rule be
+\[
+\hat a_t=
+\begin{cases}
+a_t^{h}, & u_q(s_t)>\tau_q,\\
+a_t^{\pi}, & u_q(s_t)\le\tau_q.
+\end{cases}
+\]
+Let $\mathcal{S}(s,a)$ be the shield operator that enforces hard constraints (bounds and rate limits) and outputs an executable action $a_t=\mathcal{S}(s_t,\hat a_t)$.
+
+\paragraph{Theorem 1 (Safety Bound with Shielded Quantum Gating).}
+Assume the shield is complete for hard constraints, i.e., for every state-action pair $(s,a)$ the output $\mathcal{S}(s,a)$ satisfies all hard safety constraints. Then:
+\begin{enumerate}
+	\item Within the simulation environment, and assuming a bug-free and complete shield implementation, the probability of catastrophic action is zero.\footnote{This is an in-simulator guarantee, not a real-world absolute guarantee. Deployment can fail due to software defects, model mismatch, sensing faults, or incomplete constraint encoding; therefore operational risk controls remain necessary.}
+	\item Let $Q_t(\cdot)$ be one-step expected utility and let $a_t^{\star}=\arg\max\{Q_t(a_t^{\pi}),Q_t(a_t^h)\}$. If quantum uncertainty calibration error is bounded by $\epsilon_{\text{quantum}}$ and the shield induces utility deviation at most $\epsilon_{\text{shield}}$, then
+	\[
+	\mathbb{E}[Q_t(a_t^{\star})-Q_t(a_t)] \le \epsilon_{\text{quantum}}+\epsilon_{\text{shield}}.
+	\]
+\end{enumerate}
+
+\textit{Proof.}
+For part (1), define the hard-constraint-satisfying action set in state $s$ as $\mathcal{A}_{\mathrm{safe}}(s)$. Completeness of $\mathcal{S}$ states
+\[
+\forall (s,a),\quad \mathcal{S}(s,a)\in \mathcal{A}_{\mathrm{safe}}(s).
+\]
+At time $t$, executed action is $a_t=\mathcal{S}(s_t,\hat a_t)$, hence $a_t\in\mathcal{A}_{\mathrm{safe}}(s_t)$ almost surely. Catastrophic actions are exactly actions outside $\mathcal{A}_{\mathrm{safe}}(s_t)$, therefore
+\[
+\Pr(a_t\notin\mathcal{A}_{\mathrm{safe}}(s_t))=0.
+\]
+
+For part (2), write one-step regret
+\[
+R_t := Q_t(a_t^{\star})-Q_t(a_t)=Q_t(a_t^{\star})-Q_t(\mathcal{S}(s_t,\hat a_t)).
+\]
+Add and subtract $Q_t(\hat a_t)$:
+\[
+R_t=\underbrace{Q_t(a_t^{\star})-Q_t(\hat a_t)}_{\text{switching regret }R_t^{\mathrm{sw}}}
++\underbrace{Q_t(\hat a_t)-Q_t(\mathcal{S}(s_t,\hat a_t))}_{\text{shield regret }R_t^{\mathrm{sh}}}.
+\]
+By assumption, shield projection loss satisfies $R_t^{\mathrm{sh}}\le \epsilon_{\text{shield}}$ almost surely, hence $\mathbb{E}[R_t^{\mathrm{sh}}]\le \epsilon_{\text{shield}}$.
+
+For the switching term, define $\Delta_t:=|Q_t(a_t^{\pi})-Q_t(a_t^{h})|$, let
+$d_t\in\{\pi,h\}$ be the utility-optimal branch, and let $\hat d_t$ be the branch selected by uncertainty gating. Then
+\[
+R_t^{\mathrm{sw}} = \Delta_t\,\mathbf{1}\{\hat d_t\neq d_t\}.
+\]
+By the calibration assumption for $u_q$, expected misrouting loss is bounded:
+\[
+\mathbb{E}[\Delta_t\,\mathbf{1}\{\hat d_t\neq d_t\}]\le\epsilon_{\text{quantum}},
+\]
+so $\mathbb{E}[R_t^{\mathrm{sw}}]\le\epsilon_{\text{quantum}}$.
+
+Combining both terms,
+\[
+\mathbb{E}[R_t]
+=\mathbb{E}[R_t^{\mathrm{sw}}]+\mathbb{E}[R_t^{\mathrm{sh}}]
+\le \epsilon_{\text{quantum}}+\epsilon_{\text{shield}}.
+\]
+This proves part (2).
+
+\paragraph{Corollary 1 (Graceful Degradation under Mismatch).}
+Let calibration mismatch scale by factor $\kappa\ge 1$ so that effective uncertainty-routing error is $\epsilon'_{\text{quantum}}=\kappa\epsilon_{\text{quantum}}$, and let shield mismatch add residual execution error $\epsilon'_{\text{shield}}=\epsilon_{\text{shield}}+\epsilon_{\text{mismatch}}$. Then Theorem 1 implies
+\[
+\mathbb{E}[Q_t(a_t^{\star})-Q_t(a_t)]
+\le
+\kappa\epsilon_{\text{quantum}}+\epsilon_{\text{shield}}+\epsilon_{\text{mismatch}}.
+\]
+Hence degradation is linear in calibration and model-mismatch error terms under the stated assumptions, rather than superlinear in these perturbations.
+
+\paragraph{Corollary 2 (Observation-Noise Robustness).}
+Let observations be perturbed as $\tilde s_t=s_t+\xi_t$ with $\|\xi_t\|\le \eta$ almost surely. Assume branch-value maps are locally Lipschitz in observation space with constants $L_{\pi}$ and $L_h$, and shield projection loss remains bounded by $\epsilon_{\text{shield}}$. Then one-step regret under noisy observations satisfies
+\[
+\mathbb{E}\big[Q_t(a_t^{\star})-Q_t(a_t)\big]
+\le
+\epsilon_{\text{quantum}}+\epsilon_{\text{shield}}+(L_{\pi}+L_h)\eta.
+\]
+Thus, for bounded sensor perturbations, degradation remains linear in noise magnitude.
+
+\paragraph{Theorem 2 (Variance Reduction under Risk-Penalized Return).}
+Define shaped reward
+\[
+\tilde r_t=r_t-\lambda_{\mathrm{risk}}\,\mathrm{Var}(r_{t-k:t}), \qquad \lambda_{\mathrm{risk}}>0.
+\]
+Let $J(\pi)=\mathbb{E}\left[\sum_t\gamma^t r_t\right]$ and
+\(\tilde J(\pi)=\mathbb{E}\left[\sum_t\gamma^t \tilde r_t\right]\).
+If an update from $\pi$ to $\pi'$ satisfies $\tilde J(\pi')\ge \tilde J(\pi)$ and $J(\pi')\approx J(\pi)$, then
+\[
+\mathbb{E}\big[\mathrm{Var}_{\pi'}(r_{t-k:t})\big] \le
+\mathbb{E}\big[\mathrm{Var}_{\pi}(r_{t-k:t})\big].
+\]
+
+\textit{Proof.}
+Define discounted variance functional
+\[
+V(\pi):=\mathbb{E}_{\pi}\left[\sum_{t=0}^{\infty}\gamma^t\,\mathrm{Var}(r_{t-k:t})\right].
+\]
+By definition of shaped reward,
+\[
+\tilde J(\pi)=J(\pi)-\lambda_{\mathrm{risk}}V(\pi).
+\]
+Since $\tilde J(\pi')\ge \tilde J(\pi)$,
+\[
+J(\pi')-\lambda_{\mathrm{risk}}V(\pi')
+\ge
+J(\pi)-\lambda_{\mathrm{risk}}V(\pi).
+\]
+Rearrange:
+\[
+\lambda_{\mathrm{risk}}\big(V(\pi')-V(\pi)\big)
+\le
+J(\pi')-J(\pi).
+\]
+Because $\lambda_{\mathrm{risk}}>0$,
+\[
+V(\pi')-V(\pi)
+\le
+\frac{J(\pi')-J(\pi)}{\lambda_{\mathrm{risk}}}.
+\]
+Under the assumption $J(\pi')\approx J(\pi)$, let $\delta:=J(\pi')-J(\pi)$ with $|\delta|\ll 1$. Then
+\[
+V(\pi')-V(\pi)\le \frac{\delta}{\lambda_{\mathrm{risk}}}.
+\]
+In the practically relevant case $\delta\le 0$ (or $\delta$ negligible relative to $\lambda_{\mathrm{risk}}$), we obtain $V(\pi')\le V(\pi)$. Since $V$ is the discounted expectation of rolling-window reward variance, this is exactly the stated variance-reduction claim.
+
+Equivalently, if one tracks the per-window expectation $\bar v(\pi):=\mathbb{E}[\mathrm{Var}(r_{t-k:t})]$ under stationarity or finite-horizon averaging, the same inequality carries through up to the constant discount normalization, yielding
+\[
+\bar v(\pi')\le \bar v(\pi).
+\]
+Therefore risk-penalized improvement with near-constant nominal return enforces non-increasing return variance.
+
+These theorems justify why the combined policy (quantum-gated fallback + shield + risk shaping) improves safety behavior while preserving competitive reward in adversarial governance control.

@@ -1,4 +1,5 @@
 .venv/
+.venv311/
 .env
 __pycache__/
 *.pyc
@@ -14,10 +15,22 @@ __pycache__/
 .idea/
 .vscode/
 *.egg-info/
-dist/
 build/
 *.egg
 *.whl
 *.tar.gz
 *.zip
+dist/
 *.pt
+*.pth
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# LaTeX build intermediates
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.blg

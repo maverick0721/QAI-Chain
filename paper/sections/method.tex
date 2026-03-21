@@ -1,0 +1,107 @@
+\section{Methodology}
+
+\subsection{Control Objective}
+
+The governance objective combines throughput, latency, decentralization proxy, and target tracking:
+\[
+\begin{aligned}
+r ={}& w_1 \cdot \text{throughput} + w_2 \cdot \text{latency}(d) \\
+&+ w_3 \cdot \text{decentralization} - \lambda |d - d_t|.
+\end{aligned}
+\]
+Action outputs are bounded and then validated by a safety shield before execution.
+
+\subsection{Policy Family}
+
+We evaluate random, heuristic, PPO-family, and robust gated controllers. PPO uses clipped updates \citep{schulman2017ppo}. The robust branch adds risk shaping:
+\[
+\tilde r_t = r_t - \lambda_{\mathrm{risk}}\,\mathrm{Var}(r_{t-k:t}).
+\]
+
+\subsection{Shield Logic (Executable Rule)}
+
+The shield is deterministic and state-aware. At each step, it enforces bounded actions and bounded action-rate change before execution:
+\[
+a^{\mathrm{exec}}_t=\mathrm{clip}(a_t, a_{\min}, a_{\max}),
+\]
+\[
+\Delta a_t=\mathrm{clip}(a^{\mathrm{exec}}_t-a_{t-1},-\delta_{\max},\delta_{\max}).
+\]
+If a post-check still violates a hard safety predicate (for example, projected delay or partition threshold), the shield routes to deterministic fallback $a_t^{\mathrm{heur}}$ and re-validates. In implementation terms:
+\begin{itemize}
+    \item If \texttt{hard\_safe(state, action)} is false, clamp action by bounds and max delta.
+    \item Re-check safety; if still false, switch to \texttt{heuristic\_action(state)}.
+    \item Return the validated action.
+\end{itemize}
+
+For explicit auditability, Section 4.3 shield execution is summarized below:
+\begin{enumerate}
+    \item Input $(s_t, a_t, a_{t-1})$.
+    \item Set $a\leftarrow\mathrm{clip}(a_t,a_{\min},a_{\max})$.
+    \item Set $a\leftarrow a_{t-1}+\mathrm{clip}(a-a_{t-1},-\delta_{\max},\delta_{\max})$.
+    \item If $\mathrm{hard\_safe}(s_t,a)$, return $a$.
+    \item Set $a_h\leftarrow\mathrm{heuristic\_action}(s_t)$.
+    \item Set $a_h\leftarrow\mathrm{clip}(a_h,a_{\min},a_{\max})$.
+    \item Set $a_h\leftarrow a_{t-1}+\mathrm{clip}(a_h-a_{t-1},-\delta_{\max},\delta_{\max})$.
+    \item If $\mathrm{hard\_safe}(s_t,a_h)$, return $a_h$.
+    \item Otherwise, return $\mathrm{emergency\_safe\_action}(s_t)$.
+\end{enumerate}
+
+\subsection{Quantum Uncertainty Gate}
+
+The policy front-end is a 6-qubit variational circuit with angle embedding, entangling layers, data re-uploading, and Pauli-$Z$ measurements for mean/scale signals. Uncertainty is estimated by parameter perturbation:
+\[
+\begin{aligned}
+u_q(x) &= \operatorname{Var}\left(\{\mu_{\theta+\epsilon_k}(x)\}_{k=1}^{K}\right), \\
+\epsilon_k &\sim \mathcal{N}(0,0.01I),\quad K=10.
+\end{aligned}
+\]
+The routing rule is
+\[
+a_t=
+\begin{cases}
+a_t^{\mathrm{heur}}, & u_q(x_t)>\tau_q,\\
+a_t^{\mathrm{policy}}, & u_q(x_t)\le\tau_q.
+\end{cases}
+\]
+
+\subsection{Engineering Trade-offs in Uncertainty Design}
+
+The uncertainty estimator was chosen with deployment latency in mind, not only offline accuracy. Deep ensembles improve diversity but require maintaining and serving multiple full policy copies per decision step. In contrast, parameter perturbation reuses one compact model and injects small weight noise at inference, which keeps implementation complexity and memory footprint lower in our control loop.
+
+In head-to-head tests, this choice gave a practical balance: quantum parameter-perturbation uncertainty achieved higher precision at the same trigger budget than MC-dropout and ensemble baselines, while preserving comparable recall. We therefore prioritized estimator compactness plus decision quality under fixed trigger-rate constraints over maximizing any single uncertainty score in isolation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\linewidth]{figures/robust_policy_flow.pdf}
+\caption{Quantum-gated fallback and shielded action execution.}
+\label{fig:robust-flow}
+\end{figure}
+
+\subsection{Why the VQC Compresses Well Here}
+
+The 6-qubit VQC is classically simulated in this study, and the design priority is parameter efficiency rather than raw throughput. Governance states couple a few dominant factors (delay, congestion, adversarial pressure) with strong interaction effects. Entangling layers provide multiplicative feature interactions in a compact parameterization, and data re-uploading lets the same qubits express higher-order nonlinear responses over time. In this setting, that combination approximates the required control surface with far fewer trainable weights than a dense MLP. Empirically, compression is most effective when paired with uncertainty gating and shielding, which stabilize behavior during regime shifts.
+
+\subsection{Adversarial and Ablation Design}
+
+The scaled benchmark injects burst demand, delay noise, attack pressure, and regime shifts. We evaluate seven configurations:
+\begin{itemize}
+    \item full system (quantum gate + shield + robust policy),
+    \item no quantum gate,
+    \item no shield,
+    \item no fallback,
+    \item classical PPO,
+    \item Heuristic controller,
+    \item random.
+\end{itemize}
+The stress-aware reward is
+\[
+\begin{aligned}
+r_t^{\text{adv}} ={}& \alpha\,\text{throughput}_t - \beta\,\text{delay}_t - \gamma\,\text{attack}_t \\
+&- \eta\,\text{fork}_t - \lambda |d_t-d^\star|.
+\end{aligned}
+\]
+
+\subsection{Evaluation}
+
+Primary metrics are reward, safety violations, target MAE, fallback rate, and latency proxy. For base PPO-family comparisons we report bootstrap intervals, permutation tests, and Cohen's $d$ \citep{efron1994introduction,good2005permutation}.

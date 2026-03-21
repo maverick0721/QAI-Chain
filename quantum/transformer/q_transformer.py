@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 
 from quantum.transformer.q_transformer_layer import QTransformerLayer

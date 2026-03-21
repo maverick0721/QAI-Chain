@@ -1,0 +1,53 @@
+\section{Implementation and Validation Details}
+
+\subsection{Repository Engineering Architecture}
+
+The system is organized so that each layer can be tested independently and integrated through explicit contracts:
+\begin{itemize}
+  \item Core blockchain primitives expose deterministic block and transaction semantics.
+  \item RPC interfaces use schema-driven request/response models, reducing ambiguity at API boundaries.
+  \item AI modules are separated into encoder, policy, value, and trainer code paths to isolate optimization concerns.
+  \item Quantum modules (QNN and QTransformer) are provided as pluggable components with benchmarked runtime footprints.
+  \item Experiment scripts produce machine-readable outputs that are post-processed into paper tables and plots.
+\end{itemize}
+
+This decomposition follows reproducible systems guidance where experiment claims are linked to executable artifacts rather than manually curated summaries \citep{wilson2017good,stodden2016enhancing}.
+
+\subsection{Validation Gates}
+
+The project gate stack includes:
+\begin{enumerate}
+  \item static lint checks,
+  \item static type checks,
+  \item unit and integration tests,
+  \item API contract tests,
+  \item runtime health checks,
+  \item manuscript artifact regeneration.
+\end{enumerate}
+
+The intent is to prevent a common anti-pattern in research software: result-generation scripts diverging from serving/runtime paths. In QAI-Chain, manuscript figures and tables are generated from tracked JSON artifacts, which are themselves emitted by executable protocol scripts.
+
+\subsection{Latency and System Cost Profile}
+\label{sec:latency-profile}
+
+Using the latency profile shown in Figure~\ref{fig:core-latency}, QTransformer latency dominates end-to-end inference cost, with QNN as the second-largest contributor and the classical metrics encoder effectively negligible at this scale. This motivates two engineering strategies:
+\begin{itemize}
+  \item selective invocation of quantum modules only when predictive uncertainty exceeds threshold,
+  \item asynchronous or batched execution for quantum pathways in throughput-critical deployments.
+\end{itemize}
+
+\subsection{Statistical Reporting Choices}
+
+We report effect sizes and permutation tests to avoid over-reliance on point estimates. Non-parametric tests are particularly useful at small sample sizes and under non-Gaussian reward distributions. We include bootstrap confidence intervals to characterize uncertainty around means and to help distinguish practical from purely numerical differences \citep{efron1994introduction,good2005permutation}.
+
+\subsection{Failure Modes Observed During Development}
+
+A practical contribution of this work is the debugging record converted into engineering controls. We encountered and addressed:
+\begin{itemize}
+  \item tensor-to-NumPy conversion failures with gradient-bearing tensors,
+  \item qubit-feature dimensionality mismatches in angle embedding pathways,
+  \item import path drift between utility and logger modules,
+  \item schema and payload mismatches in endpoint handlers.
+\end{itemize}
+
+The resulting fixes are reflected in tests and health checks, reducing recurrence probability and improving confidence in subsequent experiments.

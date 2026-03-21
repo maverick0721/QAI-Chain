@@ -1,0 +1,21 @@
+\section{Limitations}
+
+This study has several important limitations:
+\begin{itemize}
+    \item The governance simulators are intentionally simplified and do not yet model full peer-network dynamics, endogenous market adaptation, or realistic transaction-arrival microstructure.
+    \item The quantum-inspired uncertainty module and audit pipeline are research prototypes, not production-hardened systems.
+    \item Runtime measurements are single-machine snapshots rather than cross-hardware scaling studies.
+\end{itemize}
+
+\par
+Additional validity risks include:
+\begin{itemize}
+    \item reward misspecification sensitivity under alternate throughput/latency trade-offs (highlighted by the random-vs-full anomaly in one ablation workload),
+    \item moderate sample size in some per-method seed analyses outside the 50-seed constrained-baseline suite,
+    \item simulator realism limits for both uncertainty dynamics and network behavior,
+    \item absence of richer economic-adversary models in mining and transaction dynamics.
+\end{itemize}
+
+The observation-noise robustness claim in Corollary~2 is therefore best interpreted as a bounded-perturbation guarantee under model assumptions, not as a blanket guarantee under arbitrary sensing failures.
+
+The standard constrained benchmarks improve external validity, but they do not by themselves establish readiness for live governance deployment. These limitations define immediate future work rather than hidden assumptions.

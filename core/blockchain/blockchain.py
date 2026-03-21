@@ -1,5 +1,5 @@
 from core.blockchain.block import Block
-from core.logger import get_logger
+from core.utils.logger import get_logger
 from crypto.pqc.verification import verify_transaction
 
 logger = get_logger("blockchain")
@@ -11,6 +11,7 @@ class Blockchain:
 
         self.chain = []
         self.difficulty = difficulty
+        self.audit_trail: list[dict[str, object]] = []
 
         self.create_genesis_block()
 
@@ -68,3 +69,9 @@ class Blockchain:
                 return False
 
         return True
+
+    def commit_audit_record(self, record: dict[str, object]) -> str:
+        payload = dict(record)
+        payload["audit_index"] = len(self.audit_trail)
+        self.audit_trail.append(payload)
+        return str(payload.get("record_hash", payload["audit_index"]))

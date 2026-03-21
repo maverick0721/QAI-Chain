@@ -1,0 +1,1877 @@
+{
+  "generated_at_utc": "2026-03-21T12:05:52.269418+00:00",
+  "config": {
+    "episodes": 70,
+    "steps_per_episode": 35,
+    "seeds": [
+      3,
+      7,
+      11,
+      17,
+      21,
+      42,
+      84,
+      126,
+      5,
+      9,
+      13,
+      19,
+      23,
+      31,
+      57,
+      99
+    ],
+    "complexities": [
+      0.6,
+      1.0,
+      1.4,
+      1.8
+    ]
+  },
+  "results": {
+    "complexity_0.6": [
+      {
+        "method": "heuristic_resilience",
+        "per_seed": [
+          {
+            "mean_reward_last5": -447.2416523086419,
+            "mean_delay_last5": 14.662392421189766,
+            "mean_fork_last5": 0.44088097849430724,
+            "mean_target_error_last5": 2.7707363732739667,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -438.3308007434757,
+            "mean_delay_last5": 14.24547058260665,
+            "mean_fork_last5": 0.42810721363672033,
+            "mean_target_error_last5": 2.855083174365429,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -319.5046232779871,
+            "mean_delay_last5": 11.720500100885785,
+            "mean_fork_last5": 0.3450438297528938,
+            "mean_target_error_last5": 2.4167246570201852,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -476.7746204584691,
+            "mean_delay_last5": 14.956241505967606,
+            "mean_fork_last5": 0.45213947608225175,
+            "mean_target_error_last5": 3.018655902030462,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -360.65017497483433,
+            "mean_delay_last5": 12.485958125877985,
+            "mean_fork_last5": 0.3713703892316783,
+            "mean_target_error_last5": 2.635574688570326,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -417.7239344664153,
+            "mean_delay_last5": 13.726914708014268,
+            "mean_fork_last5": 0.4121105282793691,
+            "mean_target_error_last5": 2.7498811658649744,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -447.2894787309186,
+            "mean_delay_last5": 14.601697751587537,
+            "mean_fork_last5": 0.437315550904599,
+            "mean_target_error_last5": 2.7824342385465615,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -415.10204739441167,
+            "mean_delay_last5": 13.872122585534264,
+            "mean_fork_last5": 0.41470666036323106,
+            "mean_target_error_last5": 2.7371396037923543,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -416.4702855700409,
+            "mean_delay_last5": 14.004999640893658,
+            "mean_fork_last5": 0.4174577215276323,
+            "mean_target_error_last5": 2.702074092770904,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -394.39399851940107,
+            "mean_delay_last5": 13.63136763039892,
+            "mean_fork_last5": 0.4051589873113262,
+            "mean_target_error_last5": 2.5686548716690027,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -408.01047881932556,
+            "mean_delay_last5": 13.32080822052673,
+            "mean_fork_last5": 0.39931341263636944,
+            "mean_target_error_last5": 2.8430432905974268,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -410.6679617162178,
+            "mean_delay_last5": 13.625759327683033,
+            "mean_fork_last5": 0.4086493857978827,
+            "mean_target_error_last5": 2.781631497315246,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -430.43692873432224,
+            "mean_delay_last5": 14.289591473743116,
+            "mean_fork_last5": 0.42648086771605265,
+            "mean_target_error_last5": 2.7071928028792183,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -463.1210183039737,
+            "mean_delay_last5": 15.076043457248339,
+            "mean_fork_last5": 0.4510387621814017,
+            "mean_target_error_last5": 2.8191452477918353,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -368.30882959706366,
+            "mean_delay_last5": 12.81994955284738,
+            "mean_fork_last5": 0.3815050316488578,
+            "mean_target_error_last5": 2.6058893562673604,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -447.13931764429475,
+            "mean_delay_last5": 14.401172540040694,
+            "mean_fork_last5": 0.43431676680224535,
+            "mean_target_error_last5": 2.887187564305024,
+            "mean_fallback_rate_last5": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -416.32288445373706,
+          "mean_reward_last5_std": 39.33556453331368,
+          "mean_delay_last5_mean": 13.840061851565359,
+          "mean_delay_last5_std": 0.8831056182081547,
+          "mean_fork_last5_mean": 0.41409972264792616,
+          "mean_fork_last5_std": 0.028313824723687805,
+          "mean_target_error_last5_mean": 2.7425655329412675,
+          "mean_target_error_last5_std": 0.13674554243911918,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0
+        }
+      },
+      {
+        "method": "ppo_full",
+        "per_seed": [
+          {
+            "mean_reward_last5": -365.69257381551256,
+            "mean_delay_last5": 11.650640556295643,
+            "mean_fork_last5": 0.35052842254748356,
+            "mean_target_error_last5": 7.177399555274419,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -339.2774761354265,
+            "mean_delay_last5": 11.25473606955554,
+            "mean_fork_last5": 0.33838517824518705,
+            "mean_target_error_last5": 6.608014664990561,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -415.0508103609381,
+            "mean_delay_last5": 13.68428109400711,
+            "mean_fork_last5": 0.4039572595465335,
+            "mean_target_error_last5": 2.5764350324869154,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -502.90568438734624,
+            "mean_delay_last5": 15.57020607340706,
+            "mean_fork_last5": 0.47055841310543534,
+            "mean_target_error_last5": 3.004636049909251,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -386.5059319209596,
+            "mean_delay_last5": 13.161878766627884,
+            "mean_fork_last5": 0.39164800845417524,
+            "mean_target_error_last5": 2.4231602016517093,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -386.6408077457672,
+            "mean_delay_last5": 12.51627618957807,
+            "mean_fork_last5": 0.37579137272628316,
+            "mean_target_error_last5": 6.298804530416216,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -461.1768253891692,
+            "mean_delay_last5": 14.944944906915003,
+            "mean_fork_last5": 0.4476129655644229,
+            "mean_target_error_last5": 2.7389692139625548,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -465.2842664060255,
+            "mean_delay_last5": 15.035216409478982,
+            "mean_fork_last5": 0.44959947508157266,
+            "mean_target_error_last5": 2.727162045240402,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -385.1280959681402,
+            "mean_delay_last5": 12.135470589848468,
+            "mean_fork_last5": 0.3613718499962766,
+            "mean_target_error_last5": 7.09810122864587,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -401.90084013509835,
+            "mean_delay_last5": 12.004289600374516,
+            "mean_fork_last5": 0.35634664641059416,
+            "mean_target_error_last5": 7.14449141059603,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -410.1348280394861,
+            "mean_delay_last5": 13.726812546176347,
+            "mean_fork_last5": 0.4114849009072129,
+            "mean_target_error_last5": 2.300374229912247,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -427.9536509544294,
+            "mean_delay_last5": 14.041667165113616,
+            "mean_fork_last5": 0.4211266209208001,
+            "mean_target_error_last5": 2.7397961387463976,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -410.9494081496312,
+            "mean_delay_last5": 13.709081786809955,
+            "mean_fork_last5": 0.40906557710805785,
+            "mean_target_error_last5": 3.4740658531444413,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -438.475919293645,
+            "mean_delay_last5": 14.746727741438063,
+            "mean_fork_last5": 0.44115929070709337,
+            "mean_target_error_last5": 2.047582231760025,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -452.2053045626565,
+            "mean_delay_last5": 13.664142523325712,
+            "mean_fork_last5": 0.40683082076320776,
+            "mean_target_error_last5": 6.343985633764948,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -305.05046444857766,
+            "mean_delay_last5": 10.404557014842034,
+            "mean_fork_last5": 0.3144183010462856,
+            "mean_target_error_last5": 7.0990958661692485,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -409.6458054820506,
+          "mean_reward_last5_std": 48.092921479676924,
+          "mean_delay_last5_mean": 13.265683064612125,
+          "mean_delay_last5_std": 1.4378818781100677,
+          "mean_fork_last5_mean": 0.39686781894566386,
+          "mean_fork_last5_std": 0.04300222756159924,
+          "mean_target_error_last5_mean": 4.487629617916952,
+          "mean_target_error_last5_std": 2.095258315539983,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.0,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.0,
+          "effective_lambda_risk_std": 0.0
+        }
+      },
+      {
+        "method": "robust_ppo",
+        "per_seed": [
+          {
+            "mean_reward_last5": -427.42257068567903,
+            "mean_delay_last5": 14.28348482297229,
+            "mean_fork_last5": 0.429513750547783,
+            "mean_target_error_last5": 2.4111415664863403,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -407.2182146594558,
+            "mean_delay_last5": 13.714323390932833,
+            "mean_fork_last5": 0.41217279788650585,
+            "mean_target_error_last5": 2.3364441478596523,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -319.882795058332,
+            "mean_delay_last5": 11.760855038830387,
+            "mean_fork_last5": 0.3462544778912318,
+            "mean_target_error_last5": 2.3078115679583244,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -394.66038372573394,
+            "mean_delay_last5": 13.36257496644774,
+            "mean_fork_last5": 0.4043294798966557,
+            "mean_target_error_last5": 2.8858360181695044,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -349.16630145634014,
+            "mean_delay_last5": 12.327085694663316,
+            "mean_fork_last5": 0.3666042162952382,
+            "mean_target_error_last5": 2.368941554422766,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -411.1899288799765,
+            "mean_delay_last5": 13.625088705984583,
+            "mean_fork_last5": 0.40905574821847857,
+            "mean_target_error_last5": 2.626930037693968,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -437.9870059227526,
+            "mean_delay_last5": 14.430385184624063,
+            "mean_fork_last5": 0.43217617389569474,
+            "mean_target_error_last5": 2.6849546965343305,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -412.00215123823705,
+            "mean_delay_last5": 13.838134189529656,
+            "mean_fork_last5": 0.41368700848309287,
+            "mean_target_error_last5": 2.619353890342703,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -400.4458489675017,
+            "mean_delay_last5": 13.729338961016289,
+            "mean_fork_last5": 0.4091879011313112,
+            "mean_target_error_last5": 2.4116375986900067,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -368.88392993307366,
+            "mean_delay_last5": 13.155011341223876,
+            "mean_fork_last5": 0.3908682986360749,
+            "mean_target_error_last5": 2.173283075931883,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -402.1758539324365,
+            "mean_delay_last5": 13.279441020642196,
+            "mean_fork_last5": 0.39807239663983346,
+            "mean_target_error_last5": 2.631457388950814,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -409.6389701325737,
+            "mean_delay_last5": 13.67999452136066,
+            "mean_fork_last5": 0.4102764416082114,
+            "mean_target_error_last5": 2.579686482639006,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -404.81255723185734,
+            "mean_delay_last5": 13.955540638293103,
+            "mean_fork_last5": 0.41645934265255224,
+            "mean_target_error_last5": 2.21184963061213,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -433.1274484034354,
+            "mean_delay_last5": 14.532144741968922,
+            "mean_fork_last5": 0.4347218007230192,
+            "mean_target_error_last5": 2.380337073657015,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -351.1737901661902,
+            "mean_delay_last5": 12.544252996052492,
+            "mean_fork_last5": 0.37323413494501123,
+            "mean_target_error_last5": 2.185786957347401,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -431.2101362154015,
+            "mean_delay_last5": 14.115793459866184,
+            "mean_fork_last5": 0.42575539439701005,
+            "mean_target_error_last5": 2.6833888696818438,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -397.56236791306105,
+          "mean_reward_last5_std": 32.59348238063154,
+          "mean_delay_last5_mean": 13.520840604650537,
+          "mean_delay_last5_std": 0.7452274312133638,
+          "mean_fork_last5_mean": 0.40452308524048153,
+          "mean_fork_last5_std": 0.02391723779069167,
+          "mean_target_error_last5_mean": 2.4686775348111056,
+          "mean_target_error_last5_std": 0.2022359025849918,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.74,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.12,
+          "effective_lambda_risk_std": 0.0
+        }
+      }
+    ],
+    "complexity_1.0": [
+      {
+        "method": "heuristic_resilience",
+        "per_seed": [
+          {
+            "mean_reward_last5": -438.01492878739106,
+            "mean_delay_last5": 14.420687840181873,
+            "mean_fork_last5": 0.434544083056311,
+            "mean_target_error_last5": 2.7746540239126154,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -424.0582822395131,
+            "mean_delay_last5": 13.93726935169743,
+            "mean_fork_last5": 0.4185380478492763,
+            "mean_target_error_last5": 2.7960902020197658,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -400.6465876897524,
+            "mean_delay_last5": 13.37245756758187,
+            "mean_fork_last5": 0.40015246016924044,
+            "mean_target_error_last5": 2.7500062589559278,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -431.3932640882267,
+            "mean_delay_last5": 14.285707855492207,
+            "mean_fork_last5": 0.42782688197237834,
+            "mean_target_error_last5": 2.7525396123883414,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -331.12235055809873,
+            "mean_delay_last5": 11.703237303048551,
+            "mean_fork_last5": 0.34737624078367507,
+            "mean_target_error_last5": 2.5854379970503496,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -437.6715981205772,
+            "mean_delay_last5": 14.272110740381258,
+            "mean_fork_last5": 0.42922642868275734,
+            "mean_target_error_last5": 2.777310603455146,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -362.160940341661,
+            "mean_delay_last5": 12.906672461800007,
+            "mean_fork_last5": 0.38124150923926814,
+            "mean_target_error_last5": 2.4666444120226445,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -428.3911366037802,
+            "mean_delay_last5": 14.38687881964305,
+            "mean_fork_last5": 0.4300029082262413,
+            "mean_target_error_last5": 2.7089524658435584,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -432.83906755222205,
+            "mean_delay_last5": 14.390571994793415,
+            "mean_fork_last5": 0.4295957498969003,
+            "mean_target_error_last5": 2.737652894858417,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -450.55826173489334,
+            "mean_delay_last5": 14.519535891576941,
+            "mean_fork_last5": 0.43681020581713026,
+            "mean_target_error_last5": 2.8920855825065073,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -329.8146304611589,
+            "mean_delay_last5": 11.641619897944123,
+            "mean_fork_last5": 0.34468188302443653,
+            "mean_target_error_last5": 2.5783990387208697,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -426.449797825663,
+            "mean_delay_last5": 14.169299776020033,
+            "mean_fork_last5": 0.4246442047716628,
+            "mean_target_error_last5": 2.762951335837482,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -446.82512055766176,
+            "mean_delay_last5": 14.582487532549203,
+            "mean_fork_last5": 0.4373853713752948,
+            "mean_target_error_last5": 2.859676718780223,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -400.4897007432263,
+            "mean_delay_last5": 13.635252855055619,
+            "mean_fork_last5": 0.40566074835961896,
+            "mean_target_error_last5": 2.6497629671881677,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -429.01659929265827,
+            "mean_delay_last5": 14.062875358880438,
+            "mean_fork_last5": 0.4228366545142443,
+            "mean_target_error_last5": 2.8040120159585893,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -477.24237946337274,
+            "mean_delay_last5": 15.208281850617233,
+            "mean_fork_last5": 0.460549885854667,
+            "mean_target_error_last5": 2.971450702895069,
+            "mean_fallback_rate_last5": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -415.41841537874103,
+          "mean_reward_last5_std": 40.20935940378706,
+          "mean_delay_last5_mean": 13.843434193578954,
+          "mean_delay_last5_std": 0.9652610854307229,
+          "mean_fork_last5_mean": 0.4144420789745689,
+          "mean_fork_last5_std": 0.03098938821424599,
+          "mean_target_error_last5_mean": 2.7417266770246047,
+          "mean_target_error_last5_std": 0.12130405247154721,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0
+        }
+      },
+      {
+        "method": "ppo_full",
+        "per_seed": [
+          {
+            "mean_reward_last5": -388.470358367168,
+            "mean_delay_last5": 12.32624713184607,
+            "mean_fork_last5": 0.37171086180623686,
+            "mean_target_error_last5": 6.940225720916476,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -358.5820067884539,
+            "mean_delay_last5": 11.535009175476583,
+            "mean_fork_last5": 0.34647024256265085,
+            "mean_target_error_last5": 6.669377130440303,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -390.2530875263379,
+            "mean_delay_last5": 13.415734934918202,
+            "mean_fork_last5": 0.4014507811893304,
+            "mean_target_error_last5": 2.3432052975467275,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -417.5899677900573,
+            "mean_delay_last5": 14.041651092683116,
+            "mean_fork_last5": 0.4205051790881057,
+            "mean_target_error_last5": 2.485701828391424,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -418.6737230996819,
+            "mean_delay_last5": 13.688029505514008,
+            "mean_fork_last5": 0.40692000685763874,
+            "mean_target_error_last5": 2.6439733273216657,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -351.56242865097835,
+            "mean_delay_last5": 11.421628356232068,
+            "mean_fork_last5": 0.3437119571582817,
+            "mean_target_error_last5": 6.949375483989716,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -386.48851801108754,
+            "mean_delay_last5": 13.500782065275313,
+            "mean_fork_last5": 0.3990647973435274,
+            "mean_target_error_last5": 2.389316113931792,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -442.15854268840957,
+            "mean_delay_last5": 14.75545677863736,
+            "mean_fork_last5": 0.4410602469960706,
+            "mean_target_error_last5": 2.576533089365278,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -367.8276415208494,
+            "mean_delay_last5": 11.81521343169775,
+            "mean_fork_last5": 0.3523349930040304,
+            "mean_target_error_last5": 7.058769378321512,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -308.77378703438734,
+            "mean_delay_last5": 10.810089654972629,
+            "mean_fork_last5": 0.32552681871900085,
+            "mean_target_error_last5": 6.507272213101387,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -423.6947681100008,
+            "mean_delay_last5": 13.761469637447274,
+            "mean_fork_last5": 0.4082686120021914,
+            "mean_target_error_last5": 2.4834912530864988,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -421.566597283867,
+            "mean_delay_last5": 14.107388333420028,
+            "mean_fork_last5": 0.4227868614936626,
+            "mean_target_error_last5": 2.5948822699274334,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -448.19986412617266,
+            "mean_delay_last5": 14.797458925268812,
+            "mean_fork_last5": 0.443834513156883,
+            "mean_target_error_last5": 2.1028632729394094,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -421.02062267703735,
+            "mean_delay_last5": 14.199974831590964,
+            "mean_fork_last5": 0.42260240765567936,
+            "mean_target_error_last5": 2.3369144196595464,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -368.30791413358617,
+            "mean_delay_last5": 12.321402142115545,
+            "mean_fork_last5": 0.37059245801129753,
+            "mean_target_error_last5": 5.736684902395521,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -303.3726021256178,
+            "mean_delay_last5": 10.589520263922712,
+            "mean_fork_last5": 0.32198703825383135,
+            "mean_target_error_last5": 6.315085953772068,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -388.5339018708558,
+          "mean_reward_last5_std": 42.05222737018894,
+          "mean_delay_last5_mean": 12.942941016313652,
+          "mean_delay_last5_std": 1.3474571425913837,
+          "mean_fork_last5_mean": 0.3874267359561512,
+          "mean_fork_last5_std": 0.03893176111905753,
+          "mean_target_error_last5_mean": 4.258354478444172,
+          "mean_target_error_last5_std": 2.085007776140768,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.0,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.0,
+          "effective_lambda_risk_std": 0.0
+        }
+      },
+      {
+        "method": "robust_ppo",
+        "per_seed": [
+          {
+            "mean_reward_last5": -368.26421858084024,
+            "mean_delay_last5": 13.040545416924802,
+            "mean_fork_last5": 0.39313981035859885,
+            "mean_target_error_last5": 2.6694908367344037,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -415.7752979269478,
+            "mean_delay_last5": 13.83772644275803,
+            "mean_fork_last5": 0.41555176058109433,
+            "mean_target_error_last5": 2.502288948061325,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -399.24891109887363,
+            "mean_delay_last5": 13.455802554078646,
+            "mean_fork_last5": 0.4026528097641437,
+            "mean_target_error_last5": 2.456337571895445,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -382.0596153806161,
+            "mean_delay_last5": 13.159379433933278,
+            "mean_fork_last5": 0.3940370293256105,
+            "mean_target_error_last5": 2.6219414025269794,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -333.50987691481674,
+            "mean_delay_last5": 11.791696073012163,
+            "mean_fork_last5": 0.35003000388258343,
+            "mean_target_error_last5": 2.499136769722385,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -438.8265703372706,
+            "mean_delay_last5": 14.311013064839118,
+            "mean_fork_last5": 0.4303934984164931,
+            "mean_target_error_last5": 2.73169554953861,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -362.2625726796035,
+            "mean_delay_last5": 12.930951329261223,
+            "mean_fork_last5": 0.38196987526310466,
+            "mean_target_error_last5": 2.3883721291926103,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -420.60794405021323,
+            "mean_delay_last5": 14.31828980228094,
+            "mean_fork_last5": 0.427945237705378,
+            "mean_target_error_last5": 2.4115275789398347,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -425.37838933186185,
+            "mean_delay_last5": 14.394447289431492,
+            "mean_fork_last5": 0.42971200873604265,
+            "mean_target_error_last5": 2.4749132715378677,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -430.7261054440234,
+            "mean_delay_last5": 14.226960522011964,
+            "mean_fork_last5": 0.4280329447301809,
+            "mean_target_error_last5": 2.4709729847420725,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -333.4462302593512,
+            "mean_delay_last5": 11.770679920812922,
+            "mean_fork_last5": 0.3485536837105005,
+            "mean_target_error_last5": 2.4647013054543905,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -418.4863961256359,
+            "mean_delay_last5": 14.088857310801064,
+            "mean_fork_last5": 0.4222309308150937,
+            "mean_target_error_last5": 2.4539530586593243,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -436.5253698234417,
+            "mean_delay_last5": 14.528882702718144,
+            "mean_fork_last5": 0.435777226480363,
+            "mean_target_error_last5": 2.4449962168228367,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -395.36854255159085,
+            "mean_delay_last5": 13.627115458097627,
+            "mean_fork_last5": 0.4054166264508792,
+            "mean_target_error_last5": 2.3357321412074583,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -419.49957053076736,
+            "mean_delay_last5": 13.933438696383973,
+            "mean_fork_last5": 0.4189535546393504,
+            "mean_target_error_last5": 2.5213723863232365,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          },
+          {
+            "mean_reward_last5": -421.9743323513818,
+            "mean_delay_last5": 14.171254327708876,
+            "mean_fork_last5": 0.4294390601674163,
+            "mean_target_error_last5": 2.1549806196028087,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.74,
+            "effective_lambda_risk": 0.12
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -400.12249646170227,
+          "mean_reward_last5_std": 33.47891686167502,
+          "mean_delay_last5_mean": 13.599190021565892,
+          "mean_delay_last5_std": 0.8379361485693014,
+          "mean_fork_last5_mean": 0.40711475381417705,
+          "mean_fork_last5_std": 0.02668475426953149,
+          "mean_target_error_last5_mean": 2.475150798185099,
+          "mean_target_error_last5_std": 0.12843851209401846,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.74,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.12,
+          "effective_lambda_risk_std": 0.0
+        }
+      }
+    ],
+    "complexity_1.4": [
+      {
+        "method": "heuristic_resilience",
+        "per_seed": [
+          {
+            "mean_reward_last5": -470.1334250882232,
+            "mean_delay_last5": 14.969635819482265,
+            "mean_fork_last5": 0.45405787083210863,
+            "mean_target_error_last5": 2.9295351197704766,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -356.4722300864935,
+            "mean_delay_last5": 12.40872978860298,
+            "mean_fork_last5": 0.36944333288325987,
+            "mean_target_error_last5": 2.5876482063722333,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -389.908755985161,
+            "mean_delay_last5": 13.262429782906148,
+            "mean_fork_last5": 0.3959744361687884,
+            "mean_target_error_last5": 2.6867353420496833,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -472.7002912386821,
+            "mean_delay_last5": 15.143444484423865,
+            "mean_fork_last5": 0.4563346890442233,
+            "mean_target_error_last5": 2.9157948813229684,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -412.88259005851074,
+            "mean_delay_last5": 13.732982847862163,
+            "mean_fork_last5": 0.4110445569190151,
+            "mean_target_error_last5": 2.7652794260734037,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -357.8792129930326,
+            "mean_delay_last5": 12.665940578849524,
+            "mean_fork_last5": 0.37740113472122183,
+            "mean_target_error_last5": 2.50697119469154,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -409.96298711438834,
+            "mean_delay_last5": 13.711596753210227,
+            "mean_fork_last5": 0.4094431668387015,
+            "mean_target_error_last5": 2.7176943933840354,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -396.9995692510315,
+            "mean_delay_last5": 13.682394072678791,
+            "mean_fork_last5": 0.4074615788510121,
+            "mean_target_error_last5": 2.6071377615402462,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -443.72075306372244,
+            "mean_delay_last5": 14.498073649383475,
+            "mean_fork_last5": 0.43437484510837204,
+            "mean_target_error_last5": 2.8303106239434785,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -413.3093376461401,
+            "mean_delay_last5": 13.898819648595703,
+            "mean_fork_last5": 0.4159085303151274,
+            "mean_target_error_last5": 2.717996480309906,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -376.8584001537521,
+            "mean_delay_last5": 12.736058590177215,
+            "mean_fork_last5": 0.37980491065055,
+            "mean_target_error_last5": 2.7233734965487493,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -454.7188328768784,
+            "mean_delay_last5": 14.853241643815105,
+            "mean_fork_last5": 0.4475747545753817,
+            "mean_target_error_last5": 2.8553380063945437,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -427.13651807747203,
+            "mean_delay_last5": 14.066078422879936,
+            "mean_fork_last5": 0.4220517517483921,
+            "mean_target_error_last5": 2.804973103842607,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -434.27210373254553,
+            "mean_delay_last5": 14.431859819998317,
+            "mean_fork_last5": 0.4319598955019203,
+            "mean_target_error_last5": 2.780046918812619,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -500.72757236294854,
+            "mean_delay_last5": 15.767995970335372,
+            "mean_fork_last5": 0.4771817878577725,
+            "mean_target_error_last5": 2.964922589837757,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -351.01213123661313,
+            "mean_delay_last5": 12.218789846484752,
+            "mean_fork_last5": 0.3662943436480414,
+            "mean_target_error_last5": 2.627644991673063,
+            "mean_fallback_rate_last5": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -416.7934194353497,
+          "mean_reward_last5_std": 43.1652073580006,
+          "mean_delay_last5_mean": 13.878004482480366,
+          "mean_delay_last5_std": 1.006044805666758,
+          "mean_fork_last5_mean": 0.41601947410399304,
+          "mean_fork_last5_std": 0.032039090284109076,
+          "mean_target_error_last5_mean": 2.7513376585354568,
+          "mean_target_error_last5_std": 0.12628559942514345,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0
+        }
+      },
+      {
+        "method": "ppo_full",
+        "per_seed": [
+          {
+            "mean_reward_last5": -337.8420615555456,
+            "mean_delay_last5": 11.616739403968497,
+            "mean_fork_last5": 0.3534709783666956,
+            "mean_target_error_last5": 6.678553800582885,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -406.0489231465362,
+            "mean_delay_last5": 12.304006795133756,
+            "mean_fork_last5": 0.36630164307918317,
+            "mean_target_error_last5": 6.888895017930439,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -403.17787353705427,
+            "mean_delay_last5": 12.745560624024511,
+            "mean_fork_last5": 0.3804595167360726,
+            "mean_target_error_last5": 5.411487597056798,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -450.0658353418066,
+            "mean_delay_last5": 14.67898603904571,
+            "mean_fork_last5": 0.4424009356828787,
+            "mean_target_error_last5": 2.7077969148755074,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -367.55936803644767,
+            "mean_delay_last5": 12.850921968655445,
+            "mean_fork_last5": 0.38458273054281356,
+            "mean_target_error_last5": 2.34156759755952,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -423.14253485134753,
+            "mean_delay_last5": 12.886554710431618,
+            "mean_fork_last5": 0.3840168905421308,
+            "mean_target_error_last5": 5.969557846529143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -428.9716281533592,
+            "mean_delay_last5": 14.177528645951297,
+            "mean_fork_last5": 0.4234211236209336,
+            "mean_target_error_last5": 2.655251174058233,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -416.97028479629716,
+            "mean_delay_last5": 14.186993962968948,
+            "mean_fork_last5": 0.42259882122687736,
+            "mean_target_error_last5": 2.50346576656614,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -351.8986278381716,
+            "mean_delay_last5": 11.71682686838606,
+            "mean_fork_last5": 0.3509439215632045,
+            "mean_target_error_last5": 7.036105621201651,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -356.75194794654624,
+            "mean_delay_last5": 11.270611357327608,
+            "mean_fork_last5": 0.33706228157708457,
+            "mean_target_error_last5": 7.141597122635161,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -376.3248659803985,
+            "mean_delay_last5": 12.415483849597182,
+            "mean_fork_last5": 0.37018316609692864,
+            "mean_target_error_last5": 4.387448559147971,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -426.09099453095155,
+            "mean_delay_last5": 14.260405501921825,
+            "mean_fork_last5": 0.4297896703185833,
+            "mean_target_error_last5": 2.6015847136293138,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -416.8392811409767,
+            "mean_delay_last5": 14.206829760605501,
+            "mean_fork_last5": 0.4262742918801591,
+            "mean_target_error_last5": 2.1195086995192938,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -424.71428949971704,
+            "mean_delay_last5": 14.303733549119602,
+            "mean_fork_last5": 0.4281161073755589,
+            "mean_target_error_last5": 2.463343743511609,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -345.7752587647387,
+            "mean_delay_last5": 11.95260335973302,
+            "mean_fork_last5": 0.36272000953970196,
+            "mean_target_error_last5": 5.512261734945433,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -406.8579697210591,
+            "mean_delay_last5": 12.396892564844885,
+            "mean_fork_last5": 0.3716374251988454,
+            "mean_target_error_last5": 7.101852366924286,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -396.1894840525596,
+          "mean_reward_last5_std": 33.73331266229724,
+          "mean_delay_last5_mean": 12.998167435107217,
+          "mean_delay_last5_std": 1.098198972600778,
+          "mean_fork_last5_mean": 0.38962371958422826,
+          "mean_fork_last5_std": 0.032719587099501075,
+          "mean_target_error_last5_mean": 4.595017392292086,
+          "mean_target_error_last5_std": 1.9873738200536648,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.0,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.0,
+          "effective_lambda_risk_std": 0.0
+        }
+      },
+      {
+        "method": "robust_ppo",
+        "per_seed": [
+          {
+            "mean_reward_last5": -367.0534359366899,
+            "mean_delay_last5": 12.898896021798551,
+            "mean_fork_last5": 0.39193567690159725,
+            "mean_target_error_last5": 3.68,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -326.69442093486424,
+            "mean_delay_last5": 11.64320466091576,
+            "mean_fork_last5": 0.34647757905264337,
+            "mean_target_error_last5": 2.6342857142857143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -402.0384558781899,
+            "mean_delay_last5": 13.752396038972888,
+            "mean_fork_last5": 0.4106734238507906,
+            "mean_target_error_last5": 2.0514285714285716,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -368.39533247845327,
+            "mean_delay_last5": 12.91504744952428,
+            "mean_fork_last5": 0.38948277799723574,
+            "mean_target_error_last5": 2.9657142857142857,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -344.6839498198784,
+            "mean_delay_last5": 11.954078911763405,
+            "mean_fork_last5": 0.35767743883605235,
+            "mean_target_error_last5": 3.2685714285714287,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -379.8562931485208,
+            "mean_delay_last5": 13.086923438202406,
+            "mean_fork_last5": 0.3900306205018083,
+            "mean_target_error_last5": 2.12,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -398.5038242266537,
+            "mean_delay_last5": 13.678407998218153,
+            "mean_fork_last5": 0.4084475041889394,
+            "mean_target_error_last5": 2.262857142857143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -377.1187178564588,
+            "mean_delay_last5": 13.17153172028926,
+            "mean_fork_last5": 0.39213570827932603,
+            "mean_target_error_last5": 2.3885714285714283,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -438.8340526097856,
+            "mean_delay_last5": 14.828338011131082,
+            "mean_fork_last5": 0.44428277596080024,
+            "mean_target_error_last5": 1.9828571428571429,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -368.4263677795595,
+            "mean_delay_last5": 12.731876131963617,
+            "mean_fork_last5": 0.3809002248161648,
+            "mean_target_error_last5": 3.097142857142857,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -310.409282475228,
+            "mean_delay_last5": 11.293643705278077,
+            "mean_fork_last5": 0.33653246410357585,
+            "mean_target_error_last5": 3.085714285714286,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -380.75596982182486,
+            "mean_delay_last5": 13.208366194875277,
+            "mean_fork_last5": 0.39822849110718683,
+            "mean_target_error_last5": 3.1657142857142855,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -401.0303083172262,
+            "mean_delay_last5": 13.872196373036315,
+            "mean_fork_last5": 0.4162352902530835,
+            "mean_target_error_last5": 2.6114285714285717,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -406.936931452306,
+            "mean_delay_last5": 13.998752651134993,
+            "mean_fork_last5": 0.4189666804360206,
+            "mean_target_error_last5": 2.7314285714285713,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -361.86596666343036,
+            "mean_delay_last5": 12.761679741178531,
+            "mean_fork_last5": 0.38699230098306725,
+            "mean_target_error_last5": 3.737142857142857,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          },
+          {
+            "mean_reward_last5": -365.3704561557203,
+            "mean_delay_last5": 12.720006909266589,
+            "mean_fork_last5": 0.3813308555314966,
+            "mean_target_error_last5": 2.3142857142857145,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.796,
+            "effective_lambda_risk": 0.08
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -374.87336034717435,
+          "mean_reward_last5_std": 30.57414303518858,
+          "mean_delay_last5_mean": 13.032209122346824,
+          "mean_delay_last5_std": 0.8754357938362721,
+          "mean_fork_last5_mean": 0.3906456132999868,
+          "mean_fork_last5_std": 0.02654716077205819,
+          "mean_target_error_last5_mean": 2.7560714285714285,
+          "mean_target_error_last5_std": 0.5376089116046484,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.796,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.08,
+          "effective_lambda_risk_std": 0.0
+        }
+      }
+    ],
+    "complexity_1.8": [
+      {
+        "method": "heuristic_resilience",
+        "per_seed": [
+          {
+            "mean_reward_last5": -430.3087724399426,
+            "mean_delay_last5": 14.19833153806446,
+            "mean_fork_last5": 0.42894715230052344,
+            "mean_target_error_last5": 2.776838109530546,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -401.44982267723304,
+            "mean_delay_last5": 13.46352845984211,
+            "mean_fork_last5": 0.40490386781955906,
+            "mean_target_error_last5": 2.7326032912746143,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -398.75915427020857,
+            "mean_delay_last5": 13.332968446076531,
+            "mean_fork_last5": 0.3995998683863144,
+            "mean_target_error_last5": 2.7524278359521737,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -454.22424445741905,
+            "mean_delay_last5": 14.814845990296446,
+            "mean_fork_last5": 0.446291873236671,
+            "mean_target_error_last5": 2.8435414778054717,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -413.2277055782518,
+            "mean_delay_last5": 13.525156906723344,
+            "mean_fork_last5": 0.4067460430629292,
+            "mean_target_error_last5": 2.8481409434144753,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -442.29135744503697,
+            "mean_delay_last5": 14.537333327503305,
+            "mean_fork_last5": 0.43871946380273985,
+            "mean_target_error_last5": 2.7746612315871735,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -389.12594508987434,
+            "mean_delay_last5": 13.218759840493213,
+            "mean_fork_last5": 0.3939882880803904,
+            "mean_target_error_last5": 2.6600407579753473,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -433.9177874459536,
+            "mean_delay_last5": 14.348285376735408,
+            "mean_fork_last5": 0.43092063580716267,
+            "mean_target_error_last5": 2.796703877847916,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -472.3312045870814,
+            "mean_delay_last5": 15.153108185328994,
+            "mean_fork_last5": 0.4556592292625121,
+            "mean_target_error_last5": 2.9130490453740205,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -459.432115232256,
+            "mean_delay_last5": 14.701241186241653,
+            "mean_fork_last5": 0.44435120837315983,
+            "mean_target_error_last5": 2.985958460279284,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -410.20507951130764,
+            "mean_delay_last5": 13.377337149449273,
+            "mean_fork_last5": 0.4018213166096462,
+            "mean_target_error_last5": 2.8464001552207274,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -439.72032917671027,
+            "mean_delay_last5": 14.618893403398221,
+            "mean_fork_last5": 0.43937324932490396,
+            "mean_target_error_last5": 2.763367873517189,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -439.44154296216504,
+            "mean_delay_last5": 14.397211142686055,
+            "mean_fork_last5": 0.43236064745945185,
+            "mean_target_error_last5": 2.818009745373503,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -454.96308798336787,
+            "mean_delay_last5": 14.956827741563844,
+            "mean_fork_last5": 0.4482229238600737,
+            "mean_target_error_last5": 2.826477318611451,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -424.4144576718542,
+            "mean_delay_last5": 13.986655200005405,
+            "mean_fork_last5": 0.4210354777983217,
+            "mean_target_error_last5": 2.7610987320980542,
+            "mean_fallback_rate_last5": 0.0
+          },
+          {
+            "mean_reward_last5": -397.43152385657584,
+            "mean_delay_last5": 13.391312994975321,
+            "mean_fork_last5": 0.4031254703425781,
+            "mean_target_error_last5": 2.717891296103329,
+            "mean_fallback_rate_last5": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -428.8277581490774,
+          "mean_reward_last5_std": 24.268236885979473,
+          "mean_delay_last5_mean": 14.126362305586474,
+          "mean_delay_last5_std": 0.6355369269197385,
+          "mean_fork_last5_mean": 0.4247541697204336,
+          "mean_fork_last5_std": 0.019655126683051263,
+          "mean_target_error_last5_mean": 2.80107563449783,
+          "mean_target_error_last5_std": 0.07579345954893484,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0
+        }
+      },
+      {
+        "method": "ppo_full",
+        "per_seed": [
+          {
+            "mean_reward_last5": -392.4201402514231,
+            "mean_delay_last5": 12.502694097479921,
+            "mean_fork_last5": 0.37807802908298727,
+            "mean_target_error_last5": 6.936964258466448,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -351.76388748860126,
+            "mean_delay_last5": 11.29266142503713,
+            "mean_fork_last5": 0.33977785677540967,
+            "mean_target_error_last5": 6.755667169945581,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -416.5724773427216,
+            "mean_delay_last5": 13.798166791992855,
+            "mean_fork_last5": 0.4135471827531686,
+            "mean_target_error_last5": 2.493096167104585,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -421.33745040352875,
+            "mean_delay_last5": 14.13558770258559,
+            "mean_fork_last5": 0.42591412460534533,
+            "mean_target_error_last5": 2.5207434037114895,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -386.0828894063412,
+            "mean_delay_last5": 13.034758411657503,
+            "mean_fork_last5": 0.392034088210954,
+            "mean_target_error_last5": 2.4473685376558985,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -387.9123294711243,
+            "mean_delay_last5": 12.356637666888616,
+            "mean_fork_last5": 0.37329592213812646,
+            "mean_target_error_last5": 6.120123463060175,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -412.7733987717876,
+            "mean_delay_last5": 13.791334555050987,
+            "mean_fork_last5": 0.41116552951712354,
+            "mean_target_error_last5": 2.5953275688205446,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -454.20504164023333,
+            "mean_delay_last5": 14.84575876626104,
+            "mean_fork_last5": 0.44584402193227274,
+            "mean_target_error_last5": 2.678222941841398,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -315.5372986715648,
+            "mean_delay_last5": 11.001454343556269,
+            "mean_fork_last5": 0.3311298496560538,
+            "mean_target_error_last5": 6.9712910570417135,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -310.3435919430216,
+            "mean_delay_last5": 11.048979209529183,
+            "mean_fork_last5": 0.3347833490717858,
+            "mean_target_error_last5": 6.2427758695398055,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -392.6954156189793,
+            "mean_delay_last5": 13.143002657636245,
+            "mean_fork_last5": 0.39479128185525536,
+            "mean_target_error_last5": 2.2874906312993595,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -410.9354117785134,
+            "mean_delay_last5": 14.019799118465675,
+            "mean_fork_last5": 0.4214004207769276,
+            "mean_target_error_last5": 2.5162188591275894,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -441.6279766755673,
+            "mean_delay_last5": 14.664792708878512,
+            "mean_fork_last5": 0.4403880944452256,
+            "mean_target_error_last5": 2.1413471304518836,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -442.38147676417043,
+            "mean_delay_last5": 14.773284859592733,
+            "mean_fork_last5": 0.4427166374009403,
+            "mean_target_error_last5": 2.4655254085574834,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -400.36134081984824,
+            "mean_delay_last5": 12.998177384940243,
+            "mean_fork_last5": 0.39138114334636687,
+            "mean_target_error_last5": 5.62955205904586,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          },
+          {
+            "mean_reward_last5": -347.2477488186076,
+            "mean_delay_last5": 11.03089224773876,
+            "mean_fork_last5": 0.3323128479254813,
+            "mean_target_error_last5": 7.060125376837594,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.0,
+            "effective_lambda_risk": 0.0
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -392.7623672416271,
+          "mean_reward_last5_std": 41.36294353435354,
+          "mean_delay_last5_mean": 13.027373871705704,
+          "mean_delay_last5_std": 1.3271135758995956,
+          "mean_fork_last5_mean": 0.391785023718339,
+          "mean_fork_last5_std": 0.03911413057091774,
+          "mean_target_error_last5_mean": 4.241364993906713,
+          "mean_target_error_last5_std": 2.04929885911507,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.0,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.0,
+          "effective_lambda_risk_std": 0.0
+        }
+      },
+      {
+        "method": "robust_ppo",
+        "per_seed": [
+          {
+            "mean_reward_last5": -432.9931550208331,
+            "mean_delay_last5": 14.421182620225194,
+            "mean_fork_last5": 0.4356326847653455,
+            "mean_target_error_last5": 2.6342857142857143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -326.1149947367353,
+            "mean_delay_last5": 11.52728556465519,
+            "mean_fork_last5": 0.3468165809639514,
+            "mean_target_error_last5": 3.16,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -424.655795367912,
+            "mean_delay_last5": 14.138660045163423,
+            "mean_fork_last5": 0.42377061635892116,
+            "mean_target_error_last5": 1.9485714285714286,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -414.7121604721084,
+            "mean_delay_last5": 13.832942443359915,
+            "mean_fork_last5": 0.41683476682857507,
+            "mean_target_error_last5": 3.097142857142857,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -343.62951467286206,
+            "mean_delay_last5": 12.02898793193661,
+            "mean_fork_last5": 0.3618609738193272,
+            "mean_target_error_last5": 3.0,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -415.34565452805185,
+            "mean_delay_last5": 13.649911240911585,
+            "mean_fork_last5": 0.41209680120498826,
+            "mean_target_error_last5": 3.045714285714286,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -400.92948962359947,
+            "mean_delay_last5": 13.689394779695208,
+            "mean_fork_last5": 0.4081073362564502,
+            "mean_target_error_last5": 1.9085714285714286,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -425.61723948898225,
+            "mean_delay_last5": 14.449009797229323,
+            "mean_fork_last5": 0.4339423684219801,
+            "mean_target_error_last5": 2.2685714285714287,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -414.40036563234486,
+            "mean_delay_last5": 14.263896432904668,
+            "mean_fork_last5": 0.42898287668978224,
+            "mean_target_error_last5": 2.662857142857143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -339.5459502768235,
+            "mean_delay_last5": 12.441148931778486,
+            "mean_fork_last5": 0.37654844073926486,
+            "mean_target_error_last5": 3.342857142857143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -320.23932561729845,
+            "mean_delay_last5": 11.493303696594603,
+            "mean_fork_last5": 0.3453003130240061,
+            "mean_target_error_last5": 3.297142857142857,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -392.79771375941954,
+            "mean_delay_last5": 13.335666994483095,
+            "mean_fork_last5": 0.4008764570574502,
+            "mean_target_error_last5": 3.0628571428571427,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -401.86805206157715,
+            "mean_delay_last5": 13.838029074857305,
+            "mean_fork_last5": 0.41558518542458933,
+            "mean_target_error_last5": 2.737142857142857,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -409.2926562701303,
+            "mean_delay_last5": 13.847699009714104,
+            "mean_fork_last5": 0.4149490619045814,
+            "mean_target_error_last5": 3.2800000000000002,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -414.6134060296038,
+            "mean_delay_last5": 14.064545926464367,
+            "mean_fork_last5": 0.42337219959209055,
+            "mean_target_error_last5": 2.4285714285714284,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          },
+          {
+            "mean_reward_last5": -379.4235918239601,
+            "mean_delay_last5": 12.906363792588502,
+            "mean_fork_last5": 0.38857699427097353,
+            "mean_target_error_last5": 2.982857142857143,
+            "mean_fallback_rate_last5": 0.0,
+            "effective_tau": 0.852,
+            "effective_lambda_risk": 0.03999999999999998
+          }
+        ],
+        "aggregate": {
+          "mean_reward_last5_mean": -391.0111915863901,
+          "mean_reward_last5_std": 36.359172721053,
+          "mean_delay_last5_mean": 13.370501767660098,
+          "mean_delay_last5_std": 0.9610623424403698,
+          "mean_fork_last5_mean": 0.4020783535826423,
+          "mean_fork_last5_std": 0.028746910845417088,
+          "mean_target_error_last5_mean": 2.803571428571429,
+          "mean_target_error_last5_std": 0.4460249604070634,
+          "mean_fallback_rate_last5_mean": 0.0,
+          "mean_fallback_rate_last5_std": 0.0,
+          "effective_tau_mean": 0.852,
+          "effective_tau_std": 0.0,
+          "effective_lambda_risk_mean": 0.03999999999999998,
+          "effective_lambda_risk_std": 0.0
+        }
+      }
+    ]
+  }
+}

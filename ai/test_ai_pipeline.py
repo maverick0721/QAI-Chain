@@ -1,22 +1,29 @@
 import torch
 
 from ai.data.blockchain_dataset import BlockchainDataset
-from ai.models.metrics_encoder import MetricsEncoder
-from ai.models.policy_network import PolicyNetwork
+from ai.pipeline import run_ai
+from core.blockchain.blockchain import Blockchain
 
 
-def run_ai(blockchain):
+def test_run_ai_returns_policy_outputs_with_expected_shapes():
 
-    dataset = BlockchainDataset(blockchain)
+    torch.manual_seed(42)
+    blockchain = Blockchain()
 
-    features = dataset.extract_features()
+    mean, std = run_ai(blockchain)
 
-    x = torch.tensor(features).unsqueeze(0)
+    assert isinstance(mean, torch.Tensor)
+    assert isinstance(std, torch.Tensor)
+    assert mean.shape == (1, 1)
+    assert std.shape == (1,)
+    assert torch.isfinite(mean).all().item()
+    assert torch.isfinite(std).all().item()
 
-    encoder = MetricsEncoder()
-    policy = PolicyNetwork()
 
-    encoded = encoder(x)
-    action_logits = policy(encoded)
+def test_dataset_genesis_only_returns_zero_feature_vector():
 
-    return action_logits
+    blockchain = Blockchain()
+    features = BlockchainDataset(blockchain).extract_features()
+
+    assert features.shape == (5,)
+    assert float(features.sum()) == 0.0

@@ -1,0 +1,2819 @@
+{
+  "generated_at_utc": "2026-03-21T04:00:09.006368+00:00",
+  "runner": "omnisafe_official",
+  "config": {
+    "seeds": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      21,
+      23,
+      25,
+      27,
+      29,
+      31,
+      33,
+      35,
+      37,
+      39,
+      41,
+      43,
+      45,
+      47,
+      49,
+      51,
+      53,
+      55,
+      57,
+      59,
+      61,
+      63,
+      65,
+      67,
+      69,
+      71,
+      73,
+      75,
+      77,
+      79,
+      81,
+      83,
+      85,
+      87,
+      89,
+      91,
+      93,
+      95,
+      97,
+      99,
+      101
+    ],
+    "total_steps": 4000,
+    "episode_steps_scaled": 80,
+    "episode_steps_defi": 80,
+    "adversarial_intensity": 0.7,
+    "algorithms": {
+      "cpo_official": "CPO",
+      "p3o_official": "P3O",
+      "ppo_lagrangian_official": "PPOLag",
+      "sac_lagrangian_official": "SACLag",
+      "focops_official": "FOCOPS"
+    },
+    "environments": {
+      "scaled": "QAIChainScaled-v0",
+      "defi": "QAIChainDeFi-v0"
+    }
+  },
+  "results": {
+    "scaled": {
+      "cpo_official": {
+        "algo": "CPO",
+        "per_seed": [
+          {
+            "final_ep_return": -1538.91748046875,
+            "final_ep_cost": 74.0625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1229.7752685546875,
+            "final_ep_cost": 72.77083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1545.0404052734375,
+            "final_ep_cost": 74.9375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1581.45458984375,
+            "final_ep_cost": 75.125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1390.3841552734375,
+            "final_ep_cost": 74.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1234.0872802734375,
+            "final_ep_cost": 73.04166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1834.1641845703125,
+            "final_ep_cost": 75.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1493.4586181640625,
+            "final_ep_cost": 74.79166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1815.4237060546875,
+            "final_ep_cost": 75.58333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1512.5198974609375,
+            "final_ep_cost": 74.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1549.5928955078125,
+            "final_ep_cost": 75.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1256.1629638671875,
+            "final_ep_cost": 72.875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1655.2528076171875,
+            "final_ep_cost": 74.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1913.81689453125,
+            "final_ep_cost": 75.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1882.72216796875,
+            "final_ep_cost": 75.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1471.02294921875,
+            "final_ep_cost": 74.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1550.8349609375,
+            "final_ep_cost": 75.0625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1896.9586181640625,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1412.9361572265625,
+            "final_ep_cost": 74.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1717.0079345703125,
+            "final_ep_cost": 75.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1600.6405029296875,
+            "final_ep_cost": 75.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1428.765625,
+            "final_ep_cost": 74.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1727.1026611328125,
+            "final_ep_cost": 75.20833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1699.4805908203125,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1738.14599609375,
+            "final_ep_cost": 75.64583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1435.5582275390625,
+            "final_ep_cost": 73.89583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1841.6444091796875,
+            "final_ep_cost": 75.5625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1460.78271484375,
+            "final_ep_cost": 73.66666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1595.41259765625,
+            "final_ep_cost": 74.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1498.9024658203125,
+            "final_ep_cost": 74.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1842.4798583984375,
+            "final_ep_cost": 75.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1656.06298828125,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1623.046875,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1552.6783447265625,
+            "final_ep_cost": 74.91666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1830.9058837890625,
+            "final_ep_cost": 75.58333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1570.9801025390625,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1782.5008544921875,
+            "final_ep_cost": 75.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1625.990234375,
+            "final_ep_cost": 74.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1687.1861572265625,
+            "final_ep_cost": 75.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1732.0592041015625,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1779.9342041015625,
+            "final_ep_cost": 75.58333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1762.2900390625,
+            "final_ep_cost": 75.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1473.3812255859375,
+            "final_ep_cost": 72.70833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1717.2618408203125,
+            "final_ep_cost": 75.41666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1864.0799560546875,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1627.53857421875,
+            "final_ep_cost": 75.0625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1804.6842041015625,
+            "final_ep_cost": 75.60416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1269.693115234375,
+            "final_ep_cost": 70.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1730.9317626953125,
+            "final_ep_cost": 75.04166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1580.9029541015625,
+            "final_ep_cost": 74.75,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -1620.451162109375,
+            "std": 177.4475500296602
+          },
+          "final_ep_cost": {
+            "mean": 74.79291687011718,
+            "std": 0.9909087316423323
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 9.99950002499875e-05,
+          "significance": "**"
+        }
+      },
+      "p3o_official": {
+        "algo": "P3O",
+        "per_seed": [
+          {
+            "final_ep_return": -1571.9500732421875,
+            "final_ep_cost": 74.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1470.0755615234375,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1819.1898193359375,
+            "final_ep_cost": 75.60416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1489.5206298828125,
+            "final_ep_cost": 75.02083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1491.3734130859375,
+            "final_ep_cost": 74.79166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -515.893798828125,
+            "final_ep_cost": 58.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1873.19873046875,
+            "final_ep_cost": 75.29166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1525.19091796875,
+            "final_ep_cost": 75.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1830.4000244140625,
+            "final_ep_cost": 75.41666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -880.4326171875,
+            "final_ep_cost": 64.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1482.51220703125,
+            "final_ep_cost": 75.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1466.96240234375,
+            "final_ep_cost": 73.89583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1732.4593505859375,
+            "final_ep_cost": 74.70833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1705.4676513671875,
+            "final_ep_cost": 75.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1821.93310546875,
+            "final_ep_cost": 75.22916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1483.34375,
+            "final_ep_cost": 75.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1658.8902587890625,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1734.8250732421875,
+            "final_ep_cost": 75.22916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1660.72119140625,
+            "final_ep_cost": 75.16666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1777.7181396484375,
+            "final_ep_cost": 75.375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1741.50048828125,
+            "final_ep_cost": 75.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1359.9039306640625,
+            "final_ep_cost": 74.72916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1847.5323486328125,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1599.0003662109375,
+            "final_ep_cost": 74.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1819.7861328125,
+            "final_ep_cost": 75.64583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1386.0411376953125,
+            "final_ep_cost": 72.70833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1909.9619140625,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1601.3570556640625,
+            "final_ep_cost": 75.10416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1543.0338134765625,
+            "final_ep_cost": 73.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1274.185546875,
+            "final_ep_cost": 72.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1882.5118408203125,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1650.7930908203125,
+            "final_ep_cost": 75.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1190.2525634765625,
+            "final_ep_cost": 67.60416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1620.21435546875,
+            "final_ep_cost": 75.375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1837.42919921875,
+            "final_ep_cost": 75.41666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1484.9429931640625,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1588.9913330078125,
+            "final_ep_cost": 73.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1748.0738525390625,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1569.3443603515625,
+            "final_ep_cost": 75.29166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1596.0006103515625,
+            "final_ep_cost": 75.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1804.1683349609375,
+            "final_ep_cost": 75.70833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1476.6693115234375,
+            "final_ep_cost": 74.83333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1103.3153076171875,
+            "final_ep_cost": 68.375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1871.6114501953125,
+            "final_ep_cost": 75.5625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1888.84619140625,
+            "final_ep_cost": 75.58333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1573.2396240234375,
+            "final_ep_cost": 73.60416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1784.3662109375,
+            "final_ep_cost": 75.58333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -910.5924682617188,
+            "final_ep_cost": 62.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1666.6904296875,
+            "final_ep_cost": 75.27083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1621.79248046875,
+            "final_ep_cost": 74.91666412353516,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -1578.8841491699218,
+            "std": 276.8131477225542
+          },
+          "final_ep_cost": {
+            "mean": 73.93916687011719,
+            "std": 3.4806679002018504
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 0.000199990000499975,
+          "significance": "**"
+        }
+      },
+      "ppo_lagrangian_official": {
+        "algo": "PPOLag",
+        "per_seed": [
+          {
+            "final_ep_return": -1344.8878173828125,
+            "final_ep_cost": 73.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1101.4593505859375,
+            "final_ep_cost": 70.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1527.4031982421875,
+            "final_ep_cost": 75.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1266.5089111328125,
+            "final_ep_cost": 69.97916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1384.5062255859375,
+            "final_ep_cost": 74.1875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -607.81494140625,
+            "final_ep_cost": 61.85416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1599.18115234375,
+            "final_ep_cost": 75.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1321.1805419921875,
+            "final_ep_cost": 73.60416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1654.3338623046875,
+            "final_ep_cost": 75.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1357.567138671875,
+            "final_ep_cost": 74.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1220.597412109375,
+            "final_ep_cost": 73.29166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1265.8477783203125,
+            "final_ep_cost": 74.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1359.5692138671875,
+            "final_ep_cost": 72.875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1889.3740234375,
+            "final_ep_cost": 75.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1772.0447998046875,
+            "final_ep_cost": 75.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -943.9038696289062,
+            "final_ep_cost": 67.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1521.5003662109375,
+            "final_ep_cost": 74.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1761.8629150390625,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1144.663818359375,
+            "final_ep_cost": 70.79166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1336.5294189453125,
+            "final_ep_cost": 74.16666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1630.5836181640625,
+            "final_ep_cost": 75.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -980.2150268554688,
+            "final_ep_cost": 70.89583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1324.85205078125,
+            "final_ep_cost": 71.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1574.5751953125,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1749.3109130859375,
+            "final_ep_cost": 75.60416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1304.2032470703125,
+            "final_ep_cost": 72.95833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1718.4696044921875,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1276.12353515625,
+            "final_ep_cost": 71.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1262.4517822265625,
+            "final_ep_cost": 72.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1205.0986328125,
+            "final_ep_cost": 73.5625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1701.0897216796875,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1406.8095703125,
+            "final_ep_cost": 73.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1269.4986572265625,
+            "final_ep_cost": 72.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1381.2308349609375,
+            "final_ep_cost": 73.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1730.4774169921875,
+            "final_ep_cost": 75.125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1532.0390625,
+            "final_ep_cost": 75.0625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1704.0394287109375,
+            "final_ep_cost": 75.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1551.8599853515625,
+            "final_ep_cost": 75.1875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1585.8074951171875,
+            "final_ep_cost": 75.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1679.1419677734375,
+            "final_ep_cost": 75.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1657.2864990234375,
+            "final_ep_cost": 75.58333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1672.9818115234375,
+            "final_ep_cost": 75.47916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1558.30029296875,
+            "final_ep_cost": 74.77083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1550.7257080078125,
+            "final_ep_cost": 73.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1795.3995361328125,
+            "final_ep_cost": 75.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1459.0244140625,
+            "final_ep_cost": 73.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1702.1502685546875,
+            "final_ep_cost": 75.5625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1185.6070556640625,
+            "final_ep_cost": 70.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1483.2564697265625,
+            "final_ep_cost": 72.9375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1325.065673828125,
+            "final_ep_cost": 72.0,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -1446.7682446289064,
+            "std": 250.63449555895704
+          },
+          "final_ep_cost": {
+            "mean": 73.56708335876465,
+            "std": 2.506374768283875
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 0.09799510024498775,
+          "significance": "ns"
+        }
+      },
+      "sac_lagrangian_official": {
+        "algo": "SACLag",
+        "per_seed": [
+          {
+            "final_ep_return": -1685.0096435546875,
+            "final_ep_cost": 75.44000244140625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1657.99169921875,
+            "final_ep_cost": 75.41999816894531,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1690.3778076171875,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1711.1712646484375,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1681.751708984375,
+            "final_ep_cost": 75.4800033569336,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1671.6077880859375,
+            "final_ep_cost": 75.69999694824219,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1704.002197265625,
+            "final_ep_cost": 75.5999984741211,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1717.1700439453125,
+            "final_ep_cost": 75.66000366210938,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1687.13818359375,
+            "final_ep_cost": 75.4000015258789,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1714.950927734375,
+            "final_ep_cost": 75.45999908447266,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1693.357177734375,
+            "final_ep_cost": 75.58000183105469,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1683.1090087890625,
+            "final_ep_cost": 75.13999938964844,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1682.151123046875,
+            "final_ep_cost": 75.36000061035156,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1697.2510986328125,
+            "final_ep_cost": 75.45999908447266,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1669.53369140625,
+            "final_ep_cost": 75.27999877929688,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1667.072021484375,
+            "final_ep_cost": 75.4800033569336,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1721.91357421875,
+            "final_ep_cost": 75.54000091552734,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1703.15283203125,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1693.212158203125,
+            "final_ep_cost": 75.44000244140625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1706.4378662109375,
+            "final_ep_cost": 75.63999938964844,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1727.998291015625,
+            "final_ep_cost": 75.5199966430664,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1688.47119140625,
+            "final_ep_cost": 75.44000244140625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1710.26611328125,
+            "final_ep_cost": 75.31999969482422,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1686.0289306640625,
+            "final_ep_cost": 75.66000366210938,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1674.2271728515625,
+            "final_ep_cost": 75.54000091552734,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1670.2120361328125,
+            "final_ep_cost": 75.54000091552734,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1676.442626953125,
+            "final_ep_cost": 75.55999755859375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1683.1898193359375,
+            "final_ep_cost": 75.58000183105469,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1653.6109619140625,
+            "final_ep_cost": 75.54000091552734,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1683.4927978515625,
+            "final_ep_cost": 75.26000213623047,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1694.2952880859375,
+            "final_ep_cost": 75.41999816894531,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1653.483154296875,
+            "final_ep_cost": 75.31999969482422,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1699.87255859375,
+            "final_ep_cost": 75.62000274658203,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1702.89892578125,
+            "final_ep_cost": 75.62000274658203,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1709.089111328125,
+            "final_ep_cost": 75.33999633789062,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1689.572509765625,
+            "final_ep_cost": 75.58000183105469,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1634.6253662109375,
+            "final_ep_cost": 75.18000030517578,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1690.126220703125,
+            "final_ep_cost": 75.27999877929688,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1715.1209716796875,
+            "final_ep_cost": 75.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1633.994384765625,
+            "final_ep_cost": 74.91999816894531,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1687.141845703125,
+            "final_ep_cost": 75.54000091552734,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1684.385009765625,
+            "final_ep_cost": 75.4800033569336,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1663.569580078125,
+            "final_ep_cost": 75.30000305175781,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1684.5682373046875,
+            "final_ep_cost": 75.5199966430664,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1693.8243408203125,
+            "final_ep_cost": 75.66000366210938,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1702.14404296875,
+            "final_ep_cost": 75.54000091552734,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1669.9632568359375,
+            "final_ep_cost": 75.5199966430664,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1665.118408203125,
+            "final_ep_cost": 75.41999816894531,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1648.0926513671875,
+            "final_ep_cost": 75.37999725341797,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1672.5667724609375,
+            "final_ep_cost": 75.44000244140625,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -1685.735087890625,
+            "std": 21.016117820071663
+          },
+          "final_ep_cost": {
+            "mean": 75.46240036010742,
+            "std": 0.146514117796124
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 4.999750012499375e-05,
+          "significance": "**"
+        }
+      },
+      "focops_official": {
+        "algo": "FOCOPS",
+        "per_seed": [
+          {
+            "final_ep_return": -1211.0960693359375,
+            "final_ep_cost": 70.77083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1051.3409423828125,
+            "final_ep_cost": 69.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1653.8779296875,
+            "final_ep_cost": 75.66666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1239.9239501953125,
+            "final_ep_cost": 70.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1229.71142578125,
+            "final_ep_cost": 71.83333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -353.7087707519531,
+            "final_ep_cost": 55.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1405.0875244140625,
+            "final_ep_cost": 72.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1211.0869140625,
+            "final_ep_cost": 73.02083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1673.4337158203125,
+            "final_ep_cost": 75.52083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -915.6809692382812,
+            "final_ep_cost": 68.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1257.842041015625,
+            "final_ep_cost": 72.9375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1203.974853515625,
+            "final_ep_cost": 69.66666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1136.86181640625,
+            "final_ep_cost": 68.0625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1835.6788330078125,
+            "final_ep_cost": 75.83333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1792.3936767578125,
+            "final_ep_cost": 75.16666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -932.8215942382812,
+            "final_ep_cost": 69.70833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1460.9708251953125,
+            "final_ep_cost": 75.39583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1861.3695068359375,
+            "final_ep_cost": 75.47916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -622.4978637695312,
+            "final_ep_cost": 62.58333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1631.7933349609375,
+            "final_ep_cost": 75.22916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1660.67626953125,
+            "final_ep_cost": 75.33333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -433.5658264160156,
+            "final_ep_cost": 57.79166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1388.2694091796875,
+            "final_ep_cost": 72.91666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1146.9039306640625,
+            "final_ep_cost": 69.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1471.5782470703125,
+            "final_ep_cost": 73.27083587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1110.5533447265625,
+            "final_ep_cost": 67.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1726.0020751953125,
+            "final_ep_cost": 75.20833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1287.56884765625,
+            "final_ep_cost": 70.72916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1188.5755615234375,
+            "final_ep_cost": 70.64583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1027.17333984375,
+            "final_ep_cost": 68.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1472.3314208984375,
+            "final_ep_cost": 72.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1331.5260009765625,
+            "final_ep_cost": 73.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -817.593994140625,
+            "final_ep_cost": 63.33333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1145.381103515625,
+            "final_ep_cost": 69.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1707.8306884765625,
+            "final_ep_cost": 74.66666412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1511.1644287109375,
+            "final_ep_cost": 75.35416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1627.26416015625,
+            "final_ep_cost": 73.08333587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1402.2886962890625,
+            "final_ep_cost": 73.14583587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1499.7552490234375,
+            "final_ep_cost": 73.22916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1455.9344482421875,
+            "final_ep_cost": 74.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1677.4578857421875,
+            "final_ep_cost": 75.5625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1724.6590576171875,
+            "final_ep_cost": 75.5625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1155.8720703125,
+            "final_ep_cost": 68.47916412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1636.375,
+            "final_ep_cost": 75.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1803.5411376953125,
+            "final_ep_cost": 75.375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1454.9814453125,
+            "final_ep_cost": 74.1875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1577.0245361328125,
+            "final_ep_cost": 74.45833587646484,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -901.2521362304688,
+            "final_ep_cost": 64.85416412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1778.3779296875,
+            "final_ep_cost": 75.54166412353516,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -1469.4222412109375,
+            "final_ep_cost": 75.04166412353516,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -1345.4410607910156,
+            "std": 348.3464984053091
+          },
+          "final_ep_cost": {
+            "mean": 71.63166679382324,
+            "std": 4.5261479184916675
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 1.0,
+          "significance": "---"
+        }
+      }
+    },
+    "defi": {
+      "cpo_official": {
+        "algo": "CPO",
+        "per_seed": [
+          {
+            "final_ep_return": -124.21024322509766,
+            "final_ep_cost": 57.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.8460464477539,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -149.9475555419922,
+            "final_ep_cost": 58.22916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -88.33638763427734,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -102.7017822265625,
+            "final_ep_cost": 59.70833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -150.30300903320312,
+            "final_ep_cost": 60.39583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -110.75650787353516,
+            "final_ep_cost": 60.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -99.18498992919922,
+            "final_ep_cost": 59.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -110.91400146484375,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -124.16919708251953,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -100.18124389648438,
+            "final_ep_cost": 59.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -94.05164337158203,
+            "final_ep_cost": 58.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -54.21786117553711,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -165.0458221435547,
+            "final_ep_cost": 60.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -102.3631591796875,
+            "final_ep_cost": 59.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -42.183536529541016,
+            "final_ep_cost": 60.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -154.45330810546875,
+            "final_ep_cost": 59.125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -145.0655517578125,
+            "final_ep_cost": 59.79166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -127.42699432373047,
+            "final_ep_cost": 60.16666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -117.24311065673828,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -68.23502349853516,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -113.54214477539062,
+            "final_ep_cost": 58.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -163.24070739746094,
+            "final_ep_cost": 59.91666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -74.05546569824219,
+            "final_ep_cost": 59.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -134.19088745117188,
+            "final_ep_cost": 60.875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -137.5426788330078,
+            "final_ep_cost": 60.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -130.49485778808594,
+            "final_ep_cost": 59.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -115.37584686279297,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -102.04923248291016,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -97.451416015625,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -101.42021942138672,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.716796875,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -105.19213104248047,
+            "final_ep_cost": 60.14583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -129.01731872558594,
+            "final_ep_cost": 60.20833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -127.9268569946289,
+            "final_ep_cost": 59.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -122.15768432617188,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -105.9092025756836,
+            "final_ep_cost": 58.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -124.97759246826172,
+            "final_ep_cost": 60.04166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -91.98249053955078,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -95.11151885986328,
+            "final_ep_cost": 58.02083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -115.8383560180664,
+            "final_ep_cost": 58.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -91.04163360595703,
+            "final_ep_cost": 59.64583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -121.16348266601562,
+            "final_ep_cost": 58.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -90.58515167236328,
+            "final_ep_cost": 59.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -98.84253692626953,
+            "final_ep_cost": 58.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -153.42955017089844,
+            "final_ep_cost": 60.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -87.0889892578125,
+            "final_ep_cost": 58.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -98.26354217529297,
+            "final_ep_cost": 59.47916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -90.0284423828125,
+            "final_ep_cost": 61.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -127.7740707397461,
+            "final_ep_cost": 59.3125,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -112.42495559692382,
+            "std": 25.652149541966093
+          },
+          "final_ep_cost": {
+            "mean": 59.50875007629394,
+            "std": 0.7259940149921551
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 4.999750012499375e-05,
+          "significance": "**"
+        }
+      },
+      "p3o_official": {
+        "algo": "P3O",
+        "per_seed": [
+          {
+            "final_ep_return": -114.28064727783203,
+            "final_ep_cost": 57.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -155.24697875976562,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -162.9500274658203,
+            "final_ep_cost": 58.22916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -98.62252807617188,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -95.54236602783203,
+            "final_ep_cost": 59.70833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -155.0076904296875,
+            "final_ep_cost": 60.39583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -107.95198822021484,
+            "final_ep_cost": 60.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -122.75421905517578,
+            "final_ep_cost": 59.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -124.20291900634766,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.66277313232422,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -135.55397033691406,
+            "final_ep_cost": 59.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -122.55664825439453,
+            "final_ep_cost": 58.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -88.15457153320312,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -155.06210327148438,
+            "final_ep_cost": 60.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.8249740600586,
+            "final_ep_cost": 59.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -10.55453109741211,
+            "final_ep_cost": 60.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -171.3824920654297,
+            "final_ep_cost": 59.125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -154.4236297607422,
+            "final_ep_cost": 59.79166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -115.29825592041016,
+            "final_ep_cost": 60.16666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -131.51101684570312,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -71.39110565185547,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -109.7713851928711,
+            "final_ep_cost": 58.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -169.34498596191406,
+            "final_ep_cost": 59.91666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -76.70050811767578,
+            "final_ep_cost": 59.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -153.80975341796875,
+            "final_ep_cost": 60.875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -146.00146484375,
+            "final_ep_cost": 60.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -165.7268524169922,
+            "final_ep_cost": 59.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -138.49212646484375,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -73.9358901977539,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -108.26019287109375,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -69.2557144165039,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -143.478759765625,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -126.95623779296875,
+            "final_ep_cost": 60.14583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.35814666748047,
+            "final_ep_cost": 60.20833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -102.59432220458984,
+            "final_ep_cost": 59.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -126.45220947265625,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -99.1454086303711,
+            "final_ep_cost": 58.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -130.14405822753906,
+            "final_ep_cost": 60.04166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -80.15278625488281,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -82.02912139892578,
+            "final_ep_cost": 58.02083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -82.13611602783203,
+            "final_ep_cost": 58.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -81.5710678100586,
+            "final_ep_cost": 59.64583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.2170181274414,
+            "final_ep_cost": 58.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -90.48332977294922,
+            "final_ep_cost": 59.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -67.99300384521484,
+            "final_ep_cost": 58.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -170.83815002441406,
+            "final_ep_cost": 60.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -59.21370315551758,
+            "final_ep_cost": 58.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -106.70345306396484,
+            "final_ep_cost": 59.47916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -94.69088745117188,
+            "final_ep_cost": 61.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -140.607666015625,
+            "final_ep_cost": 59.3125,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -115.6799951171875,
+            "std": 33.93206021706718
+          },
+          "final_ep_cost": {
+            "mean": 59.50875007629394,
+            "std": 0.7259940149921551
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 4.999750012499375e-05,
+          "significance": "**"
+        }
+      },
+      "ppo_lagrangian_official": {
+        "algo": "PPOLag",
+        "per_seed": [
+          {
+            "final_ep_return": -113.2904281616211,
+            "final_ep_cost": 57.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -136.19290161132812,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -146.1825714111328,
+            "final_ep_cost": 58.22916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -40.24934005737305,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -58.59150695800781,
+            "final_ep_cost": 59.70833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -130.16026306152344,
+            "final_ep_cost": 60.39583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -74.86371612548828,
+            "final_ep_cost": 60.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -76.6838150024414,
+            "final_ep_cost": 59.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -111.44857788085938,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -106.86101531982422,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -49.2742805480957,
+            "final_ep_cost": 59.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -53.42881393432617,
+            "final_ep_cost": 58.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -42.73808288574219,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -156.38648986816406,
+            "final_ep_cost": 60.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -50.61655044555664,
+            "final_ep_cost": 59.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -41.475128173828125,
+            "final_ep_cost": 60.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -144.02471923828125,
+            "final_ep_cost": 59.125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -142.3466339111328,
+            "final_ep_cost": 59.79166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -87.03714752197266,
+            "final_ep_cost": 60.16666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -123.03661346435547,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -78.87125396728516,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -93.37601470947266,
+            "final_ep_cost": 58.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -148.46075439453125,
+            "final_ep_cost": 59.91666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -15.915996551513672,
+            "final_ep_cost": 59.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -102.60477447509766,
+            "final_ep_cost": 60.875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -108.33690643310547,
+            "final_ep_cost": 60.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -75.78093719482422,
+            "final_ep_cost": 59.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -75.125,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -47.71207809448242,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -37.66851806640625,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -103.04322052001953,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -107.55526733398438,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -82.39253997802734,
+            "final_ep_cost": 60.14583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -134.03326416015625,
+            "final_ep_cost": 60.20833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -106.8380126953125,
+            "final_ep_cost": 59.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -148.5238494873047,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -95.39940643310547,
+            "final_ep_cost": 58.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -57.91975021362305,
+            "final_ep_cost": 60.04166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -83.02276611328125,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -111.48260498046875,
+            "final_ep_cost": 58.02083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -91.97042083740234,
+            "final_ep_cost": 58.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -77.3099594116211,
+            "final_ep_cost": 59.64583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -131.3401641845703,
+            "final_ep_cost": 58.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -71.33289337158203,
+            "final_ep_cost": 59.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -74.37750244140625,
+            "final_ep_cost": 58.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -123.88928985595703,
+            "final_ep_cost": 60.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -83.55712890625,
+            "final_ep_cost": 58.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -50.93668746948242,
+            "final_ep_cost": 59.47916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -46.7216682434082,
+            "final_ep_cost": 61.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -129.67506408691406,
+            "final_ep_cost": 59.3125,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -91.60124580383301,
+            "std": 35.52459000966058
+          },
+          "final_ep_cost": {
+            "mean": 59.50875007629394,
+            "std": 0.7259940149921551
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 0.3779311034448278,
+          "significance": "ns"
+        }
+      },
+      "sac_lagrangian_official": {
+        "algo": "SACLag",
+        "per_seed": [
+          {
+            "final_ep_return": -114.30154418945312,
+            "final_ep_cost": 57.779998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -121.36166381835938,
+            "final_ep_cost": 59.060001373291016,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.124755859375,
+            "final_ep_cost": 57.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -113.0851821899414,
+            "final_ep_cost": 58.880001068115234,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -127.50590515136719,
+            "final_ep_cost": 60.279998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -112.4791488647461,
+            "final_ep_cost": 60.220001220703125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.3622817993164,
+            "final_ep_cost": 58.7599983215332,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -117.25963592529297,
+            "final_ep_cost": 59.540000915527344,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -112.2220687866211,
+            "final_ep_cost": 58.720001220703125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -103.87568664550781,
+            "final_ep_cost": 59.900001525878906,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -117.77410125732422,
+            "final_ep_cost": 58.08000183105469,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -116.51322937011719,
+            "final_ep_cost": 59.7400016784668,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -120.6460952758789,
+            "final_ep_cost": 58.34000015258789,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -117.38200378417969,
+            "final_ep_cost": 59.7400016784668,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -119.07559204101562,
+            "final_ep_cost": 59.720001220703125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -121.48626708984375,
+            "final_ep_cost": 59.779998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -119.75484466552734,
+            "final_ep_cost": 59.13999938964844,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -121.23486328125,
+            "final_ep_cost": 58.779998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.67300415039062,
+            "final_ep_cost": 59.15999984741211,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -119.75321197509766,
+            "final_ep_cost": 60.220001220703125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -119.55929565429688,
+            "final_ep_cost": 59.86000061035156,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -116.06246185302734,
+            "final_ep_cost": 59.040000915527344,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.4321517944336,
+            "final_ep_cost": 59.560001373291016,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -127.00567626953125,
+            "final_ep_cost": 58.880001068115234,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -116.8591079711914,
+            "final_ep_cost": 60.099998474121094,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -113.85504913330078,
+            "final_ep_cost": 59.900001525878906,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -113.76216125488281,
+            "final_ep_cost": 59.599998474121094,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -122.38925170898438,
+            "final_ep_cost": 58.65999984741211,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -122.78724670410156,
+            "final_ep_cost": 59.279998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -115.36636352539062,
+            "final_ep_cost": 58.97999954223633,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -124.36872863769531,
+            "final_ep_cost": 58.779998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.15357208251953,
+            "final_ep_cost": 59.79999923706055,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.07654571533203,
+            "final_ep_cost": 60.52000045776367,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -119.39761352539062,
+            "final_ep_cost": 58.81999969482422,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -109.55060577392578,
+            "final_ep_cost": 59.779998779296875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -112.3867416381836,
+            "final_ep_cost": 59.400001525878906,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -126.2872085571289,
+            "final_ep_cost": 58.70000076293945,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.63996124267578,
+            "final_ep_cost": 59.47999954223633,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -124.7369155883789,
+            "final_ep_cost": 60.13999938964844,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -122.34426879882812,
+            "final_ep_cost": 59.97999954223633,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -111.30968475341797,
+            "final_ep_cost": 58.79999923706055,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -134.51580810546875,
+            "final_ep_cost": 60.15999984741211,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -119.62732696533203,
+            "final_ep_cost": 59.540000915527344,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.45278930664062,
+            "final_ep_cost": 59.34000015258789,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -125.15221405029297,
+            "final_ep_cost": 59.79999923706055,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -97.92395782470703,
+            "final_ep_cost": 59.060001373291016,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -115.7862777709961,
+            "final_ep_cost": 58.02000045776367,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -114.95637512207031,
+            "final_ep_cost": 59.939998626708984,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -114.03034973144531,
+            "final_ep_cost": 58.84000015258789,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -106.01831817626953,
+            "final_ep_cost": 59.02000045776367,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -118.3333023071289,
+            "std": 6.404956825865279
+          },
+          "final_ep_cost": {
+            "mean": 59.30240013122559,
+            "std": 0.6777095543842244
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 4.999750012499375e-05,
+          "significance": "**"
+        }
+      },
+      "focops_official": {
+        "algo": "FOCOPS",
+        "per_seed": [
+          {
+            "final_ep_return": -86.75619506835938,
+            "final_ep_cost": 57.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -111.37004852294922,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -126.55815887451172,
+            "final_ep_cost": 58.22916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -45.51384353637695,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -81.28963470458984,
+            "final_ep_cost": 59.70833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -113.21112060546875,
+            "final_ep_cost": 60.39583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -61.76034927368164,
+            "final_ep_cost": 60.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -55.92131423950195,
+            "final_ep_cost": 59.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -96.114990234375,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -80.18959045410156,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -56.93048095703125,
+            "final_ep_cost": 59.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -65.03519439697266,
+            "final_ep_cost": 58.77083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -59.09684753417969,
+            "final_ep_cost": 59.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -126.7989273071289,
+            "final_ep_cost": 60.35416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -62.70417404174805,
+            "final_ep_cost": 59.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -31.6095027923584,
+            "final_ep_cost": 60.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -129.80752563476562,
+            "final_ep_cost": 59.125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -116.49210357666016,
+            "final_ep_cost": 59.79166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -118.78216552734375,
+            "final_ep_cost": 60.16666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -116.68743133544922,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -58.72378158569336,
+            "final_ep_cost": 59.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -63.43558120727539,
+            "final_ep_cost": 58.54166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -149.5729217529297,
+            "final_ep_cost": 59.91666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -43.6176643371582,
+            "final_ep_cost": 59.27083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -108.32720947265625,
+            "final_ep_cost": 60.875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -114.20954132080078,
+            "final_ep_cost": 60.3125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -85.3155517578125,
+            "final_ep_cost": 59.5,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -101.3272933959961,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -39.44862747192383,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -45.49647903442383,
+            "final_ep_cost": 59.83333206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -88.7632064819336,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -87.20563507080078,
+            "final_ep_cost": 59.10416793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -87.8149642944336,
+            "final_ep_cost": 60.14583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -134.7928924560547,
+            "final_ep_cost": 60.20833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -101.4499740600586,
+            "final_ep_cost": 59.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -101.92916870117188,
+            "final_ep_cost": 59.45833206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -94.16703033447266,
+            "final_ep_cost": 58.6875,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -88.0009994506836,
+            "final_ep_cost": 60.04166793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -93.3699722290039,
+            "final_ep_cost": 59.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -83.74679565429688,
+            "final_ep_cost": 58.02083206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -92.80908966064453,
+            "final_ep_cost": 58.75,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -77.00550842285156,
+            "final_ep_cost": 59.64583206176758,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -87.03121185302734,
+            "final_ep_cost": 58.625,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -69.66356658935547,
+            "final_ep_cost": 59.41666793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -54.611148834228516,
+            "final_ep_cost": 58.25,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -117.26299285888672,
+            "final_ep_cost": 60.0,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -68.64531707763672,
+            "final_ep_cost": 58.8125,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -52.55995559692383,
+            "final_ep_cost": 59.47916793823242,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -69.94634246826172,
+            "final_ep_cost": 61.4375,
+            "final_ep_length": 80.0
+          },
+          {
+            "final_ep_return": -95.4416275024414,
+            "final_ep_cost": 59.3125,
+            "final_ep_length": 80.0
+          }
+        ],
+        "aggregate": {
+          "final_ep_return": {
+            "mean": -85.96643299102783,
+            "std": 27.541377532497773
+          },
+          "final_ep_cost": {
+            "mean": 59.50875007629394,
+            "std": 0.7259940149921551
+          },
+          "final_ep_length": {
+            "mean": 80.0,
+            "std": 0.0
+          }
+        },
+        "vs_best_return": {
+          "best_alias": "focops_official",
+          "p_value": 1.0,
+          "significance": "---"
+        }
+      }
+    }
+  }
+}
