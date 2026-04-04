@@ -10,7 +10,7 @@
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{subcaption}
-\usepackage{placeins}
+\IfFileExists{placeins.sty}{\usepackage{placeins}}{\providecommand{\FloatBarrier}{}}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{hyperref}
@@ -27,7 +27,8 @@
 
 \author{
 SHIVANG GUPTA\\
-Indian Institute of Technology Roorkee
+Indian Institute of Technology Roorkee\\
+\texttt{shivang\_g@ar.iitr.ac.in}
 }
 
 \date{}
