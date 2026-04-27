@@ -1,0 +1,9 @@
+# arXiv Submission System 1.5 — https://info.arxiv.org/help/00README.html
+# Points the compiler at the real manuscript (under paper/).
+spec_version: 1
+process:
+  compiler: pdflatex
+sources:
+  - filename: paper/main.tex
+    usage: toplevel
+texlive_version: 2025
