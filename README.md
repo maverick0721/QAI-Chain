@@ -127,6 +127,8 @@ Where to look for outputs:
 - **Bench / research artifacts:** `experiments/` (see `experiments/benchmarks/latest.json` if present)
 - **Docs summaries:** `docs/` (benchmark/repro/stat analysis files)
 
+**Paper vs code alignment (important):** the manuscript uses two evaluation tracks. **Safety Gym (30 seeds, CPO / P3O / PPOLag)** comes from vanilla OmniSafe training in [`experiments/run_standard_constrained_transfer.py`](experiments/run_standard_constrained_transfer.py)—no QAI-Chain uncertainty gate or shield on that path; it is an external-validity anchor. **Governance simulators, ablations, and stress suites** run the stacked system (gate, shield, robust PPO branch) via scripts such as [`experiments/run_publication_suite.py`](experiments/run_publication_suite.py) and related runners described in `paper/sections/reproducibility.tex`.
+
 If you are presenting this to a recruiter, the easiest demo is `make showcase` plus opening `paper/main.pdf`.
 
 ---
@@ -155,6 +157,9 @@ PYTHONPATH=. .venv/bin/python scripts/generate_api_schema_docs.py
 ## Experiment Pipelines
 
 ```bash
+# Standard Safety Gym constrained baselines (OmniSafe only; feeds paper transfer-status table when regenerated)
+PYTHONPATH=. .venv/bin/python experiments/run_standard_constrained_transfer.py --seeds $(seq 0 29)
+
 # Research suite
 PYTHONPATH=. .venv/bin/python experiments/run_research_suite.py
 
@@ -223,7 +228,7 @@ BibTeX:
   title   = {QAI-Chain: Safe RL Governance with Quantum-Inspired Efficiency and Verifiable Blockchain Auditing},
   author  = {Gupta, Shivang and QAI-Chain Contributors},
   year    = {2026},
-  url     = {https://github.com/maverick0721/QAI-Chain.git}
+  url     = {https://github.com/IcySpicy21/QAI-Chain}
 }
 ```
 

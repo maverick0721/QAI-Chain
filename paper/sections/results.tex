@@ -49,7 +49,7 @@ Table~\ref{tab:standard-transfer-status} is the external-validity anchor: OmniSa
 
 PointGoal is miserable in a useful way---mean return hovers near zero while cost stays nonzero, so the task keeps punishing you for constraint pressure the whole run. Same protocol, PPOLag buys roughly an 11.6\% cut in constraint cost versus P3O and pays with about 14.3\% less return; whether that trade is worth it is a policy call, but at least the table states it bluntly.
 
-HalfCheetah velocity behaves less pathologically: finite returns, no meltdown across methods. So we are not leaning on one quirky benchmark family. The point is narrower than ``we beat every suite'': the gating-plus-shield path plugs into off-the-shelf constrained RL stacks, then we go beat on governance sims where the interesting breakage shows up.
+HalfCheetah velocity behaves less pathologically: finite returns, no meltdown across methods. So we are not leaning on one quirky benchmark family. The Safety Gym block is vanilla OmniSafe constrained training---evidence the codebase sits next to standard practice---while the governance sections below exercise the gate, shield, and robust branch where the paper's mechanism actually runs.
 
 \subsection{Stress Sweep}
 

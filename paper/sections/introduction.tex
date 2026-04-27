@@ -6,7 +6,7 @@ QAI-Chain is that bolt-on story. PPO proposes; a cheap uncertainty read says tru
 
 No quantum speedup pitch, no new universal objective. Under fast switching, calibrated routing plus a hard shield reshapes \emph{how} failures arrive compared with policy-only paths, and the uncertainty block stays small.
 
-Empirics stay split. SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 at thirty seeds each tell you the OmniSafe path is not a toy fork. Governance simulators hurt more: fifty seeds for the controller comparison grid plus sweeps in the appendix. Heuristics stay in every plot---they are not strawmen; in mild cells they still cash checks.
+Empirics stay split. SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 at thirty seeds each reproduce standard OmniSafe constrained runs (CPO/P3O/PPOLag) so the toolchain is not a toy fork. Governance simulators hurt more: fifty seeds for the controller comparison grid plus sweeps in the appendix, and that is where the gated stack actually executes. Heuristics stay in every plot---they are not strawmen; in mild cells they still cash checks.
 
 Training delta versus vanilla PPO is modest: variance-aware reward shaping plus a routing rule with threshold $\tau$ and risk weight $\lambda_{\mathrm{risk}}$. Complexity sweeps freeze the backbone and simulator; only those scalars move so we do not confuse ``more safety glue'' with ``different network.''
 
@@ -17,7 +17,7 @@ What we think clears the bar:
 \begin{itemize}
     \item Decision-time wiring that couples uncertainty-triggered fallback to deterministic shielding before actuators move.
     \item A deliberately small VQC-style head that still buys nonlinear routing signal when disturbances spike (classical simulation only).
-    \item Finished thirty-seed Safety Gym evidence for the two tasks named above, the fifty-seed governance controller suite, and the appendix stress material---all from the same gate/shield code path.
+    \item Thirty-seed Safety Gym runs (official OmniSafe CPO/P3O/PPOLag) as an external-validity anchor, plus the fifty-seed governance controller suite and appendix stress material where the proposed gate, shield, and robust PPO branch are actually in the loop.
 \end{itemize}
 
 \begin{table}[htbp]

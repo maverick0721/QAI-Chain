@@ -1,7 +1,7 @@
 \section{Experimental Setup}
 
 \paragraph{Protocol.}
-Bucket~A stays deliberately dull: SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, thirty seeds each, same gate/shield hooks as elsewhere, baselined against CPO / P3O / PPOLag inside OmniSafe. Bucket~B bruises harder---scaled governance (twelve states, three actions, two hundred steps, partial obs, injected telemetry faults) plus a toy DeFi loop (eight states, two actions, one fifty-step horizon, MEV and liquidity stress baked in).
+Bucket~A stays deliberately dull: SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, thirty seeds each, trained through official OmniSafe agents for CPO / P3O / PPOLag (no QAI-Chain gate or shield in that path---it is a sanity anchor that the repo and pinned deps reproduce standard constrained metrics). Bucket~B bruises harder---scaled governance (twelve states, three actions, two hundred steps, partial obs, injected telemetry faults) plus a toy DeFi loop (eight states, two actions, one fifty-step horizon, MEV and liquidity stress baked in), where the gate, shield, and robust stack evaluated in the paper actually run.
 
 Tables pin seeds so pairwise comparisons do not wander when noise sneaks in. Heavy PPO-family and ablation grids use sixteen paired seeds; the constrained-baseline headline block uses fifty; uncertainty and efficiency cells use thirty so a single lucky draw cannot own the story.
 
