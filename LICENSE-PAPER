@@ -1,0 +1,16 @@
+Copyright (c) 2026 Shivang Gupta
+
+All rights reserved.
+
+This license applies to the manuscript and publication assets in this repository, including:
+- `paper/` (LaTeX sources, generated bibliographies, and compiled PDFs),
+- `figures/` and any plots intended for publication,
+- any tables or text excerpts reproduced in documentation as part of the paper.
+
+No part of the above materials may be copied, reproduced, modified, distributed, published,
+or used to create derivative works, in whole or in part, by any means, without prior written
+permission from the copyright holder, except for:
+
+- fair-use quotation for academic citation with proper attribution, and
+- links to the repository / preprint without reproducing substantial portions of the text.
+

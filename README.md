@@ -1,35 +1,67 @@
-<h1 align="center">QAI-Chain</h1>
+<div align="center">
 
-<p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0b7285" alt="License"></a>
-  <a href=".github/workflows/ci.yml"><img src="https://img.shields.io/badge/CI-ready-2f9e44" alt="CI"></a>
-  <img src="https://img.shields.io/badge/python-3.12+-3776AB" alt="Python">
-  <img src="https://img.shields.io/badge/status-research%20prototype-7048e8" alt="Status">
-</p>
+# QAI-Chain
 
-QAI-Chain is a research-grade modular stack that combines safe reinforcement learning, blockchain governance mechanics, quantum-inspired model components, post-quantum cryptography, and ZK integration hooks.
+**Uncertainty-gated safe RL control under shift, with deterministic shielding and reproducible paper artifacts.**
 
-The repository is designed for reproducible experimentation and publication workflows, from baseline execution to camera-ready paper artifacts.
+[![Repo](https://img.shields.io/badge/repo-IcySpicy21%2FQAI--Chain-181717?logo=github)](https://github.com/IcySpicy21/QAI-Chain)
+[![Stars](https://img.shields.io/github/stars/IcySpicy21/QAI-Chain?style=flat&logo=github)](https://github.com/IcySpicy21/QAI-Chain/stargazers)
+[![Python](https://img.shields.io/badge/python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Paper](https://img.shields.io/badge/paper-paper%2Fmain.pdf-459598?logo=latex&logoColor=white)](paper/main.pdf)
+[![Code License](https://img.shields.io/badge/code%20license-MIT-0b7285)](LICENSE)
+[![Paper License](https://img.shields.io/badge/paper%20license-All%20rights%20reserved-b91c1c)](LICENSE-PAPER)
 
-## Highlights
+</div>
 
-- Safe control loop with uncertainty-gated routing and deterministic fallback.
-- Compact quantum-inspired estimator path for parameter-efficiency experiments.
-- Blockchain-native auditable execution path and governance telemetry.
-- Reproducibility pipeline: artifacts, reports, figures, and paper builds.
-- Venue packaging scripts for NeurIPS, ICLR, and IEEE-style submissions.
+---
+
+## Problem
+
+Safe RL controllers often fail under **regime shift** in ways that mean-return hides: actions become brittle when telemetry is noisy, adversarial, or non-stationary. In governance-like control loops, this shows up as “bad-day” behavior (bursts, attack pressure, latency spikes), not a simple drop in average reward.
+
+At the same time, production systems frequently keep **deterministic rules** in the loop (fallbacks, clamps, post-checks). The practical gap is a clean, testable pattern that integrates learning with those safety controls and reports outcomes in a reproducible way.
+
+---
+
+## Solution
+
+QAI-Chain studies a concrete decision-time safety pattern on top of PPO:
+
+- **Uncertainty gate**: decide whether to execute the learned action or route to a deterministic fallback
+- **Deterministic shield**: clamp / validate actions against hard constraints before execution
+- **Compact (quantum-inspired) uncertainty head**: a low-parameter nonlinear signal used for gating (classically simulated)
+- **Reproducibility pipeline**: scripts → artifacts → tables/figures → paper build
+
+The core claim is architectural (systems-and-control), not “quantum advantage” and not universal reward dominance.
+
+---
 
 ## Architecture
 
 ```mermaid
-flowchart LR
-    N[Network and RPC] --> B[Blockchain Core]
-    C[PQC Signing and Verification] --> B
-    Z[ZK Interfaces] --> B
-    B --> A[Safe RL Governance]
-    A --> Q[Quantum and Hybrid Models]
-    A --> L[Audit and Artifact Layer]
-    L --> P[Paper Tables and Figures]
+flowchart TB
+  subgraph IN["Inputs"]
+    S["State / telemetry"]
+    E["Environment / simulator"]
+  end
+
+  subgraph CTRL["Control loop"]
+    PPO["PPO policy proposal"]
+    UG["Uncertainty gate (route / trigger)"]
+    SH["Deterministic shield (bounds, rate limits)"]
+    FB["Deterministic fallback (heuristic)"]
+  end
+
+  subgraph ART["Artifacts"]
+    J["JSON / logs"]
+    T["LaTeX tables + figures"]
+    P["paper/main.pdf"]
+  end
+
+  IN --> PPO --> UG
+  UG -->|low uncertainty| SH
+  UG -->|high uncertainty| FB --> SH
+  SH --> E --> J --> T --> P
 ```
 
 Detailed notes: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
@@ -46,7 +78,9 @@ Detailed notes: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
 - [scripts](scripts): automation, reporting, publication, and health checks
 - [paper](paper): manuscript sources and publication figures/tables
 
-## Quick Start
+---
+
+## Demo Command
 
 ```bash
 python -m venv .venv
@@ -54,7 +88,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## One-Command Final Sanity Check
+### One-command sanity check
 
 ```bash
 PYTHONPATH=. .venv/bin/python scripts/healthcheck.py && \
@@ -62,7 +96,7 @@ PYTHONPATH=. .venv/bin/python -m pytest -q && \
 PYTHONPATH=. .venv/bin/python scripts/benchmark_quick.py
 ```
 
-## One-Command Recruiter Demo
+### One-command recruiter demo
 
 ```bash
 make showcase
@@ -81,6 +115,29 @@ Optional paper build in the same flow:
 ```bash
 PYTHONPATH=. .venv/bin/python scripts/showcase.py --with-paper
 ```
+
+---
+
+## Results
+
+Where to look for outputs:
+
+- **Paper PDF:** `paper/main.pdf`
+- **Paper sources:** `paper/`
+- **Bench / research artifacts:** `experiments/` (see `experiments/benchmarks/latest.json` if present)
+- **Docs summaries:** `docs/` (benchmark/repro/stat analysis files)
+
+If you are presenting this to a recruiter, the easiest demo is `make showcase` plus opening `paper/main.pdf`.
+
+---
+
+## Why this matters
+
+- **Recruiter signal:** demonstrates end-to-end ownership across research engineering (pipelines, artifacts, tests) and scientific reporting (tables/figures/paper build).
+- **Safety practice:** formalizes a deployable pattern—**route by uncertainty, then enforce with a deterministic shield**—that can sit on top of existing policy learners.
+- **Reproducibility:** turns “trust me” claims into regeneratable artifacts and a paper build you can reproduce from a clean clone.
+
+---
 
 ## Core Validation Commands
 
@@ -216,4 +273,5 @@ Use this checklist before tagging a public release.
 
 ## License
 
-MIT
+- **Code:** MIT — see [`LICENSE`](LICENSE)
+- **Paper / manuscript assets:** **All rights reserved** — see [`LICENSE-PAPER`](LICENSE-PAPER)
