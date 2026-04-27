@@ -1,25 +1,25 @@
 \section{System Design}
 
-The runtime story is simple to draw even if the implementation is not: telemetry in, policy proposes something, an uncertainty gate may veto it, a shield always gets the last word, then the actuators see a bounded action. Blockchain shows up after the fact as an append-only receipt if you want multi-party review.
+Draw the runtime on a napkin and it is linear: telemetry in, policy guesses, maybe the gate vetoes, the shield always edits last, actuators see something bounded. Chain commits ride afterward if you want receipts two companies can argue over later.
 
 \[
 \text{state telemetry} \rightarrow \text{policy proposal} \rightarrow \text{uncertainty gate} \rightarrow \text{shield} \rightarrow \text{executed action}.
 \]
 
-Commits land on chain once an action is finalized so the adaptive bits stay in Python/Sim and the ledger stays a witness, not a hot path for gradient math.
+Learning stays in Python/Sim; hashes land once the action is final so nobody pretends the ledger is on the hot gradient path.
 
 \subsection{System Diagram}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/architecture_flow.pdf}
-\caption{System flowchart}
+\caption{Runtime sketch: policy, gate, shield, optional commit.}
 \label{fig:system-mermaid-rendered}
 \end{figure}
 
 \subsection{Data and Control Flow}
 
-RPC and validation code advance ledger state from peer and transaction events. The controller reads a compressed governance vector and emits bounded knobs (difficulty, block size, gas limit). The diagram is the same idea as above, just drawn with the shield spelled out:
+Peers and txs move ledger state through RPC plus validation. The controller ingests a compressed governance vector and proposes bounded knobs---difficulty, block size, gas limit. Same story as the napkin, typeset with the shield explicit:
 
 \begin{equation}
 \begin{aligned}
@@ -28,12 +28,12 @@ RPC and validation code advance ledger state from peer and transaction events. T
 \end{aligned}
 \end{equation}
 
-The gate may punt to a heuristic before execution; the shield may clamp or reject. Numbers in the paper all assume that gated-and-shielded path. Appendix material carries the extra protocol detail if you care about receipts and Merkle layouts.
+Gate can punt to a heuristic first; shield can clamp or reject anyway. Every number in the paper assumes that gated-then-shielded path. Receipt/Merkle minutiae sit in appendix text if you need them.
 
 \subsection{API Contracts}
 
-RPC payloads are typed; garbage-in gets a hard error. We keep negative-path tests around malformed fields so the adaptive layer cannot silently widen the contract surface.
+RPC structs are typed; junk input throws instead of silently widening what the adaptive layer may try. Negative-path tests on malformed fields are boring and necessary.
 
 \subsection{Operational Guardrails}
 
-Typed interfaces, those RPC tests, and a deterministic ordering between policy, gate, and shield are what keep multi-node runs from drifting into ``works on my laptop'' territory. None of that is novel science, but it is what makes the behavior legible when something breaks at 2\,am.
+Typed interfaces, those tests, and a fixed ordering between policy, gate, and shield keep multi-node runs from decaying into ``works on my laptop.'' Zero novelty medals; it is what keeps pages legible when pagerduty fires at 2\,am.

@@ -1,35 +1,35 @@
 \section{Experimental Setup}
 
 \paragraph{Protocol.}
-We split evaluation into two buckets on purpose. The first bucket is vanilla constrained RL: SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 with thirty seeds, sharing the same gating and shield code paths, compared against CPO, P3O, and PPOLag under OmniSafe. The second bucket is meaner: a scaled governance simulator (twelve states, three actions, two-hundred steps, partial observability, injected telemetry faults) and a DeFi-style simulator (eight states, two actions, one-fifty steps, MEV and liquidity stress baked in).
+Bucket~A stays deliberately dull: SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, thirty seeds each, same gate/shield hooks as elsewhere, baselined against CPO / P3O / PPOLag inside OmniSafe. Bucket~B bruises harder---scaled governance (twelve states, three actions, two hundred steps, partial obs, injected telemetry faults) plus a toy DeFi loop (eight states, two actions, one fifty-step horizon, MEV and liquidity stress baked in).
 
-Publication tables use fixed seed sets so paired comparisons stay honest under noise. Heavy PPO-family and ablation sweeps use sixteen paired seeds; the official constrained-baseline block uses fifty; uncertainty and efficiency comparisons use thirty so the headline cells are not dominated by variance.
+Tables pin seeds so pairwise comparisons do not wander when noise sneaks in. Heavy PPO-family and ablation grids use sixteen paired seeds; the constrained-baseline headline block uses fifty; uncertainty and efficiency cells use thirty so a single lucky draw cannot own the story.
 
 \paragraph{Governance comparison method set.}
-The governance comparison table lines up six controllers on the same protocol in both environments: Random, Heuristic, CPO-style, P3O-style, PPO-Lagrangian-style, and Robust QGate+Shield.
+Controller grid: Random, Heuristic, CPO-style, P3O-style, PPO-Lagrangian-style, Robust QGate+Shield---same protocol in both custom environments.
 
 \paragraph{Environment realism extension.}
-Both simulators accept optional CSV-driven traces (demand, volatility, MEV pressure, oracle noise). That lets us replay coarse historical shapes instead of only drawing synthetic drift. The trace-backed run in the paper uses Ethereum daily gas-price history from Etherscan to schedule intensity.
+Optional CSV traces drive demand, volatility, MEV-ish pressure, oracle noise so we can replay coarse historical shapes instead of only synthetic drift. The paper's trace-backed run feeds Ethereum daily gas prices (Etherscan) into intensity scheduling.
 
 \paragraph{Primary Metrics.}
-Reward mean and standard deviation across seeds, violation counts, target MAE, how often fallback fires, and a per-step latency / forward-FLOPs proxy.
+Means and standard deviations on reward, violation counts, target MAE, fallback counters, plus a per-step latency / forward-FLOPs proxy.
 
-Fallback rate counts any step where execution came from the deterministic controller, either because the gate routed away from the policy or because the shield rejected the policy move and substituted the heuristic.
+Fallback ticks whenever execution actually came from the deterministic branch---either the gate routed away from the policy or the shield vetoed the policy move and swapped in the heuristic.
 
 \paragraph{Hypothesis Testing.}
-PPO-family comparisons use permutation tests and effect sizes where we care about pairwise structure; constrained baseline suites compare final return, final cost, and episode length directly. Bootstrap 95\% intervals appear where intervals read more clearly than point estimates alone.
+Permutation tests plus effect sizes when PPO-family rows need pairwise structure; constrained suites compare final return, final cost, episode length directly. Bootstrapped 95\% intervals show up wherever bars read cleaner than lonely point estimates.
 
 \paragraph{High-rigor constrained-baseline protocol.}
-Fifty seeds, frozen environment knobs, and metrics declared up front (reward, safety cost, violations in hard regimes) keep the baseline ordering from jittering with a single lucky draw.
+Fifty seeds, frozen knobs, metrics named before runs (reward, safety cost, hard-regime violations) so baseline ordering does not jitter on one seed lottery ticket.
 
 \paragraph{Fair-capacity quantum-inspired efficiency protocol.}
-Matched-parameter controls (VQC-28 vs MLP-28) sit next to larger classical nets so we can separate ``different head'' from ``more parameters.'' We report both raw and parameter-normalized views.
+VQC-28 beside MLP-28 beside a fatter MLP so ``different head'' does not silently mean ``different parameter budget.'' Raw counts and normalized views both land in the tables.
 
 \paragraph{Primary standard-benchmark protocol.}
-The external-validity anchor is still the Safety Gym pair above under shared gating and shielding, three thousand steps per run on this host. Governance runs are stress tests for regime behavior that is hard to stress in the standard suites alone.
+Safety Gym pair above, shared gating/shielding, three thousand steps per episode on the machine that generated Table~\ref{tab:standard-transfer-status}. Governance blocks stress regime behavior the Gym suites barely tickle.
 
 \paragraph{Robust PPO settings.}
-Robust PPO keeps risk-aware shaping, quantum-uncertainty gating, and the contract-style shield. Uncertainty uses $K=10$ perturbations with Gaussian noise scale $0.01$. $\tau_q$ and $\lambda_{\mathrm{risk}}$ were tuned where switching is aggressive.
+Risk-shaped rewards, quantum-uncertainty gate, contract-style shield. Perturbation batch uses $K{=}10$, Gaussian noise scale $0.01$ on weights. $\tau_q$ and $\lambda_{\mathrm{risk}}$ were tuned where switching gets aggressive.
 
 \paragraph{Robust ablation variants.}
-Seven configurations isolate pieces: Full (gate+shield+robust policy), No quantum gate, No shield, No fallback, Classical PPO, Heuristic, Random.
+Seven toggles: Full (gate+shield+robust policy), No quantum gate, No shield, No fallback, Classical PPO, Heuristic, Random.

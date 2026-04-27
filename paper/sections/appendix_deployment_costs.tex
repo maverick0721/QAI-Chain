@@ -13,8 +13,8 @@ where $b$ is bytes committed and $h$ is hash/check overhead terms. For an episod
 
 \subsection{Interpretation}
 
-This cost model is included to expose the practical cost-of-safety instrumentation: stronger provenance and finer-grained audit logging increase operational spend. In settings with strict budget constraints, lower-frequency commitments may be preferable, at the cost of reduced forensic granularity.
+Gas model exists so nobody confuses ``free safety'' with ``free ops.'' Tighter provenance / finer commits burn money. Budget-constrained shops throttle commit cadence and eat worse forensics---pick your poison.
 
 \subsection{Practical Guidance}
 
-For production deployment, we recommend pre-declaring commitment cadence (per action, per block, or per epoch) and reporting both safety gains and incremental audit costs. This avoids overstating benefits while hiding operational overhead.
+Before prod: pick cadence (per action, block, epoch) up front and publish both safety upside and incremental audit spend. Hiding ops cost while waving safety banners is how you get surprised finance teams.

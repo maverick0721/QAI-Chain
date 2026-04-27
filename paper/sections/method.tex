@@ -2,32 +2,32 @@
 
 \subsection{Control Objective}
 
-The governance objective combines throughput, latency, decentralization proxy, and target tracking:
+Reward mashes throughput, latency-shaped terms, a decentralization proxy, and distance to a moving target:
 \[
 \begin{aligned}
 r ={}& w_1 \cdot \text{throughput} + w_2 \cdot \text{latency}(d) \\
 &+ w_3 \cdot \text{decentralization} - \lambda |d - d_t|.
 \end{aligned}
 \]
-Action outputs are bounded and then validated by a safety shield before execution.
+Shield always sees actions after clipping.
 
 \subsection{Policy Family}
 
-We evaluate random, heuristic, PPO-family, and robust gated controllers. PPO uses clipped updates \cite{schulman2017ppo}. The robust branch adds risk shaping:
+Controllers span random, hand-tuned heuristics, vanilla PPO-family runs, and the robust gated recipe. PPO stays clipped \cite{schulman2017ppo}; our robust branch subtracts rolling reward variance:
 \[
 \tilde r_t = r_t - \lambda_{\mathrm{risk}}\,\mathrm{Var}(r_{t-k:t}).
 \]
 
 \subsection{Shield Logic (Executable Rule)}
 
-The shield is deterministic and state-aware. At each step, it enforces bounded actions and bounded action-rate change before execution:
+Shield code is deterministic, state-aware, and boring on purpose---box constraints plus a per-step slew cap before anything executes:
 \[
 a^{\mathrm{exec}}_t=\mathrm{clip}(a_t, a_{\min}, a_{\max}),
 \]
 \[
 \Delta a_t=\mathrm{clip}(a^{\mathrm{exec}}_t-a_{t-1},-\delta_{\max},\delta_{\max}).
 \]
-If a post-check still violates a hard safety predicate (for example, projected delay or partition threshold), the shield routes to deterministic fallback $a_t^{\mathrm{heur}}$ and re-validates. In implementation terms:
+Still unsafe on a predicate (delay projection, partition threshold, etc.)? Swap to heuristic $a_t^{\mathrm{heur}}$ and re-run the checks. Code-level sketch:
 \begin{itemize}
     \item If \texttt{hard\_safe(state, action)} is false, clamp action by bounds and max delta.
     \item Re-check safety; if still false, switch to \texttt{heuristic\_action(state)}.
@@ -49,7 +49,7 @@ For explicit auditability, shield execution is summarized below:
 
 \subsection{Quantum-Inspired Uncertainty Gate}
 
-The policy front-end is a 6-qubit variational circuit with angle embedding, entangling layers, data re-uploading, and Pauli-$Z$ measurements for mean/scale signals. Uncertainty is estimated by parameter perturbation:
+Front-end is a six-qubit variational sketch: angle embed, entangle, re-upload data, read Pauli-$Z$ for mean/scale-ish scalars. Uncertainty comes from shaking weights, not from mysticism:
 \[
 \begin{aligned}
 u_q(x) &= \operatorname{Var}\left(\{\mu_{\theta+\epsilon_k}(x)\}_{k=1}^{K}\right), \\
@@ -67,24 +67,24 @@ a_t^{\mathrm{policy}}, & u_q(x_t)\le\tau_q.
 
 \subsection{Engineering Trade-offs in Uncertainty Design}
 
-Latency mattered when we picked the uncertainty block, not only whether the score looked pretty offline. Full ensembles diversify but you pay with memory and serving: every step needs several forward passes through separate copies. Parameter perturbation keeps one small network and jitters weights at inference; that is easier to host next to a real controller.
+Offline pretty plots were not the bottleneck---serving cost was. Ensembles mean N forwards per step and N copies in RAM; perturbation keeps one net and jitters $\theta$ at inference, which is easier to colocate with a controller loop.
 
-Head-to-head, the perturbation readout hit higher precision at the same trigger budget than MC-dropout and the ensemble baselines we tried, without giving up much recall. We therefore tuned for ``good enough routing under a fixed trigger rate'' instead of chasing a single scalar uncertainty metric.
+In our head-to-head grid the perturbation readout bought precision at fixed trigger budget versus MC-dropout and a small ensemble baseline without torching recall, so tuning targeted ``routing good enough at 10\% fire rate'' instead of chasing a single scalar uncertainty KPI.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.88\linewidth]{figures/robust_policy_flow.pdf}
-\caption{Quantum-inspired uncertainty-gated fallback and shielded action execution.}
+\caption{Fallback path: perturbation uncertainty $\rightarrow$ gate $\rightarrow$ shielded execution.}
 \label{fig:robust-flow}
 \end{figure}
 
 \subsection{Why the Compact Estimator Compresses Well Here}
 
-We simulate the six-qubit VQC-style block classically; the win we cared about was parameter count, not quantum throughput. Governance states in our build mix a handful of heavy drivers---delay, congestion, attack pressure---with ugly cross-terms. Entanglement buys multiplicative mixing cheaply, and re-uploading lets the same wires react nonlinearly across time. That recipe tracks the control surface we needed with far fewer weights than a fat MLP. In practice the compression only looked good once gating and shielding were on, because otherwise the head saw regimes it was never trained to stabilize.
+Classical simulation only; quantum throughput is irrelevant. Governance vectors in our build jam delay, congestion, attack pressure, and nasty cross-terms. Entangling layers mix multiplicatively on the cheap; re-uploading lets the same wires bend across time. Net effect: fewer weights than a fat MLP for the surface we needed. Compression only popped once gate+shield were live---without them the head trained on regimes it never had to stabilize.
 
 \subsection{Adversarial and Ablation Design}
 
-The scaled benchmark injects burst demand, delay noise, attack pressure, and regime shifts. We evaluate seven configurations:
+Scaled workload throws bursts, noisy delay, attack ramps, and regime hops. Seven toggles:
 \begin{itemize}
     \item full system (quantum gate + shield + robust policy),
     \item no quantum gate,
@@ -104,4 +104,4 @@ r_t^{\text{adv}} ={}& \alpha\,\text{throughput}_t - \beta\,\text{delay}_t - \gam
 
 \subsection{Evaluation}
 
-We track the obvious scalars---reward, violations, target MAE, how often fallback fires, and a latency proxy. Whenever we compare PPO-family runs we pair that with bootstrap intervals, permutation tests, and Cohen's $d$ so we do not overfit a table to one lucky seed \cite{efron1994introduction,good2005permutation}.
+Scalars first: reward, violations, target MAE, fallback counters, a latency stand-in. Whenever two PPO-family rows get compared we bolt on bootstraps, permutation tests, and Cohen's $d$ so a single seed draw cannot ghost-write the conclusion \cite{efron1994introduction,good2005permutation}.

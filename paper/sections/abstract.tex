@@ -1,9 +1,9 @@
 \begin{abstract}
-When the environment drifts, safe RL often fails before average reward collapses: the policy starts acting twitchy while its value estimates are still noisy, which is an awkward failure mode if you care about ``bad days'' (attacks, bursts, latency spikes) and not only about the mean curve.
+Drift does not always show up first in mean reward. Often the curve still looks polite while the controller is already juddering---noisy value estimates plus twitchy actions---which hurts if you care about bursts, attacks, or latency spikes instead of averaging over friendly weeks.
 
-We built a thin layer on top of PPO that runs at decision time. A calibrated uncertainty score picks between the learned action and a fixed heuristic; a separate shield clamps or rejects actions before they hit the plant. Nothing here is about beating every baseline on return---the point is architectural. Gating plus shielding shifts where the safety--stability trade-off sits compared with ``policy only,'' and we use a small, classically simulated VQC-style head so that routing signal does not cost an ensemble-sized footprint.
+The stack we ship is a thin PPO-sidecar that only wakes at decision time. One uncertainty scalar routes between the learned action and a fixed heuristic; a shield downstream clips or rejects before the plant sees anything. Beating every baseline on return is out of scope here: we care how the safety--stability trade moves once you stop executing the policy raw. A classically simulated six-qubit-style readout supplies the routing score without ensemble-sized memory.
 
-Most of the evidence is routine constrained-gym work. Each standard Safety Gym task in the protocol uses thirty seeds (task IDs appear in the setup section). The custom governance simulators are there as stress tests, again with matched seeds (fifty for the controller comparison block). We also print an embarrassing line on purpose: in one governance ablation the full stack loses to random on scalar reward. That stays in because reward alone is a weak certificate here---we care about stable, constraint-respecting behavior under shift and tight model budgets, not a universal return trophy.
+Evidence is split on purpose: thirty-seed Safety Gym runs for constrained sanity (task IDs in setup), fifty-seed governance controller grids for stress, plus appendix sweeps. One ablation row is ugly on purpose---random wins scalar reward against the full stack---because reward alone can lie and we care about violations and tracking when the schedule shifts.
 
-Repository artifacts and scripts are available upon request.
+Numbers in the tables trace to version-controlled artifacts; the reproducibility section lists how to regenerate them from the repository.
 \end{abstract}

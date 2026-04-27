@@ -1,42 +1,42 @@
 \section{Discussion}
 
-If you skim only one sentence: we are not claiming a universally better learner. We are claiming that a tiny decision-time wrapper can change \emph{how} things break when the world moves underneath the policy. Read the figures as trade-offs---where policy-only control goes brittle, gating plus a hard shield often trades raw return for steadier constraint satisfaction.
+Skim-level takeaway: we are not pitching a universally stronger learner. We are pitching a thin decision-time wrapper that changes \emph{how} failures unfold once the world slides under the policy. Treat every figure as a trade plot---where raw policy execution goes brittle, gate plus hard shield often buys constraint slack by spending return.
 
-Start with the boring benchmarks. Thirty seeds on each Safety Gym task from the protocol block are there so you know the code path is not hallucinating on our custom simulators alone. The governance environments are deliberately nasty: they are where regime switches and calibration drift show up in the plots.
+Safety Gym rows exist so you know we are not only storytelling on bespoke sims. Thirty seeds each, same protocol block as elsewhere. Governance sims are where regime switches and calibration drift actually show up in ink.
 
-The random-policy row is not hidden. In one ablation workload random beats the full stack on scalar reward. We left it in because reward shaping can be gamed and because ``who ranks first on return'' is a lousy safety certificate. The gated stack often picks conservative, shield-friendly moves; some reward engineers will count that as losing even when tracking and violation curves look healthier.
+Random stays in the table even when it wins reward. Reward shaping games exist; ``top of the leaderboard'' is a lousy safety proof. The gated stack sometimes picks conservative, shield-shaped moves that reward engineers hate even while violation and tracking curves look saner.
 
-Where the architecture earns its keep is when switching intensity ramps up. Routing on a calibrated uncertainty score buys better ``when to fall back'' decisions without paying for a giant ensemble, and the shield caps tail risk on trajectories even when the gate slips. That is the practical reason the compact head matters: it is a signal you can actually ship inside the loop.
+Payoff shows up when switching intensity climbs. Calibrated uncertainty answers ``when to fall back'' without renting an ensemble, and the shield caps tail risk when the gate guesses wrong. That is why the tiny head is worth mentioning at all: you can ship it beside the controller.
 
-This does not replace modern safe-RL objectives; it stacks beside them. The OmniSafe baselines are a useful reminder that return orderings shuffle with budget and environment, while safety cost behaves more like a frontier.
+This is additive to modern safe-RL objectives, not a replacement. OmniSafe rows are a reminder that return order reshuffles with budget and environment while safety cost behaves like a frontier.
 
 \subsection{Why Uncertainty-Gated Control Works}
 
-Three pieces interact, but they are not independent knobs.
+Three mechanisms, one caveat: they talk to each other.
 
-Uncertainty gating is doing branch selection under shift. When epistemic noise spikes, handing off to a deterministic heuristic keeps you from committing to policy logits in exactly the window where policy-only execution tends to wobble.
+Gating is branch picking under shift---when epistemic noise spikes, handing off to a heuristic avoids committing to policy logits in the window where policy-only paths wobble hardest.
 
-The shield is doing something different: it bounds execution even when the gate picks the wrong branch. Rate limits and action caps trim the tail trajectories that usually dominate incident stories in high-switch settings.
+Shielding is not the same job. Even if the gate picks wrong, rate caps and action boxes still trim the trajectories that usually show up in incident writeups.
 
-Risk-shaped training nudges learning away from chasing short spikes in the reward window that do not line up with stable control intent. It is not magic; it just removes one easy way for the policy to cheat the scalar.
+Risk-shaped training starves the cheap cheat where the policy chases short reward spikes that fight stable control intent. No fairy dust---just one fewer cheat code against the scalar.
 
-Put together, the gains show up most clearly under disturbance because the stack is really about failure-mode containment, not about squeezing another few points of return in an easy stationary room.
+Under disturbance those pieces line up because the stack targets failure containment, not squeezing a few more return points in an easy stationary room.
 
 \subsection{Failure Cases}
 
-Two failure modes showed up often enough to mention. If calibration drifts faster than the gate can react, fallback fires late and you can see a short violation burst before things settle. If disturbances wander outside what the shield encodes, the policy and heuristic can chase each other and tracking suffers.
+Late fallback when calibration sprints ahead of the gate shows up as a short violation burst. Disturbances outside the shield vocabulary make the policy and heuristic chase each other and tracking wobbles.
 
-In the runs we have, those episodes are bounded in time, but they argue for tighter online calibration and shields that know more about model mismatch. The scaling lines up with Corollary~2: under bounded observation noise, regret grows about linearly with perturbation size instead of falling off a cliff.
+In our logs those episodes end; they still argue for tighter online calibration and shields that encode more mismatch. Qualitatively that tracks Corollary~2---bounded observation noise keeps regret growing about linearly instead of cliff-diving.
 
-We are still on toy governance physics, uncertainty scaling is partly post-hoc, and the benchmark net is thinner than what a production sign-off would demand. Live governance would want richer state, smarter economic adversaries, and monitoring constraints we did not model.
+Toy physics, partly post-hoc uncertainty scaling, thin baseline net versus what production sign-off wants, richer economic adversaries missing: all true. Live governance needs state, adversaries, and monitors we did not build.
 
-Reasonable next steps if someone continues this line: actually calibrated heads (ensemble or Bayesian approximations) instead of variance proxies; explicit hard constraints on top of routing; and train-on-one-disturbance-profile, test-on-another without a full retune.
+If someone extends this: swap variance hacks for real calibrated heads, stack explicit hard constraints on top of routing, train on one disturbance atlas and test on another without a full retune.
 
-For anyone shipping something like this: keep the deterministic fallback, gate on uncertainty, and always print safety metrics next to reward \cite{pineau2021improving,dror2018hitchhikers}---the leaderboard alone will lie to you.
+Shipping advice stays boring: keep deterministic fallback, gate on uncertainty, plot safety next to reward \cite{pineau2021improving,dror2018hitchhikers}---leaderboards alone will gaslight you.
 
 \begin{table}[htbp]
 \centering
 \input{tables/when_to_use}
-\caption{When to use this method in practice.}
+\caption{Heuristic on when this pattern is worth the complexity.}
 \label{tab:when-to-use}
 \end{table}

@@ -1,10 +1,10 @@
 \section{Appendix: Deployment Architecture Details}
 
-This appendix is the wiring diagram stuff we pulled out of the main thread so reviewers can find RPC and ledger detail without mixing it into the RL theorem line.
+RPC and ledger minutiae live here so the main thread can stay on control behavior.
 
 \subsection{Layered Deployment Stack}
 
-If you squint, the deployment stack is six slabs:
+Roughly six slabs if you squint:
 \begin{enumerate}
     \item \textbf{Network/RPC:} peer registration, transaction intake, and block propagation.
     \item \textbf{Blockchain core:} validation, mempool updates, and PoW checks.
@@ -16,8 +16,8 @@ If you squint, the deployment stack is six slabs:
 
 \subsection{Why On-Chain Audit Commitments}
 
-Participants do not trust each other's laptops. A local SQLite log is easy to ``lose.'' A hash on a shared ledger is a boring but useful witness when two orgs argue about who approved a knob turn.
+Cross-org fights start when everyone trusts their own laptop log. SQLite rows vanish; hashes on a shared ledger are dull witnesses that survive a shouting match about who approved a knob turn.
 
 \subsection{Boundary to Learning Claims}
 
-Nothing in the appendix replaces the gated-and-shielded path evaluated in the tables. Chain commits are instrumentation for accountability; they do not move reward curves by themselves.
+Appendix wiring never replaces the gated-and-shielded path the tables score. Commits are accountability instrumentation, not a lever that moves reward by themselves.

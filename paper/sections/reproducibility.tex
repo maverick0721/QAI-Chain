@@ -1,8 +1,8 @@
 \section{Reproducibility Checklist}
 
-Code for the experiments and for regenerating tables lives in the repo. Seeds are fixed for the publication-scale runs so you can diff two branches without rerolling noise. JSON and markdown artifacts are emitted straight from scripts; LaTeX tables are generated from those files rather than hand-typed. CI runs lint, types, tests, and a few health checks so obvious foot-guns fail early.
+Experiment code and table generators live in the same repository. Publication-scale runs pin seeds so branch diffs do not turn into RNG theater. Scripts spit JSON/Markdown artifacts; LaTeX tables are compiled from those outputs instead of hand-typed digits that drift. CI runs lint, typing, tests, and a few smoke checks so obvious landmines fail before review.
 
-The long path from raw logs to camera-ready tables looks like this:
+Kitchen-sink path from logs to PDF:
 \begingroup
 \scriptsize
 \begin{verbatim}
@@ -26,28 +26,28 @@ artifacts.py
 \endgroup
 
 \paragraph{Provenance policy.}
-We tried to avoid ``magic numbers'' in \texttt{.tex}: if a digit appears in the main text, it should trace back to an artifact file. That habit hurts when you refactor code, but it pays back the first time a reviewer asks for a regeneration.
+Digits in \texttt{.tex} should map to artifact rows. Refactors hurt; first angry regeneration email pays the tab.
 
 \paragraph{One-command replication.}
-For day-to-day checks there is a shorter entry point:
+Daily shortcut:
 \begingroup
 \scriptsize
 \begin{verbatim}
 make reproduce
 \end{verbatim}
 \endgroup
-That target runs the subset of generators behind the main tables and figures (constrained transfer, uncertainty, efficiency, adversarial perturbation, qubit scaling). The longer script list above is still the full kitchen-sink pipeline if you want every auxiliary plot.
+That target hits the generators behind the headline tables/figures (constrained transfer, uncertainty, efficiency, adversarial perturbation, qubit scaling). The long script stack above still exists when you want every auxiliary plot.
 
 \paragraph{Checklist links.}
-Venue-style checklists are checked in under \texttt{docs/} if you need wording for a particular submission:
+Venue boilerplate lives under \texttt{docs/} if you need copy-paste wording:
 \begin{itemize}
     \item \texttt{docs/NEURIPS\_SUBMISSION\_CHECKLIST.md}
     \item \texttt{docs/ICLR\_SUBMISSION\_CHECKLIST.md}
     \item \texttt{docs/IEEE\_SUBMISSION\_CHECKLIST.md}
 \end{itemize}
-Code and artifacts are available upon request.
+Generated outputs referenced by the tables live next to the code; use the command list above if you need a clean rebuild.
 
 \paragraph{Environment notes.}
-Python with pinned seeds and deterministic script order is the reference stack. Bit-identical floats across machines are not a promise we make; protocol-level reproducibility \emph{is}---commands, outputs, and validation hooks are documented.
+Reference stack is Python with pinned seeds and deterministic script order. We do not promise bitwise-identical floats across machines; we do document commands, outputs, and validation hooks.
 
-The checklist framing here matches how NIST and related bodies talk about AI and cyber risk management in 2024--2025 guidance \cite{nistairmf2023,nistcsf2024}.
+NIST-style AI/cyber risk framing in 2024--2025 guidance matches the checklist tone we used \cite{nistairmf2023,nistcsf2024}.

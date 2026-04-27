@@ -1,9 +1,9 @@
 \section{Limitations}
 
-The governance worlds are toys on purpose: no full peer churn, no endogenous liquidity games, no realistic micro-structure in the mempool. The quantum-inspired block and the audit hooks are research prototypes, not hardened production services. Latency numbers come from one workstation profile, not a sweep across accelerators.
+Governance simulators stay toy-scale on purpose---no realistic peer churn, no endogenous liquidity games, no mempool microstructure worth the name. The VQC-style block and audit hooks are lab prototypes, not hardened services. Latency came from one workstation profile, not a GPU sweep menu.
 
-Other risks are worth naming without bullet polish. Reward shaping can invert rankings---the random-vs-full anomaly is the clearest example---so readers should not lean only on scalar return. Some per-method slices still have modest seed counts outside the fifty-seed constrained suite. Simulator fidelity is limited for both uncertainty dynamics and network physics, and we do not yet model richer economic adversaries in mining or transaction flows. Baseline coverage stops short of a full 2022--2025 safe-RL zoo.
+Reward shaping can reorder winners (random beating the full stack is the blunt example), so leaning on scalar return alone is silly. Some slices outside the fifty-seed constrained suite still run thinner seed counts. Simulator fidelity caps how far uncertainty and network physics claims travel, and we do not yet model nasty economic adversaries inside mining or tx flows. Baseline coverage stops well short of a 2022--2025 safe-RL catalog.
 
-Corollary~2 is a bounded-perturbation statement under explicit assumptions, not a certificate that survives arbitrary sensor faults.
+Corollary~2 needs bounded perturbations and clean assumptions; it is not a shield against arbitrary sensor pathology.
 
-The Safety Gym pair buys external validity on standard constrained control, but it does not, by itself, mean you can wire this straight into a live chain. Those gaps are the roadmap, not footnotes we forgot to mention.
+Safety Gym gives standard constrained-control cover; it does not license plugging this straight into a live chain without the gaps above getting closed.

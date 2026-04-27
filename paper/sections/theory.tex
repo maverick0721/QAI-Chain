@@ -1,6 +1,6 @@
 \section{Theory: Safety and Stability Guarantees}
 
-This section states what we can actually prove about the controller under assumptions that are stronger than deployment reality. The point is to connect the simulation behavior to a small set of formal knobs---not to pretend the assumptions cover every datacenter failure mode.
+We keep proofs in their lane. The lemmas below need cleaner assumptions than any datacenter gives you; treat them as a map from knobs we can measure in sim to statements we can say without hand-waving, not as a blanket deployment warranty.
 
 Let $s_t$ be the observed state, $a_t^{\pi}$ the learned policy action, $a_t^{h}$ the fallback heuristic action, and $u_q(s_t)$ the quantum-inspired uncertainty estimate. Let the switching rule be
 \[
@@ -15,7 +15,7 @@ Let $\mathcal{S}(s,a)$ be the shield operator that enforces hard constraints (bo
 \paragraph{Theorem 1 (Safety Bound with Shielded Quantum-Inspired Gating).}
 Assume the shield is complete for hard constraints, i.e., for every state-action pair $(s,a)$ the output $\mathcal{S}(s,a)$ satisfies all hard safety constraints. Then:
 \begin{enumerate}
-	\item Within the simulation environment, and assuming a bug-free and complete shield implementation, the probability of catastrophic action is zero.\footnote{This is an in-simulator guarantee, not a real-world absolute guarantee. Deployment can fail due to software defects, model mismatch, sensing faults, or incomplete constraint encoding; therefore operational risk controls remain necessary.}
+	\item Inside the simulator, with a shield implementation that actually implements the predicates you think it implements, catastrophic actions have probability zero.\footnote{Real deployments still die on bugs, bad sensors, wrong constraints, and model mismatch---keep ops playbooks.}
 	\item Let $Q_t(\cdot)$ be one-step expected utility and let $a_t^{\star}=\arg\max\{Q_t(a_t^{\pi}),Q_t(a_t^h)\}$. If quantum-inspired uncertainty calibration error is bounded by $\epsilon_{\text{quantum}}$ and the shield induces utility deviation at most $\epsilon_{\text{shield}}$, then
 	\[
 	\mathbb{E}[Q_t(a_t^{\star})-Q_t(a_t)] \le \epsilon_{\text{quantum}}+\epsilon_{\text{shield}}.
@@ -130,6 +130,5 @@ Equivalently, if one tracks the per-window expectation $\bar v(\pi):=\mathbb{E}[
 \[
 \bar v(\pi')\le \bar v(\pi).
 \]
-Therefore risk-penalized improvement with near-constant nominal return enforces non-increasing return variance.
 
-Taken together, these results provide a conditional explanation for the observed behavior of the combined policy (quantum-inspired uncertainty-gated fallback + shield + risk shaping): when shield completeness and calibration assumptions are approximately satisfied, degradation remains controlled and safety behavior is more stable under shift.
+Theorem~1 plus the two corollaries are the formal mirror of the plots: mis-specified gates or shields hurt you linearly in the error knobs instead of detonating, same ``controlled degradation'' read we get empirically from gate + shield + risk shaping together.

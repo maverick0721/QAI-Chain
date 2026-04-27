@@ -1,41 +1,41 @@
 \section{Introduction}
 
-Governance-style loops are awkward for off-the-shelf RL. Mean return can look fine while the policy does something brittle whenever telemetry gets adversarial or the regime flips mid-episode. At the same time, engineers rarely rip out every hand-written rule; the interesting design problem is how to bolt learning onto deterministic safeguards without pretending the safeguards do not exist.
+Off-the-shelf RL loves a stationary room. Governance telemetry rarely cooperates: means stay polite while the policy does brittle things the moment the regime flips or someone poisons a sensor stream. Nobody deletes every handwritten rule either, so the design question we kept circling is how to bolt learning onto deterministic safeguards instead of pretending the safeguards vanished.
 
-That is the setting we had in mind for QAI-Chain. PPO still proposes an action. A cheap uncertainty read decides whether we trust that action or hand off to a deterministic heuristic. A shield---again deterministic---clips rates and bounds before anything executes. The ``quantum-inspired'' label is only about parameter count: we use a compact VQC-style readout, simulated classically, to get a nonlinear uncertainty signal without dragging a full ensemble into the loop. In the hardest regime we looked at, that readout gave higher fallback precision at the same trigger rate than MC-dropout (0.964 vs 0.743 at intensity~1.0).
+QAI-Chain is that bolt-on story. PPO proposes; a cheap uncertainty read says trust or punt to a heuristic; a second deterministic layer---the shield---clips rates and bounds before execution. ``Quantum-inspired'' is a budget label here: a compact VQC-style readout simulated classically gives a nonlinear routing signal without dragging an ensemble into the loop. Hardest intensity we tested: fallback precision 0.964 versus 0.743 for MC-dropout at matched trigger rate (intensity~1.0).
 
-We are not selling quantum speedups or a new universal RL objective. The narrow claim is that, under fast switching, calibrated routing plus a hard shield changes the failure shape relative to policy-only execution, and you can get there without a huge uncertainty module.
+No quantum speedup pitch, no new universal objective. Under fast switching, calibrated routing plus a hard shield reshapes \emph{how} failures arrive compared with policy-only paths, and the uncertainty block stays small.
 
-The empirical story is split on purpose. SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 with a fixed thirty-seed protocol are the sanity check that the training stack behaves on standard constrained tasks. The governance simulators are deliberately meaner: same matched fifty-seed protocol for the controller comparison table, plus stress sweeps. Heuristic controllers stay in the plot on purpose---they are not straw opponents, and in mild regimes they still win plenty of cells.
+Empirics stay split. SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 at thirty seeds each tell you the OmniSafe path is not a toy fork. Governance simulators hurt more: fifty seeds for the controller comparison grid plus sweeps in the appendix. Heuristics stay in every plot---they are not strawmen; in mild cells they still cash checks.
 
-Training changes relative to vanilla PPO are small: we add variance-aware reward shaping and a routing rule with threshold $\tau$ and risk weight $\lambda_{\mathrm{risk}}$. When we sweep complexity we keep the model class and simulator fixed and only retune those scalars so we are not confounding ``more safety glue'' with ``different backbone network.''
+Training delta versus vanilla PPO is modest: variance-aware reward shaping plus a routing rule with threshold $\tau$ and risk weight $\lambda_{\mathrm{risk}}$. Complexity sweeps freeze the backbone and simulator; only those scalars move so we do not confuse ``more safety glue'' with ``different network.''
 
-Blockchain commitments show up only as an optional audit trail after execution. They matter for provenance if several parties review actions; they do not change the control math we evaluate in the main experiments.
+On-chain commitments are optional receipts after actions land. Useful when two orgs fight over who turned a knob; irrelevant to the control math in the headline tables.
 
 \paragraph{Contributions.}
-What we think is new enough to write down:
+What we think clears the bar:
 \begin{itemize}
-    \item a decision-time stack that couples uncertainty-triggered fallback with deterministic shielding,
-    \item a low-footprint uncertainty head (the VQC-style block) that keeps behavior from falling apart when disturbances kick in,
-    \item and an evaluation package that includes finished thirty-seed runs on the two Safety Gym tasks above, plus the fifty-seed governance controller suite and the stress tests behind the appendix figures.
+    \item Decision-time wiring that couples uncertainty-triggered fallback to deterministic shielding before actuators move.
+    \item A deliberately small VQC-style head that still buys nonlinear routing signal when disturbances spike (classical simulation only).
+    \item Finished thirty-seed Safety Gym evidence for the two tasks named above, the fifty-seed governance controller suite, and the appendix stress material---all from the same gate/shield code path.
 \end{itemize}
 
 \begin{table}[htbp]
 \centering
 \input{tables/core_contribution_layers}
-\caption{Core contribution layering: what is algorithmically novel versus efficiency support versus deployment engineering.}
+\caption{Where the novelty sits: algorithm vs cheap uncertainty trick vs deployment trim.}
 \label{tab:core-contribution-layers}
 \end{table}
 
 \paragraph{Scope.}
-The falsifiable bit is narrow: with fixed seeds and paired comparisons, gated control plus the compact head matches the safety-relevant behavior of heavier setups at much smaller parameter budget under the non-stationary governance dynamics we actually simulated \cite{dror2018hitchhikers,pineau2021improving,wilson2017good}.
+Claim stays narrow: fixed seeds, paired comparisons, gated control plus the compact head tracks safety-relevant behavior of heavier stacks at lower parameter budget in the non-stationary governance worlds we actually simulated \cite{dror2018hitchhikers,pineau2021improving,wilson2017good}.
 
 \section{Related Perspectives}
 
-Most blockchain--ML papers we see stay in the comfortable zone: fraud scoring, mempool analytics, mechanism tuning, all with fairly stationary statistics. Adversarial governance telemetry gets less of that treatment, and reproducible benchmarks are rarer than slide decks. Nakamoto-style consensus is still the floor for why anyone trusts a shared log \cite{nakamoto2008bitcoin}; PPO is still the default hammer for continuous control \cite{schulman2017ppo}. Neither removes the need to beat on the loop before you ship it.
+Chain+ML hybrids usually live where statistics behave: fraud scores, mempool dashboards, mechanism tweaks. Messy governance telemetry with adversarial seasoning gets slide-deck love long before it gets reproducible benchmarks. Consensus still explains why anyone trusts a shared append-only log \cite{nakamoto2008bitcoin}; PPO is still the boring default for continuous control \cite{schulman2017ppo}. Neither buys you a free pass on testing the loop.
 
-Safe RL has a crowded toolbox---CVaR-style objectives \cite{chow2015cvar}, robust DP views \cite{iyengar2005robust}, constrained policy optimization \cite{achiam2017cpo}, plus a long tail of distribution-shift hacks. We stayed conservative on the optimizer (PPO) and spent effort on what happens \emph{after} the policy logits are sampled: routing, shaping, shielding. Everything is evaluated under one disturbance model so the comparisons are not apples-to-oranges. We treat the paper as a systems contribution: wiring and evaluation, not a new surrogate loss.
+Safe RL already ships CVaR flavors \cite{chow2015cvar}, robust DP lenses \cite{iyengar2005robust}, constrained policy tricks \cite{achiam2017cpo}, plus a zoo of shift hacks. We left the optimizer alone and obsessed over the moment \emph{after} logits exist---routing, shaping, shielding---all under one disturbance recipe so rows stay comparable. Framing is systems work: plumbing plus measurement, not a fresh surrogate loss name.
 
-Compared with the newer risk-sensitive and uncertainty-heavy lines, our delta is mostly architectural---how branch-level routing and a post-check shield sit in a reproducible pipeline. A wider baseline net (2023--2025 methods) is honest future work; we say that up front instead of pretending the table is exhaustive.
+Compared with the newer risk-sensitive and uncertainty-heavy lines, our delta is mostly architectural---how branch-level routing and a post-check shield sit in a reproducible pipeline. We are not pretending the baseline zoo is complete through 2025; widening that net is future sweat, stated now so nobody expects a survey paper.
 
-Reproducibility lives in the checklist-style appendix material; the main text stays focused on behavior.
+Checklist prose and command dumps sit in appendix-style sections; the main thread stays on what actually happened in the runs.
