@@ -1,24 +1,16 @@
 \section{Introduction}
 
-A compact 6-qubit variational controller with uncertainty-gated routing improves hard-regime fallback precision (at intensity 1.0: 0.964 vs 0.743 for MC-dropout, with matched trigger rates) while preserving safety behavior in non-stationary governance dynamics.
+Two themes motivate QAI-Chain. First, controllers deployed in governance-like loops fail under shift in ways that mean-return plots conceal: the policy may keep a reasonable average reward while producing brittle, high-variance actions when telemetry is adversarial or the regime changes mid-episode. Second, in those regimes it is common to keep a deterministic rule-based controller in the loop anyway; the engineering question is how to integrate learning with that reality cleanly.
 
-The paper's primary claim is not "quantum advantage" and not universal reward dominance. The claim is architectural: in high-switch settings, uncertainty-gated routing and deterministic shielding produce more stable safety behavior than policy-only execution, and this can be implemented with a compact classically simulated uncertainty head.
+We study a concrete pattern: \emph{uncertainty-gated execution with deterministic shielding}. PPO proposes an action, an uncertainty estimate decides whether to execute it or fall back to a deterministic heuristic, and a shield enforces hard bounds and rate limits before the environment sees the control. The ``quantum-inspired'' element is used as an efficiency mechanism: a compact, classically simulated VQC-style head provides a nonlinear uncertainty signal at low parameter count. In a hard regime we observe higher fallback precision at matched trigger rate (intensity 1.0: 0.964 vs 0.743 for MC-dropout).
 
-Stated as a one-line contribution: we introduce and evaluate a deployable decision-time safety layer for safe RL under shift, where uncertainty-triggered branch selection and deterministic shielding jointly improve stability at constrained parameter budgets.
+Scope is intentionally narrow. The claim is not a quantum advantage statement and not a promise of universal reward dominance. The claim is architectural: under rapid switching, routing by calibrated uncertainty plus a deterministic shield yields a more stable safety profile than policy-only execution, and can be implemented with a compact estimator instead of a large ensemble.
 
-In decentralized governance, the painful failures are rarely about average reward. They show up when load shifts quickly, latency spikes, and attack pressure distorts telemetry. The practical question is whether a controller stays predictable when estimates are noisy and the regime changes mid-episode.
+Empirically we anchor external validity on standard constrained benchmarks (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1) under a fixed 30-seed protocol, then treat governance simulations as stress tests with matched 50-seed comparisons. We also keep ``honest baselines'' in the loop: deterministic heuristics are not straw men, and in easier regimes they remain strong.
 
-QAI-Chain was built to study that exact failure mode. The empirical focus is narrow and operational: once vanilla PPO is placed in adversarial, regime-switching dynamics, can uncertainty-gated safe control recover stability without sacrificing hard constraints?
+Implementation-wise, we change as little as possible relative to PPO: (i) variance-aware reward shaping during training, and (ii) a decision-time routing rule controlled by a threshold $\tau$ and a risk weight $\lambda_{\mathrm{risk}}$. Across complexity levels we keep the model class and environment fixed and retune only these few scalars, so comparisons track the effect of the safety layer rather than a shifting architecture.
 
-For safety-critical RL practice, a practical pattern is uncertainty-gated fallback with deterministic post-checks. This pattern is not blockchain-specific and can transfer to other control domains where policy collapse is unacceptable.
-
-The updated protocol gives three practical lessons. First, baseline reward alone is an incomplete indicator of safe behavior under shift. Second, deterministic heuristics remain strong in easier regimes and are not straw-man baselines. Third, once switching complexity rises, uncertainty-gated control preserves safety behavior with substantially fewer parameters, which is the paper's primary practical value.
-
-Primary external evidence comes from standard constrained benchmarks (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, 30 seeds) and a matched 50-seed governance controller-comparison suite. Across these settings, reward-safety trade-offs remain compute-budget dependent.
-
-Design-wise, we deliberately changed as little as possible. The controller keeps PPO's policy/value backbone and adds two controls: variance-aware reward shaping during training, and a decision-time routing rule that falls back to a resilience heuristic when uncertainty is high. In the complexity benchmark, only the risk weight $\lambda_{\mathrm{risk}}$ and uncertainty threshold $\tau$ are retuned across levels; model class and environment stay fixed. This keeps the comparison about efficient safety behavior, not architecture churn.
-
-Deployment integrations (for example, on-chain audit commitments) provide optional provenance support in multi-party governance settings but are orthogonal to the core Safe RL mechanism evaluated in this paper.
+On-chain audit commitments appear as an optional deployment layer for provenance and incident review; they are orthogonal to the core safe-control mechanism evaluated in this manuscript.
 
 \paragraph{Contributions.}
 The paper makes the following contributions:

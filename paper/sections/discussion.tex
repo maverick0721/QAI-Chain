@@ -1,22 +1,18 @@
 \section{Discussion}
 
-The results are easiest to read as a trade-off story rather than a single winning score.
+The headline interpretation is not ``we found a universally better learner''; it is that a small decision-time safety layer can change what failure looks like under shift. Read the plots as trade-offs: where a policy-only controller is brittle, gating plus a deterministic shield can trade some raw return for predictability and constraint adherence.
 
-The strongest empirical message is architectural, not leaderboard-based: uncertainty-gated execution with deterministic shielding changes failure behavior under shift. That mechanism-level change is the paper's central scientific value.
+External validity should be judged first on standard constrained tasks. SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1 under a fixed 30-seed protocol establish that the training and evaluation loop behaves sanely outside the custom governance simulator. The governance environments then serve as stress tests designed to surface regime-switch brittleness and miscalibration.
 
-The first point is external validity: the primary standard-benchmark runs (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1) show stable constrained-learning behavior under a fixed 30-seed protocol. These tasks are where we should judge portability. The governance environments then serve as stress tests that expose mechanism behavior under harder, less stationary shifts.
+The negative result is also part of the message. In one stylized ablation workload, random reward is less negative than the full system. We keep that table because it is a concrete reminder that reward design can be gamed and that ``reward rank'' is not a sufficient certificate in safety-critical control. The gated controller often prefers conservative, shield-compatible actions; in some reward designs that can look worse on the scalar return while still behaving better on tracking and constraint-oriented metrics.
 
-The second point is the negative result. In the main ablation table, random reward is less negative than full-system reward in one workload. We do not hide or smooth that result. It indicates reward misspecification pressure: a random controller can occasionally score better on a stylized reward while ignoring control intent. The gated controller often chooses conservative actions that protect tracking and constraints at the expense of raw return. This is both a limitation of reward design and a concrete argument for evaluating constrained control with multi-metric criteria rather than reward alone.
+Where the method helps is when switching intensity rises. Under those conditions, routing by calibrated uncertainty improves the precision of ``when to fall back'' without requiring large ensembles, and the deterministic shield limits tail-risk trajectories even when the gate makes mistakes. This is why the efficiency mechanism matters: a compact uncertainty head can be used as a practical signal inside the loop rather than an offline diagnostic.
 
-The third point is where the method helps in practice. As switching complexity increases, uncertainty-gated routing reduces brittle policy behavior and improves failure-targeting precision without increasing model size. The efficiency claim is therefore practical, not cosmetic: a compact uncertainty head can preserve safety-oriented behavior while keeping deployment budgets realistic.
-
-Positioning-wise, the method should be read as a systems-and-control design for high-shift environments. It does not replace modern safe RL objective design; it complements it by adding a deployable decision-time safety layer that can sit on top of existing policy learners.
-
-Official OmniSafe constrained baselines reinforce this interpretation. Return rankings move across methods and budgets, while cost differences can remain relatively tight. That pattern is exactly what we expect in constrained RL: safety and reward should be interpreted as a frontier, not a leaderboard.
+Positioning-wise, this is a systems-and-control pattern that can sit on top of modern safe-RL objectives; it does not replace them. The OmniSafe constrained baselines reinforce the broader lesson: return rankings move with budgets and regimes, while safety costs often behave like a frontier, not a leaderboard.
 
 \subsection{Why Uncertainty-Gated Control Works}
 
-The mechanism can be understood as a three-part decomposition.
+The mechanism can be understood as three interacting components.
 
 First, uncertainty gating improves branch selection under shift. When epistemic uncertainty rises, routing to a deterministic heuristic avoids committing to poorly calibrated policy logits in exactly the regime where policy-only execution is most brittle.
 
@@ -28,7 +24,7 @@ This decomposition clarifies why gains are most visible under disturbance and le
 
 \subsection{Failure Cases}
 
-The controller still fails under two regimes. First, when uncertainty calibration drifts faster than the gate update rate, fallback can trigger too late and transiently increase violations before stabilizing. Second, when disturbance magnitude exceeds the shield's modeled envelope, the policy-fallback pair can oscillate between conservative and aggressive actions, degrading target tracking.
+The controller still fails under two regimes. First, when uncertainty calibration drifts faster than the gate can track, fallback can trigger late and violations can spike briefly before stabilizing. Second, when disturbances exceed the shield's modeled envelope, the policy and heuristic can oscillate, degrading tracking.
 
 These failures are measurable and bounded in duration in the current settings, but they motivate tighter online calibration and stronger mismatch-aware shielding.
 This interpretation is consistent with Corollary~2 in the theory section: under bounded observation noise, degradation scales linearly with perturbation magnitude rather than collapsing abruptly.

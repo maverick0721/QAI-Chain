@@ -5,6 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
+\IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}\pdfgentounicode=1}{}
+\IfFileExists{cmap.sty}{\usepackage{cmap}}{}
+\DisableLigatures{encoding = *, family = *}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{longtable}

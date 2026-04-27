@@ -2,7 +2,7 @@
 
 \subsection{Repository Engineering Architecture}
 
-The system is organized so that each layer can be tested independently and integrated through explicit contracts:
+We keep the repository split into layers that can be tested in isolation and connected via explicit contracts:
 \begin{itemize}
   \item Core blockchain primitives expose deterministic block and transaction semantics.
   \item RPC interfaces use schema-driven request/response models, reducing ambiguity at API boundaries.
@@ -11,7 +11,7 @@ The system is organized so that each layer can be tested independently and integ
   \item Experiment scripts produce machine-readable outputs that are post-processed into paper tables and plots.
 \end{itemize}
 
-This decomposition follows reproducible systems guidance where experiment claims are linked to executable artifacts rather than manually curated summaries \citep{wilson2017good,stodden2016enhancing}.
+The intent is pragmatic: make it hard to ``hand-wave'' a result into the paper. Figures and tables should be regenerated from tracked artifacts, not copy-pasted from a scratch notebook \citep{wilson2017good,stodden2016enhancing}.
 
 \subsection{Validation Gates}
 
@@ -25,7 +25,7 @@ The project gate stack includes:
   \item manuscript artifact regeneration.
 \end{enumerate}
 
-The intent is to prevent a common anti-pattern in research software: result-generation scripts diverging from serving/runtime paths. In QAI-Chain, manuscript figures and tables are generated from tracked JSON artifacts, which are themselves emitted by executable protocol scripts.
+These gates exist to prevent a common research failure mode: result scripts drift away from the code path that would actually run in a system. In QAI-Chain, paper assets are produced from tracked JSON artifacts emitted by executable protocol scripts; the ``paper view'' is downstream of the run view.
 
 \subsection{Latency and System Cost Profile}
 \label{sec:latency-profile}
@@ -38,11 +38,11 @@ Using the latency profile shown in Figure~\ref{fig:core-latency}, QTransformer l
 
 \subsection{Statistical Reporting Choices}
 
-We report effect sizes and permutation tests to avoid over-reliance on point estimates. Non-parametric tests are particularly useful at small sample sizes and under non-Gaussian reward distributions. We include bootstrap confidence intervals to characterize uncertainty around means and to help distinguish practical from purely numerical differences \citep{efron1994introduction,good2005permutation}.
+We report effect sizes and permutation tests to avoid over-reading point estimates. Non-parametric tests are useful when reward distributions are heavy-tailed or seed counts are modest. Bootstrap intervals complement the tests by making uncertainty visible around reported means \citep{efron1994introduction,good2005permutation}.
 
 \subsection{Failure Modes Observed During Development}
 
-A practical contribution of this work is the debugging record converted into engineering controls. We encountered and addressed:
+One practical contribution is turning debugging scars into durable checks. During development we repeatedly hit:
 \begin{itemize}
   \item tensor-to-NumPy conversion failures with gradient-bearing tensors,
   \item qubit-feature dimensionality mismatches in angle embedding pathways,
