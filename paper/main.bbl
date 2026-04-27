@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -32,6 +32,12 @@ Bradley Efron and Robert~J Tibshirani.
 Phillip Good.
 \newblock \emph{Permutation, Parametric and Bootstrap Tests of Hypotheses}.
 \newblock Springer, 2005.
+
+\bibitem[Gupta(2026)]{gupta2026qaichain_artifacts}
+Shivang Gupta.
+\newblock {QAI-Chain}: uncertainty-gated safe rl artifacts and implementation.
+\newblock Version-controlled code drop (accessed 2026-04-26), 2026.
+\newblock URL \url{https://github.com/maverick0721/QAI-Chain}.
 
 \bibitem[Iyengar(2005)]{iyengar2005robust}
 Garud~N. Iyengar.
