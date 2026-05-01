@@ -1,6 +1,10 @@
 \section{Introduction}
 
-A compact 6-qubit variational controller with uncertainty-gated routing improves hard-regime fallback precision (0.964 vs 0.743 for MC-dropout at matched trigger rates) while preserving safety behavior in non-stationary governance dynamics, with parameter efficiency as the headline outcome.
+A compact 6-qubit variational controller with uncertainty-gated routing improves hard-regime fallback precision (at intensity 1.0: 0.964 vs 0.743 for MC-dropout, with matched trigger rates) while preserving safety behavior in non-stationary governance dynamics.
+
+The paper's primary claim is not ``quantum advantage'' and not universal reward dominance. The claim is architectural: in high-switch settings, uncertainty-gated routing and deterministic shielding produce more stable safety behavior than policy-only execution, and this can be implemented with a compact classically simulated uncertainty head.
+
+Stated as a one-line contribution: we introduce and evaluate a deployable decision-time safety layer for safe RL under shift, where uncertainty-triggered branch selection and deterministic shielding jointly improve stability at constrained parameter budgets.
 
 In decentralized governance, the painful failures are rarely about average reward. They show up when load shifts quickly, latency spikes, and attack pressure distorts telemetry. The practical question is whether a controller stays predictable when estimates are noisy and the regime changes mid-episode.
 
@@ -10,7 +14,7 @@ For safety-critical RL practice, a practical pattern is uncertainty-gated fallba
 
 The updated protocol gives three practical lessons. First, baseline reward alone is an incomplete indicator of safe behavior under shift. Second, deterministic heuristics remain strong in easier regimes and are not straw-man baselines. Third, once switching complexity rises, uncertainty-gated control preserves safety behavior with substantially fewer parameters, which is the paper's primary practical value.
 
-Primary external evidence comes from standard constrained benchmarks (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, 30 seeds) and an official OmniSafe constrained-baseline suite with 50 seeds. Across these settings, ranking and significance patterns confirm that reward-safety trade-offs remain compute-budget dependent.
+Primary external evidence comes from standard constrained benchmarks (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1, 30 seeds) and a matched 50-seed governance controller-comparison suite. Across these settings, reward-safety trade-offs remain compute-budget dependent.
 
 Design-wise, we deliberately changed as little as possible. The controller keeps PPO's policy/value backbone and adds two controls: variance-aware reward shaping during training, and a decision-time routing rule that falls back to a resilience heuristic when uncertainty is high. In the complexity benchmark, only the risk weight $\lambda_{\mathrm{risk}}$ and uncertainty threshold $\tau$ are retuned across levels; model class and environment stay fixed. This keeps the comparison about efficient safety behavior, not architecture churn.
 
@@ -19,9 +23,9 @@ Deployment integrations (for example, on-chain audit commitments) provide option
 \paragraph{Contributions.}
 The paper makes the following contributions:
 \begin{itemize}
+    \item a decision-time safe-control architecture that combines uncertainty-gated fallback with deterministic shielding,
     \item a parameter-efficient uncertainty-estimation module (compact architecture) that preserves safety behavior under non-stationary disturbances,
-    \item a safe RL control rule centered on uncertainty-gated fallback and deterministic shielding,
-    \item and a high-rigor evaluation protocol centered on completed 30-seed standard constrained-benchmark runs (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1), with 50-seed constrained OmniSafe baselines and governance stress tests as supporting evidence.
+    \item and a high-rigor evaluation protocol centered on completed 30-seed standard constrained-benchmark runs (SafetyPointGoal1-v0 and SafetyHalfCheetahVelocity-v1), with a matched 50-seed governance controller-comparison suite and governance stress tests as supporting evidence.
 \end{itemize}
 
 \begin{table}[htbp]
@@ -38,6 +42,8 @@ The empirical claim is specific and testable: uncertainty-gated control with com
 
 Blockchain and ML integration work often focuses on transaction analytics, mechanism optimization, or fraud detection in mostly stationary settings. Governance control with adversarial perturbations has received less systematic, reproducible treatment. Classical consensus foundations remain essential \citep{nakamoto2008bitcoin}, and PPO remains a practical baseline for continuous-control policy learning \citep{schulman2017ppo}, but both need stress-tested evaluation when used in operational control loops.
 
-Safe RL literature offers several tools with different assumptions: CVaR objectives \citep{chow2015cvar}, robust MDP formulations \citep{iyengar2005robust}, and constrained policy optimization \citep{achiam2017cpo}. The approach here keeps PPO as the optimizer and adds uncertainty-aware routing at action time with risk shaping during updates. We evaluate this controller pattern against strong heuristic and constrained baselines under the same disturbance model.
+Safe RL literature offers several tools with different assumptions: CVaR objectives \citep{chow2015cvar}, robust MDP formulations \citep{iyengar2005robust}, and constrained policy optimization \citep{achiam2017cpo}. Recent practice also emphasizes distribution-shift robustness, risk-sensitive policy updates, and uncertainty-aware action filtering. The approach here keeps PPO as the optimizer and adds uncertainty-aware routing at action time with risk shaping during updates. We evaluate this controller pattern against strong heuristic and constrained baselines under the same disturbance model, and we explicitly treat this paper as a systems-and-control contribution rather than a new policy-optimization objective.
+
+Relative to modern safe-RL directions (risk-sensitive updates, uncertainty-aware filtering, and robust constrained control), this work contributes primarily at the control-architecture layer: it specifies how to combine branch-level uncertainty routing with deterministic post-check execution in a reproducible deployment pipeline. Expanding direct head-to-head comparison against additional recent baselines is an explicit next step, not an omitted assumption.
 
 Reproducibility details are provided in dedicated checklist material, while the main text focuses on algorithmic behavior and safety-relevant outcomes.
