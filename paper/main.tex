@@ -10,7 +10,7 @@
 \usepackage{longtable}
 \usepackage{float}
 \usepackage{subcaption}
-\usepackage{placeins}
+\IfFileExists{placeins.sty}{\usepackage{placeins}}{\providecommand{\FloatBarrier}{}}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{hyperref}
